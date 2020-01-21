@@ -1,0 +1,21 @@
+body, html {
+  width: 100%;
+  height: 100%; }
+
+section {
+  height: 100vh; }
+
+#hero {
+  background: beige; }
+
+#about {
+  background: gray; }
+
+.test {
+  transform: translateY(200px);
+  opacity: 0;
+  transition: all .5s ease-out; }
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0); }
