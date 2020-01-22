@@ -1,18 +1,55 @@
-body, html{
+body,
+html {
     width: 100%;
     height: 100%;
 }
 
-section {
-    height: 100vh; 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: inline-block;
 }
 
-#hero{
-    background: beige;
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tint {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 1;
+}
+
+section {
+    height: 100vh;
+}
+
+#hero {
+    // background: url('../images/stars.jpg');
+    background-image: linear-gradient(to top, rgb(65,43,108), rgb(42,45,108), rgb(22, 22, 71), rgb(3,4,22));
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .container {
+        position: relative;
+        z-index: 999;
+        color: white;
+    }
 }
 
 #about {
-    background:gray;
+    background: gray;
 }
 
 .test {
@@ -37,3 +74,45 @@ section {
 // #table-tennis {
 //     background-image: url('../images/flipbook/jump1.jpg');
 // }
+
+
+$hexagon-width: 175px;
+$hexagon-height: $hexagon-width / 1.732;
+$hexagon-margin: $hexagon-width / 3.4642;
+$hexagon-border-tb: $hexagon-margin;
+$hexagon-border-lr: $hexagon-width / 2;
+
+.hexagon {
+    position: relative;
+    width: $hexagon-width;
+    height: $hexagon-height;
+    background-color: #64C7CC;
+    margin: $hexagon-margin 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: $hexagon-border-lr solid transparent;
+    border-right: $hexagon-border-lr solid transparent;
+}
+
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: $hexagon-border-tb solid #64C7CC;
+}
+
+.hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: $hexagon-border-tb solid #64C7CC;
+}
+
+.fas {
+    position: relative;
+    z-index: 999;
+    font-size: 500%;
+    color: white;
+}
