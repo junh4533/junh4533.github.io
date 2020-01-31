@@ -30,7 +30,7 @@ section {
   height: 100vh; }
 
 #hero {
-  background-image: linear-gradient(to top, #412b6c, #2a2d6c, #161647, #030416);
+  background-image: linear-gradient(to top, #1b0b3d, #0f1242, #050522, #010108);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -38,6 +38,11 @@ section {
     position: relative;
     z-index: 999;
     color: white; }
+  #hero #starfield {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999; }
 
 #about {
   background: gray; }

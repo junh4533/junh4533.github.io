@@ -36,7 +36,7 @@ section {
 
 #hero {
     // background: url('../images/stars.jpg');
-    background-image: linear-gradient(to top, rgb(65,43,108), rgb(42,45,108), rgb(22, 22, 71), rgb(3,4,22));
+    background-image: linear-gradient(to top, rgb(27, 11, 61), rgb(15, 18, 66), rgb(5, 5, 34), rgb(1, 1, 8));
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -45,6 +45,14 @@ section {
         position: relative;
         z-index: 999;
         color: white;
+    }
+
+    #starfield {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 999;
+        // background: #111;
     }
 }
 
