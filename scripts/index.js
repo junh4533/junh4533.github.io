@@ -86,56 +86,35 @@ $(document).ready(function () {
     // })
 
 
-
-    
-
-    // x times a square canvasWH will give coordinate
-    
-
-    // function drawSagittarius(x, y) {
-    //     var x = getRandom(-50, 50) + e.pageX,
-    //         y = getRandom(-50, 50) + e.pageY,
-    //         radius = Math.random() * 5,
-    //         saturation = getRandom(50, 100), //higher range = higher chance of darker stars
-    //         lightness = getRandom(70, 100); //higher range = lower chance of being 100% white
-
-    //     ctx.beginPath();
-    //     ctx.arc(x, y, radius, 0, 360); //draws a circle
-    //     ctx.shadowBlur = lightness / 10;
-    //     ctx.shadowColor = "white";
-    //     ctx.fillStyle = "hsl(240, " + saturation + "%, " + lightness + "%)";
-    //     ctx.fill();
-    // }
-
     var sagittarius = document.getElementById("sagittarius"),
         ctx = sagittarius.getContext("2d"),
         canvasWH = document.body.clientHeight,
-        mouseDistance = 25;
+        mouseDistance = 60;
         
     sagittarius.width = canvasWH;
     sagittarius.height = canvasWH;
 
-    
+    // x times a square canvasWH will give coordinate
     const star_coordinates = {
         1:[.4, .9],
         2:[.39, .8],
         3:[.234, .834],
-        4:[.212, .834],
-        5:[.2, .834],
-        6:[.194, .834],
-        7:[.336, .834],
-        8:[.476, .834],
-        9:[.456, .834],
-        10:[.402, .834],
-        11:[.508, .834],
-        12:[.534, .834],
-        13:[.588, .834],
-        14:[.684, .834],
-        15:[.744, .834],
-        16:[.73, .834],
-        17:[.81, .834],
-        18:[.694, .834],
-        19:[.74, .834],
+        4:[.212, .636],
+        5:[.2, .584],
+        6:[.194, .396],
+        7:[.336, .284],
+        8:[.476, .406],
+        9:[.456, .17],
+        10:[.402, .072],
+        11:[.508, .456],
+        12:[.534, .34],
+        13:[.588, .368],
+        14:[.684, .32],
+        15:[.744, .23],
+        16:[.73, .446],
+        17:[.81, .474],
+        18:[.694, .588],
+        19:[.74, .66],
     }
 
     document.body.addEventListener("mousemove", function (e) {
@@ -144,7 +123,7 @@ $(document).ready(function () {
             var starX = star_coordinates[star][0] * canvasWH;
             var starY = star_coordinates[star][1] * canvasWH;
             //if mouse moves within mouseDistance of the star
-            if (Math.abs(e.pageX - starX) >= mouseDistance || Math.abs(e.pageY - starY) >= mouseDistance) {
+            if (Math.abs(e.pageX - starX) <= mouseDistance && Math.abs(e.pageY - starY) <= mouseDistance) {
                 console.log(starX);
                 var radius = Math.random() * 5,
                 saturation = getRandom(50, 100), //higher range = higher chance of darker stars
