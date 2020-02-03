@@ -63,76 +63,150 @@ $(document).ready(function () {
 
     var sagittarius = document.getElementById("sagittarius"),
         canvasWH = document.body.clientHeight,
-        mouseDistance = 60;
-        
+        mouseDistance = 45;
+
     sagittarius.width = document.body.clientWidth;
     sagittarius.height = canvasWH;
 
     // x times a square canvasWH will give coordinate
     const star_coordinates = {
-        1:[.4, .9],
-        2:[.39, .8],
-        3:[.234, .834],
-        4:[.212, .636],
-        5:[.2, .584],
-        6:[.194, .396],
-        7:[.336, .284],
-        8:[.476, .406],
-        9:[.456, .17],
-        10:[.402, .072],
-        11:[.508, .456],
-        12:[.534, .34],
-        13:[.588, .368],
-        14:[.684, .32],
-        15:[.744, .23],
-        16:[.73, .446],
-        17:[.81, .474],
-        18:[.694, .588],
-        19:[.74, .66],
+        1: [.4, .9],
+        2: [.39, .8],
+        3: [.234, .834],
+        4: [.212, .636],
+        5: [.2, .584],
+        6: [.194, .396],
+        7: [.336, .284],
+        8: [.476, .406],
+        9: [.534, .34],
+        10: [.588, .368],
+        12: [.456, .17], 
+        13: [.402, .072], 
+        11: [.508, .456],
+        14: [.684, .32],
+        15: [.744, .23],
+        16: [.73, .446],
+        17: [.81, .474],
+        18: [.694, .588],
+        19: [.74, .66],
+    }
+
+    const star_coordinates2 = {
+        1: [.4, .9],
+        2: [.39, .8],
+        3: [.234, .834],
+        4: [.212, .636],
+        5: [.2, .584],
+        6: [.194, .396],
+        7: [.336, .284],
+        8: [.476, .406],
+        9: [.534, .34],
+        10: [.588, .368],
+        12: [.456, .17], 
+        13: [.402, .072], 
+        11: [.508, .456],
+        14: [.684, .32],
+        15: [.744, .23],
+        16: [.73, .446],
+        17: [.81, .474],
+        18: [.694, .588],
+        19: [.74, .66],
+    }
+
+    const sagittarius_lines = {
+        1: 3,
+        2: 3,
+        3: 4,
+        4: 5,
+        5: 6,
+        6: 7,
+        7: 8,
+        8: 9,
+        9: 10,
+        10: 11,
+        11: 8,
+        12: 8,
+        13: 12,
+        14: 10,
+        15: 14,
+        16: 14,
+        17: 16,
+        18: 16,
+        19: 18,
+    }
+
+    function animateCanvas(canvas, x, y, radius, saturation, lightness, interval, delay) {
+        ctx = canvas.getContext("2d");
+        for (var i = radius / interval; i <= radius; i += radius / interval) {
+            setTimeout(function () {
+                // ctx.clearRect(x, y, i, i);
+                ctx.beginPath();
+                ctx.arc(x, y, i, 0, 360); //draws a circle
+                ctx.shadowBlur = lightness / 10;
+                ctx.shadowColor = "hsl(240, " + saturation + "%, " + lightness + "%)";
+                ctx.fillStyle = "hsl(240, " + saturation + "%, " + lightness + "%)";
+                ctx.fill();
+                ctx.closePath();
+            }, delay * i);  
+        }
     }
 
     document.body.addEventListener("mousemove", function (e) {
-
+        
         //if mouse moves the minimum x or y distance
         if (Math.abs(e.pageX - mouseX) > mouseTravel || Math.abs(e.pageY - mouseY) > mouseTravel) {
             mouseX = e.pageX;
             mouseY = e.pageY;
 
-            var x = getRandom(-50, 50) + e.pageX,
-                y = getRandom(-50, 50) + e.pageY,
-                radius = Math.random() * 2,
-                // radius = Math.random() > .99 ? Math.random() * 20 : Math.random() * 2,
-                saturation = getRandom(50, 100), //higher range = higher chance of darker stars
-                lightness = getRandom(70, 100); //higher range = lower chance of being 100% white
-
-            ctx = starfield.getContext("2d");
-            ctx.beginPath();
-            ctx.arc(x, y, radius, 0, 360); //draws a circle
-            ctx.shadowBlur = lightness / 10;
-            ctx.shadowColor = "white";
-            ctx.fillStyle = "hsl(240, " + saturation + "%, " + lightness + "%)";
-            ctx.fill();
+            animateCanvas(starfield,
+                getRandom(-50, 50) + e.pageX,
+                getRandom(-50, 50) + e.pageY,
+                Math.random() * 2,
+                getRandom(50, 100),
+                getRandom(70, 100),
+                3,
+                500);
         }
-
-        for (var star in star_coordinates){
+        
+        // check each star coordinate everytime the mouse moves 
+        for (var star in star_coordinates) {
             var starX = star_coordinates[star][0] * document.body.clientWidth;
             var starY = star_coordinates[star][1] * canvasWH;
-            //if mouse moves within mouseDistance of the star
-            if (Math.abs(e.pageX - starX) <= mouseDistance && Math.abs(e.pageY - starY) <= mouseDistance) {
-                var radius = 15,
-                saturation = getRandom(50, 100), //higher range = higher chance of darker stars
-                lightness = getRandom(70, 100); //higher range = lower chance of being 100% white
 
-                ctx = sagittarius.getContext("2d");
-                ctx.beginPath();
-                ctx.arc(starX, starY, radius, 0, 360); //draws a circle
-                ctx.shadowBlur = lightness / 10;
-                ctx.shadowColor = "white";
-                ctx.fillStyle = "hsl(240, " + saturation + "%, " + lightness + "%)";
-                ctx.fill();
+            // if mouse is within mouseDistance of star coordinate
+            if (Math.abs(e.pageX - starX) <= mouseDistance && Math.abs(e.pageY - starY) <= mouseDistance) {
+                animateCanvas(sagittarius,
+                    starX,
+                    starY,
+                    8,
+                    getRandom(50, 100),
+                    getRandom(85, 100),
+                    1,
+                    0);
+                // delete star so it doesn't redraw on hover
                 delete star_coordinates[star];
+                
+                // check sagitarrius lines for star coordinates that are removed (hovered over)
+                for (var line_coordinate in sagittarius_lines) {
+                    var line_coordinate2 = sagittarius_lines[line_coordinate];
+                    // if both coordinates are hovered over, form a line connecting the two
+                    if (!(line_coordinate in star_coordinates) && !(line_coordinate2 in star_coordinates)){
+                        var starX1 = star_coordinates2[line_coordinate][0] * document.body.clientWidth;
+                        var starY1 = star_coordinates2[line_coordinate][1] * canvasWH;
+                        var starX2 = star_coordinates2[line_coordinate2][0] * document.body.clientWidth;
+                        var starY2 = star_coordinates2[line_coordinate2][1] * canvasWH;
+                        ctx.beginPath();
+                        ctx.lineWidth = 3;
+                        ctx.strokeStyle = "hsl(240, 90%, 90%)";
+                        ctx.moveTo(starX1, starY1);
+                        ctx.lineTo(starX2, starY2);
+                        ctx.stroke();
+                        ctx.closePath();
+                    }
+                }
             }
         }
+
 
     })
 
