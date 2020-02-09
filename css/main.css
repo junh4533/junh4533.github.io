@@ -24,7 +24,7 @@ h6 {
   left: 0;
   top: 0;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 1; }
+  z-index: 700; }
 
 section {
   height: 100vh; }
@@ -37,17 +37,21 @@ section {
   #hero .container {
     position: relative;
     z-index: 999;
-    color: white; }
+    color: #fa8607;
+    font-weight: 900; }
+  #hero #social-media-icons {
+    color: white;
+    font-size: 300%; }
   #hero #starfield {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 999; }
+    z-index: 500; }
   #hero #sagittarius {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 999; }
+    z-index: 500; }
 
 #about {
   background: gray; }
