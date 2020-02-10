@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Jun Huang's Portfolio</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,95 +10,297 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <!-- Custom stylesheet  -->
   <link rel="stylesheet" href="css/main.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+
+  <!-- Popper.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+
+  <!-- Bootstrap JS  -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <!-- Font Awesome  -->
+  <script src="https://kit.fontawesome.com/7737a0af7b.js" crossorigin="anonymous"></script>
+
+  <!-- GreenSock Animation (GSAP) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+
+  <!-- ScrollMagic JS  -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+
+  <!-- ScrollMagic Indicators  -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+  <!-- GSAP Plugin  -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+
+  <!-- Custom JS  -->
+  <script src="scripts/index.js"></script>
 </head>
 
 <body>
 
   <section class="flex-center" id="hero">
+
     <!-- <div class="tint"></div> -->
     <aside id="social-media-icons">
       <i class="fab fa-facebook-square"></i>
       <i class="fab fa-linkedin"></i>
       <i class="fab fa-github-square"></i>
     </aside>
-    
+
     <div class="container flex-center">
       <h1></h1> <br />
       <h1>Hi! My name is Jun Huang.</h1> <br />
       <h1>Sagitarrius</h1> <br />
       <!-- <h3>junh4533@gmail.com</h3> -->
-       <button>Guess my Horoscope</button>
+      <button>Guess my Horoscope</button>
     </div>
+
     <canvas id="starfield" width="750" height="500"></canvas>
     <canvas id="sagittarius" width="800" height="800"></canvas>
 
   </section>
 
-  <section class="" id="about">
-    <div class="container-fluid flex-center">
-      <div class="row">
-        <div class="col-6 col-md-3">
-          <div class="hexagon flex-center">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h1 class="" id="test-h1">Efficient</h1>
+  <section class="text-center" id="about">
+    <h1 class="page-header">About</h1>
+
+    <div class="container-fluid">
+      <img id="flip-img" src="images/flipbook/jump1.jpg" alt="flip-img"> <br>
+      <h3>Huge Fan of Table Tennis</h3>
+    </div>
+
+    <div id="food-gallery" class="container-fluid">
+      <br><br>
+      <!-- <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-xl-4">
+          <img src="images/food/foie-gras.jpg" alt="foie gras"> 
         </div>
-        <div class="col-6 col-md-3">
-          <div class="hexagon flex-center">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h1 class="" id="test-h1">Creative</h1>
+
+        <div class="col-12 col-sm-12 col-md-6 col-xl-4">
+          <img src="images/food/salmon.jpg" alt="salmon"> 
         </div>
-        <div class="col-6 col-md-3">
-          <div class="hexagon flex-center">
-            <i class="fas fa-hand-pointer"></i>
+
+        <div class="col-12 col-sm-12 col-md-12 col-xl-8">
+          <div class="row">
+
+            <div class="col-12 col-sm-12 col-md-6 col-xl-4">
+              <img src="images/food/noodles.jpg" alt="noodles"> 
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-6 col-xl-6">
+              <img src="images/food/ice-cream.jpg" alt="ice cream"> 
+            </div>
+    
+            <div class="col-12 col-sm-12 col-md-6 col-xl-6">
+              <img src="images/food/rice.jpg" alt="rice"> 
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-6 col-xl-6">
+              <img src="images/food/sashimi.jpg" alt="sashimi"> 
+            </div>
+    
+            <div class="col-12 col-sm-12 col-md-6 col-xl-6">
+              <img src="images/food/hargow.jpg" alt="hargow"> 
+            </div>
+
           </div>
-          <h1 class="" id="test-h1">Interactive</h1>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="hexagon flex-center">
-            <i class="fas fa-lightbulb"></i>
-          </div>
+
+        <div class="col-0 col-md-12 col-xl-0"></div>
+        
+        <div class="col-12 col-sm-12 col-md-6 col-xl-4">
+          <img src="images/food/fish.jpg" alt="fish"> 
+        </div>
+
+        
+
+        <div class="col-12 col-sm-12 col-md-6">
+          <img src="images/food/eel.jpg" alt="eel">  
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6">
+          <img src="images/food/short-ribs.jpg" alt="short ribs"> 
+        </div>
+      </div> -->
+
+      <!-- <h3>Love Traveling to Eat</h3> -->
+
+      <div class="parent">
+        <div class="div1">
+          <img src="images/food/rice.jpg" alt="rice">
+        </div>
+        <div class="div2">
+          <!-- <img src="images/food/salmon.jpg" alt="salmon"> -->
+        </div>
+        <div class="div3">
+          <!-- <img src="images/food/hargow.jpg" alt="hargow"> -->
+        </div>
+        <div class="div4">
+          <!-- <img src="images/food/ice-cream.jpg" alt="ice cream"> -->
+        </div>
+        <div class="div5">
+          <!-- <img src="images/food/fish.jpg" alt="fish"> -->
+        </div>
+        <div class="div6">
+          <!-- <img src="images/food/noodles.jpg" alt="noodles"> -->
+        </div>
+        <div class="div7">
+          <!-- <img src="images/food/sashimi.jpg" alt="sashimi"> -->
+        </div>
+        <div class="div8">
+          <!-- <img src="images/food/foie-gras.jpg" alt="foie gras"> -->
+        </div>
+        <div class="div9">
+          <!-- <img src="images/food/eel.jpg" alt="eel"> -->
+        </div>
+        <div class="div10">
+          <!-- <img src="images/food/short-ribs.jpg" alt="short ribs"> -->
         </div>
       </div>
     </div>
+
   </section>
 
-  <section id="skills">
+  <section class="text-center" id="skills">
+
     <div class="container-fluid">
-      <img id="flip-img" src="images/flipbook/jump1.jpg" alt="flip-img">
+
+      <h1 class="page-header">Skills</h1>
+
+      <div class="row my-5">
+        <div class="col-6 col-md-3 flex-center">
+          <div class="hexagon flex-center">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3 v>Efficient</h1>
+        </div>
+        <div class="col-6 col-md-3 flex-center">
+          <div class="hexagon flex-center">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3 class="mt-2">Creative</h1>
+        </div>
+        <div class="col-6 col-md-3 flex-center">
+          <div class="hexagon flex-center">
+            <i class="fas fa-hand-pointer"></i>
+          </div>
+          <h3 class="mt-2">Interactive</h1>
+        </div>
+        <div class="col-6 col-md-3 flex-center">
+          <div class="hexagon flex-center">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="mt-2">Responsive</h1>
+        </div>
+      </div>
+
+      <div class="row my-5">
+        <div class="col-12 col-md-5 flex-center">
+          <div class="img-round flex-center">
+            <img id="profile-pic" src="images/profile.jpg" alt="Jun">
+          </div>
+        </div>
+        <div class="col-12 col-md-7 flex-center">
+          <div class="container">
+            <!-- Nav pills -->
+            <ul class="nav nav-pills" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#languages">Languages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#frameworks">Frameworks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#software">Software</a>
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div id="languages" class="container tab-pane active"><br>
+                <h3>Languages</h3>
+                <div class="container">
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:90%;height:30px">HTML</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:80%;height:30px">CSS</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:60%;height:30px">JavaScript</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:50%;height:30px">Python</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:40%;height:30px">SQL</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:40%;height:30px">PHP</div>
+                  </div>
+                </div>
+              </div>
+              <div id="frameworks" class="container tab-pane fade"><br>
+                <h3>Frameworks</h3>
+                <div class="container">
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:90%;height:30px">Bootstrap</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:60%;height:30px">Python-Django</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:50%;height:30px">React</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:40%;height:30px">Node.js</div>
+                  </div>
+                </div>
+              </div>
+              <div id="software" class="container tab-pane fade"><br>
+                <h3>Software</h3>
+                <div class="container">
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:90%;height:30px">Visual Studio Code</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:80%;height:30px">Git</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:75%;height:30px">MYSQL Workbench</div>
+                  </div>
+                  <div class="progress my-3" style="height:30px">
+                    <div class="progress-bar" style="width:70%;height:30px">XAMPP</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
   </section>
 
-  <section id="section4">
+  <section class="text-center" id="projects">
+
     <div class="container-fluid">
-      <h1>section 4</h1>
+      <h1 class="page-header">Projects</h1>
     </div>
-  </section>
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <!-- Popper.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <!-- Bootstrap JS  -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
-  <!-- Font Awesome  -->
-  <script src="https://kit.fontawesome.com/7737a0af7b.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
-  <!-- ScrollMagic JS  -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
-  <!-- Custom JS  -->
-  <script src="scripts/index.js"></script>
+  </section>
 </body>
 
 </html>

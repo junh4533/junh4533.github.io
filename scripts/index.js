@@ -3,7 +3,7 @@ $(document).ready(function () {
     var controller = new ScrollMagic.Controller();
 
     new ScrollMagic.Scene({
-            triggerElement: '#about', //select element for scrollmagic scene
+            triggerElement: '#skills', //select element for scrollmagic scene
             // duration: 300
             duration: '50%', //end after scrolling 50% of viewport height below starting point
             triggerHook: .7 //how much the user needs to scroll before triggering animation (0-1)
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
     // build scene
     new ScrollMagic.Scene({
-            triggerElement: "#skills",
+            triggerElement: "#about",
             duration: '60%',
             triggerHook: .6
         })
@@ -138,8 +138,7 @@ $(document).ready(function () {
     function animateCanvas(canvas, x, y, radius, saturation, lightness, interval, delay) {
         ctx = canvas.getContext("2d");
         for (var i = radius / interval; i <= radius; i += radius / interval) {
-            setTimeout(function () {
-                // ctx.clearRect(x, y, i, i);
+            setTimeout(function() {
                 ctx.beginPath();
                 ctx.arc(x, y, i, 0, 360); //draws a circle
                 ctx.shadowBlur = lightness / 10;
@@ -151,7 +150,7 @@ $(document).ready(function () {
         }
     }
 
-    document.body.addEventListener("mousemove", function (e) {
+    document.body.addEventListener("mousemove", function(e) {
         
         //if mouse moves the minimum x or y distance
         if (Math.abs(e.pageX - mouseX) > mouseTravel || Math.abs(e.pageY - mouseY) > mouseTravel) {
