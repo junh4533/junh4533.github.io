@@ -11,6 +11,25 @@ $(document).ready(function () {
         .addIndicators() //indicators for debugging
         .addTo(controller); //add scene to controller
 
+    // build tween
+    var tween = new TweenMax.to("#test1", 1, {
+        // className: "div1 fade-in"
+        // backgroundColor: 'red';
+        transform: "translateX(0)"
+    });
+
+    // build scene
+    new ScrollMagic.Scene({
+            triggerElement: ".parent",
+            duration: 200,
+            offset: -50
+        })
+        .setTween(tween)
+        .addIndicators({
+            name: "tween css class"
+        }) // add indicators (requires plugin)
+        .addTo(controller);
+
 
     var images = [
         "../images/flipbook/jump1.jpg",
@@ -47,6 +66,28 @@ $(document).ready(function () {
         .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
+    
+        // build tween
+    var tween = new TweenMax.to(".project-img", 1, {
+        // className: "div1 fade-in"
+        // backgroundColor: 'red';
+        xPercent: "0%",
+        maxWidth: "100%",
+        // height: "100%"
+    });
+
+    // build scene
+    new ScrollMagic.Scene({
+            triggerElement: "#projects",
+            duration: 200,
+            offset: -50
+        })
+        .setTween(tween)
+        .addIndicators({
+            name: "tween css class"
+        }) // add indicators (requires plugin)
+        .addTo(controller);
+
 
     function getRandom(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -80,8 +121,8 @@ $(document).ready(function () {
         8: [.476, .406],
         9: [.534, .34],
         10: [.588, .368],
-        12: [.456, .17], 
-        13: [.402, .072], 
+        12: [.456, .17],
+        13: [.402, .072],
         11: [.508, .456],
         14: [.684, .32],
         15: [.744, .23],
@@ -102,8 +143,8 @@ $(document).ready(function () {
         8: [.476, .406],
         9: [.534, .34],
         10: [.588, .368],
-        12: [.456, .17], 
-        13: [.402, .072], 
+        12: [.456, .17],
+        13: [.402, .072],
         11: [.508, .456],
         14: [.684, .32],
         15: [.744, .23],
@@ -138,7 +179,7 @@ $(document).ready(function () {
     function animateCanvas(canvas, x, y, radius, saturation, lightness, interval, delay) {
         ctx = canvas.getContext("2d");
         for (var i = radius / interval; i <= radius; i += radius / interval) {
-            setTimeout(function() {
+            setTimeout(function () {
                 ctx.beginPath();
                 ctx.arc(x, y, i, 0, 360); //draws a circle
                 ctx.shadowBlur = lightness / 10;
@@ -146,12 +187,12 @@ $(document).ready(function () {
                 ctx.fillStyle = "hsl(240, " + saturation + "%, " + lightness + "%)";
                 ctx.fill();
                 ctx.closePath();
-            }, delay * i);  
+            }, delay * i);
         }
     }
 
-    document.body.addEventListener("mousemove", function(e) {
-        
+    document.body.addEventListener("mousemove", function (e) {
+
         //if mouse moves the minimum x or y distance
         if (Math.abs(e.pageX - mouseX) > mouseTravel || Math.abs(e.pageY - mouseY) > mouseTravel) {
             mouseX = e.pageX;
@@ -166,7 +207,7 @@ $(document).ready(function () {
                 3,
                 500);
         }
-        
+
         // check each star coordinate everytime the mouse moves 
         for (var star in star_coordinates) {
             var starX = star_coordinates[star][0] * document.body.clientWidth;
@@ -184,12 +225,12 @@ $(document).ready(function () {
                     0);
                 // delete star so it doesn't redraw on hover
                 delete star_coordinates[star];
-                
+
                 // check sagitarrius lines for star coordinates that are removed (hovered over)
                 for (var line_coordinate in sagittarius_lines) {
                     var line_coordinate2 = sagittarius_lines[line_coordinate];
                     // if both coordinates are hovered over, form a line connecting the two
-                    if (!(line_coordinate in star_coordinates) && !(line_coordinate2 in star_coordinates)){
+                    if (!(line_coordinate in star_coordinates) && !(line_coordinate2 in star_coordinates)) {
                         var starX1 = star_coordinates2[line_coordinate][0] * document.body.clientWidth;
                         var starY1 = star_coordinates2[line_coordinate][1] * canvasWH;
                         var starX2 = star_coordinates2[line_coordinate2][0] * document.body.clientWidth;

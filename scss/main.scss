@@ -122,11 +122,17 @@ section {
                 background-size: cover;
                 width:100%;
                 height:100%;
+                // position: absolute;
             }
 
             .div1 {
                 grid-area: 1 / 1 / 3 / 3;
-                background-image: url("../images/food/rice.jpg");
+                // background-image: url("../images/food/rice.jpg");
+                transform: "translateX(-200px)"
+            }
+
+            .test-img {
+                position: absolute;
             }
 
             .div2 {
@@ -240,10 +246,11 @@ section {
 //     transition: all .5s ease-out;
 // }
 
-// .fade-in {
-//     opacity: 1;
-//     transform: translateY(0);
-// }
+.fade-in {
+    // opacity: 1;
+    // transform: translateX(0) !important;
+    // background-size: 50% 50% !important;
+}
 
 
 
@@ -287,3 +294,18 @@ $hexagon-border-lr: $hexagon-width / 2;
     font-size: 3.5rem;
     color: white;
 }
+
+#projects {
+    img{
+        // width: 0;
+        // height: 0;
+        // max-width: 0%;
+        // transform: translateX(-20%);
+    }
+
+   
+}
+
+// .test{
+//     max-width: 100%;
+// }
