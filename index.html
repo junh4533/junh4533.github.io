@@ -44,202 +44,223 @@
   <!-- GSAP Plugin  -->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
 
+  <!-- Particle JS  -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
   <!-- Custom JS  -->
   <script src="scripts/index.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <div class="parallax">
+    <!-- HERO -->
+    <section class="flex-center" id="hero">
 
-  <section class="flex-center" id="hero">
-
-    <!-- <div class="tint"></div> -->
-    <aside id="social-media-icons">
-      <i class="fab fa-facebook-square"></i>
-      <i class="fab fa-linkedin"></i>
-      <i class="fab fa-github-square"></i>
-    </aside>
-
-    <div class="container flex-center">
-      <h1></h1> <br />
-      <h1>Hi! My name is Jun Huang.</h1> <br />
-      <h1>Sagitarrius</h1> <br />
-      <!-- <h3>junh4533@gmail.com</h3> -->
-      <button>Guess my Horoscope</button>
-    </div>
-
-    <canvas id="starfield" width="750" height="500"></canvas>
-    <canvas id="sagittarius" width="800" height="800"></canvas>
-
-  </section>
-  <div>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-      <a class="navbar-brand" href="#">Jun Huang</a>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
-
-    <section class="text-center" id="about">
-
-      <h1 class="page-header">About</h1>
-
-      <div class="container-fluid">
-        <img id="flip-img" src="images/flipbook/jump1.jpg" alt="flip-img"> <br>
-        <h3>Huge Fan of Table Tennis</h3>
-      </div>
-
+      <!-- <div class="tint"></div>
+      <aside id="social-media-icons">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-github-square"></i>
+      </aside>
+  
+      <div class="container flex-center">
+        <h1></h1> <br />
+        <h1>Hi! My name is Jun Huang.</h1> <br />
+        <h1>Sagitarrius</h1> <br />
+        <button>Guess my Horoscope</button>
+      </div> -->
+  
+      <canvas id="starfield" width="750" height="500"></canvas>
+      <canvas id="sagittarius" width="800" height="800"></canvas>
+  
     </section>
 
-    <section class="text-center" id="skills">
-
-      <div class="container-fluid">
-
-        <h1 class="page-header">Skills</h1>
-
-        <div class="row my-5">
-          <div class="col-6 col-md-3 flex-center">
-            <div class="hexagon flex-center">
-              <i class="fas fa-rocket"></i>
-            </div>
-            <h3>Efficient</h1>
-          </div>
-          <div class="col-6 col-md-3 flex-center">
-            <div class="hexagon flex-center">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <h3 class="mt-2">Creative</h1>
-          </div>
-          <div class="col-6 col-md-3 flex-center">
-            <div class="hexagon flex-center">
-              <i class="fas fa-hand-pointer"></i>
-            </div>
-            <h3 class="mt-2">Interactive</h1>
-          </div>
-          <div class="col-6 col-md-3 flex-center">
-            <div class="hexagon flex-center">
-              <i class="fas fa-laptop-code"></i>
-            </div>
-            <h3 class="mt-2">Responsive</h1>
-          </div>
+    <!-- CONTAINER FOR SCROLLSPY -->
+    <div class="main-content">
+     
+      <!-- FIXED TOP NAVBAR -->
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <a class="navbar-brand" href="#">Jun Huang</a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <!-- ABOUT -->
+      <section class="text-center parallax__group" id="about">
+        <div class="particles-bg parallax__layer parallax__layer--back" id="particles-about"></div>
+  
+        <h1 class="page-header">About</h1>
+  
+        <div class="container-fluid parallax__layer--base">
+          <img id="flip-img" src="images/flipbook/jump1.jpg" alt="flip-img"> <br>
+          <h3>Huge Fan of Table Tennis</h3>
         </div>
-
-        <div class="row my-5">
-          <div class="col-12 col-md-5 flex-center">
-            <div class="img-round flex-center">
-              <img id="profile-pic" src="images/profile.jpg" alt="Jun">
+  
+      </section>
+  
+      <!-- SKILLS -->
+      <section class="text-center parallax__group" id="skills">
+        <div class="particles-bg parallax__layer parallax__layer--back" id="particles-skills"></div>
+        <div class="container-fluid parallax__layer--base">
+  
+          <h1 class="page-header">Skills</h1>
+  
+          <div class="row my-5">
+            <div class="col-6 col-md-3 flex-center">
+              <div class="hexagon flex-center">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>Efficient</h1>
+            </div>
+            <div class="col-6 col-md-3 flex-center">
+              <div class="hexagon flex-center">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3 class="mt-2">Creative</h1>
+            </div>
+            <div class="col-6 col-md-3 flex-center">
+              <div class="hexagon flex-center">
+                <i class="fas fa-hand-pointer"></i>
+              </div>
+              <h3 class="mt-2">Interactive</h1>
+            </div>
+            <div class="col-6 col-md-3 flex-center">
+              <div class="hexagon flex-center">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3 class="mt-2">Responsive</h1>
             </div>
           </div>
-          <div class="col-12 col-md-7 flex-center">
-            <div class="container">
-              <!-- Nav pills -->
-              <ul class="nav nav-pills" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" data-toggle="pill" href="#languages">Languages</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="pill" href="#frameworks">Frameworks</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="pill" href="#software">Software</a>
-                </li>
-              </ul>
-
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div id="languages" class="container tab-pane active"><br>
-                  <h3>Languages</h3>
-                  <div class="container">
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:90%;height:30px">HTML</div>
-                    </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:80%;height:30px">CSS</div>
-                    </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:60%;height:30px">JavaScript</div>
-                    </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:50%;height:30px">Python</div>
-                    </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:40%;height:30px">SQL</div>
-                    </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:40%;height:30px">PHP</div>
-                    </div>
-                  </div>
-                </div>
-                <div id="frameworks" class="container tab-pane fade"><br>
-                  <h3>Frameworks</h3>
-                  <div class="container">
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:90%;height:30px">Bootstrap</div>
-                    </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:60%;height:30px">Python-Django</div>
-                    </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:50%;height:30px">React</div>
-                    </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:40%;height:30px">Node.js</div>
+  
+          <div class="row my-5">
+            <div class="col-12 col-md-5 flex-center">
+              <div class="img-round flex-center">
+                <img id="profile-pic" src="images/profile.jpg" alt="Jun">
+              </div>
+            </div>
+            <div class="col-12 col-md-7 flex-center">
+              <div class="container">
+                <!-- Nav pills -->
+                <ul class="nav nav-pills" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#languages">Languages</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#frameworks">Frameworks</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#software">Software</a>
+                  </li>
+                </ul>
+  
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div id="languages" class="container tab-pane active"><br>
+                    <h3>Languages</h3>
+                    <div class="container">
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:90%;height:30px">HTML</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:80%;height:30px">CSS</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:60%;height:30px">JavaScript</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:50%;height:30px">Python</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:40%;height:30px">SQL</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:40%;height:30px">PHP</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div id="software" class="container tab-pane fade"><br>
-                  <h3>Software</h3>
-                  <div class="container">
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:90%;height:30px">Visual Studio Code</div>
+                  <div id="frameworks" class="container tab-pane fade"><br>
+                    <h3>Frameworks</h3>
+                    <div class="container">
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:90%;height:30px">Bootstrap</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:60%;height:30px">Python-Django</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:50%;height:30px">React</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:40%;height:30px">Node.js</div>
+                      </div>
                     </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:80%;height:30px">Git</div>
-                    </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:75%;height:30px">MYSQL Workbench</div>
-                    </div>
-                    <div class="progress my-3" style="height:30px">
-                      <div class="progress-bar" style="width:70%;height:30px">XAMPP</div>
+                  </div>
+                  <div id="software" class="container tab-pane fade"><br>
+                    <h3>Software</h3>
+                    <div class="container">
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:90%;height:30px">Visual Studio Code</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:80%;height:30px">Git</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:75%;height:30px">MYSQL Workbench</div>
+                      </div>
+                      <div class="progress my-3" style="height:30px">
+                        <div class="progress-bar" style="width:70%;height:30px">XAMPP</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+  
         </div>
-
-      </div>
-
-    </section>
-
-    <section class="text-center" id="projects">
-
-      <div class="container-fluid">
-        <h1 class="page-header">Projects</h1>
-      </div>
-
-    </section>
-
-    <section class="text-center" id="contact">
-
-      <div class="container-fluid">
-        <h1 class="page-header">Contact</h1>
-      </div>
-
-    </section>
-
-  </div>
+  
+      </section>
+  
+      <!-- PROJECTS -->
+      <section class="text-center" id="projects">
+        <div class="particles-bg parallax__layer parallax__layer--back" id="particles-projects"></div>
+        <div class="container-fluid">
+          <h1 class="page-header">Projects</h1>
+  
+          <!-- <h3>Appointment Scheduling</h3>
+      <h3>Queueing Software</h3>
+      <h3>Video Upload</h3>
+      <h3>Arduino Smarthome</h3>
+      <h3>Ascend Baruch</h3>
+      <h3>Donor Registry</h3>
+      <h3>Firedrop</h3> -->
+        </div>
+  
+      </section>
+  
+      <!-- CONTACT -->
+      <section class="text-center" id="contact">
+        <div class="container-fluid">
+          <h1 class="page-header">Contact</h1>
+        </div>
+  
+      </section>
+  
+    </div> <!-- END SCROLLSPY CONTAINER -->
+  
+</div>
 
 </body>
 

@@ -1,16 +1,121 @@
 $(document).ready(function () {
-    // initialize scrollmagic
-    var controller = new ScrollMagic.Controller();
 
-    new ScrollMagic.Scene({
-            triggerElement: '#skills', //select element for scrollmagic scene
-            // duration: 300
-            duration: '50%', //end after scrolling 50% of viewport height below starting point
-            triggerHook: .7 //how much the user needs to scroll before triggering animation (0-1)
-        }).setClassToggle('#test-h1', 'fade-in') // add in class for animations
-        .addIndicators() //indicators for debugging
-        .addTo(controller); //add scene to controller
+    const particlesJSON = {
+        "particles": {
+            "number": {
+                "value": 10,
+                "density": {
+                    "enable": true,
+                    "value_area": 1500
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 1,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 5,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 80,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 300,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1.5
+            },
+            "move": {
+                "enable": true,
+                "speed": .5,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "bubble"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 800,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 100,
+                    "size": 10,
+                    "duration": 1,
+                    "opacity": 1,
+                    "speed": .2
+                },
+                "repulse": {
+                    "distance": 100,
+                    "duration": 1.5
+                },
+                "push": {
+                    "particles_nb": 2
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    }
 
+    particlesJS("particles-about", particlesJSON);
+    particlesJS("particles-skills", particlesJSON);
+    particlesJS("particles-projects", particlesJSON);
+
+    var controller = new ScrollMagic.Controller(); // initialize scrollmagic
 
     var images = [
         "../images/flipbook/jump1.jpg",
@@ -47,7 +152,6 @@ $(document).ready(function () {
         .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-
     function getRandom(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -80,8 +184,8 @@ $(document).ready(function () {
         8: [.476, .406],
         9: [.534, .34],
         10: [.588, .368],
-        12: [.456, .17], 
-        13: [.402, .072], 
+        12: [.456, .17],
+        13: [.402, .072],
         11: [.508, .456],
         14: [.684, .32],
         15: [.744, .23],
@@ -102,8 +206,8 @@ $(document).ready(function () {
         8: [.476, .406],
         9: [.534, .34],
         10: [.588, .368],
-        12: [.456, .17], 
-        13: [.402, .072], 
+        12: [.456, .17],
+        13: [.402, .072],
         11: [.508, .456],
         14: [.684, .32],
         15: [.744, .23],
@@ -138,7 +242,7 @@ $(document).ready(function () {
     function animateCanvas(canvas, x, y, radius, saturation, lightness, interval, delay) {
         ctx = canvas.getContext("2d");
         for (var i = radius / interval; i <= radius; i += radius / interval) {
-            setTimeout(function() {
+            setTimeout(function () {
                 ctx.beginPath();
                 ctx.arc(x, y, i, 0, 360); //draws a circle
                 ctx.shadowBlur = lightness / 10;
@@ -146,12 +250,12 @@ $(document).ready(function () {
                 ctx.fillStyle = "hsl(240, " + saturation + "%, " + lightness + "%)";
                 ctx.fill();
                 ctx.closePath();
-            }, delay * i);  
+            }, delay * i);
         }
     }
 
-    document.body.addEventListener("mousemove", function(e) {
-        
+    document.body.addEventListener("mousemove", function (e) {
+
         //if mouse moves the minimum x or y distance
         if (Math.abs(e.pageX - mouseX) > mouseTravel || Math.abs(e.pageY - mouseY) > mouseTravel) {
             mouseX = e.pageX;
@@ -166,7 +270,7 @@ $(document).ready(function () {
                 3,
                 500);
         }
-        
+
         // check each star coordinate everytime the mouse moves 
         for (var star in star_coordinates) {
             var starX = star_coordinates[star][0] * document.body.clientWidth;
@@ -184,12 +288,12 @@ $(document).ready(function () {
                     0);
                 // delete star so it doesn't redraw on hover
                 delete star_coordinates[star];
-                
+
                 // check sagitarrius lines for star coordinates that are removed (hovered over)
                 for (var line_coordinate in sagittarius_lines) {
                     var line_coordinate2 = sagittarius_lines[line_coordinate];
                     // if both coordinates are hovered over, form a line connecting the two
-                    if (!(line_coordinate in star_coordinates) && !(line_coordinate2 in star_coordinates)){
+                    if (!(line_coordinate in star_coordinates) && !(line_coordinate2 in star_coordinates)) {
                         var starX1 = star_coordinates2[line_coordinate][0] * document.body.clientWidth;
                         var starY1 = star_coordinates2[line_coordinate][1] * canvasWH;
                         var starX2 = star_coordinates2[line_coordinate2][0] * document.body.clientWidth;
