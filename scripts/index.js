@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
 
     const particlesJSON = {
         "particles": {
@@ -10,13 +10,13 @@ $(document).ready(function () {
                 }
             },
             "color": {
-                "value": ["#5f5fc2","#250a63"]
+                "value": ["#5f5fc2", "#250a63"]
             },
             "shape": {
                 "type": "circle",
                 "stroke": {
                     "width": 0,
-                    "color": ["#5f5fc2","#250a63"]
+                    "color": ["#5f5fc2", "#250a63"]
                 },
                 "polygon": {
                     "nb_sides": 5
@@ -115,9 +115,9 @@ $(document).ready(function () {
     particlesJS("particles-skills", particlesJSON);
     particlesJS("particles-projects", particlesJSON);
 
-    var controller = new ScrollMagic.Controller(); // initialize scrollmagic
+    const controller = new ScrollMagic.Controller(); // initialize scrollmagic
 
-    var images = [
+    const images = [
         "../images/flipbook/jump1.jpg",
         "../images/flipbook/jump2.jpg",
         "../images/flipbook/jump3.jpg",
@@ -127,17 +127,17 @@ $(document).ready(function () {
     ];
 
     // TweenMax can tween any property of any object. We use this object to cycle through the array
-    var obj = {
+    let obj = {
         curImg: 0
     };
 
     // create tween
-    var tween = TweenMax.to(obj, 0.5, {
+    let tween = TweenMax.to(obj, 0.5, {
         curImg: images.length - 1, // animate propery curImg to number of images
         roundProps: "curImg", // only integers so it can be used as an array index
         immediateRender: true, // load first image automatically
         ease: Linear.easeNone, // show every image the same ammount of time
-        onUpdate: function () {
+        onUpdate: () => {
             $("#flip-img").attr("src", images[obj.curImg]); // set the image source
         }
     });
@@ -152,27 +152,29 @@ $(document).ready(function () {
         .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-    function getRandom(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    let getRandom = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    };
 
-    var starfield = document.getElementById("starfield"),
+    const starfield = document.getElementById("starfield"),
+        sagittarius = document.getElementById("sagittarius"),
+        canvasHeight = document.body.clientHeight,
+        canvasWidth = document.body.clientWidth,
         mouseTravel = 15,
-        mouseX = 0,
-        mouseY = 0;
-
-    //set canvas to fullscreen
-    starfield.width = document.body.clientWidth;
-    starfield.height = document.body.clientHeight;
-
-    var sagittarius = document.getElementById("sagittarius"),
-        canvasWH = document.body.clientHeight,
         mouseDistance = 45;
 
-    sagittarius.width = document.body.clientWidth;
-    sagittarius.height = canvasWH;
+    let mouseX = 0,
+        mouseY = 0;
 
-    // x times a square canvasWH will give coordinate
+    //set background starfield to fullscreen
+    starfield.width = canvasWidth;
+    starfield.height = document.body.clientHeight;
+
+    //set sag map to fullscreen
+    sagittarius.width = canvasWidth;
+    sagittarius.height = canvasHeight;
+
+    // x times a square canvasHeight will give coordinate
     const star_coordinates = {
         1: [.4, .9],
         2: [.39, .8],
@@ -239,10 +241,10 @@ $(document).ready(function () {
         19: 18,
     }
 
-    function animateCanvas(canvas, x, y, radius, saturation, lightness, interval, delay) {
+    let animateCanvas = (canvas, x, y, radius, saturation, lightness, interval, delay) => {
         ctx = canvas.getContext("2d");
-        for (var i = radius / interval; i <= radius; i += radius / interval) {
-            setTimeout(function () {
+        for (let i = radius / interval; i <= radius; i += radius / interval) {
+            setTimeout(() => {
                 ctx.beginPath();
                 ctx.arc(x, y, i, 0, 360); //draws a circle
                 ctx.shadowBlur = lightness / 10;
@@ -252,9 +254,9 @@ $(document).ready(function () {
                 ctx.closePath();
             }, delay * i);
         }
-    }
+    };
 
-    document.body.addEventListener("mousemove", function (e) {
+    document.body.addEventListener("mousemove", (e) => {
 
         //if mouse moves the minimum x or y distance
         if (Math.abs(e.pageX - mouseX) > mouseTravel || Math.abs(e.pageY - mouseY) > mouseTravel) {
@@ -272,9 +274,9 @@ $(document).ready(function () {
         }
 
         // check each star coordinate everytime the mouse moves 
-        for (var star in star_coordinates) {
-            var starX = star_coordinates[star][0] * document.body.clientWidth;
-            var starY = star_coordinates[star][1] * canvasWH;
+        for (let star in star_coordinates) {
+            let starX = star_coordinates[star][0] * canvasWidth;
+            let starY = star_coordinates[star][1] * canvasHeight;
 
             // if mouse is within mouseDistance of star coordinate
             if (Math.abs(e.pageX - starX) <= mouseDistance && Math.abs(e.pageY - starY) <= mouseDistance) {
@@ -290,14 +292,14 @@ $(document).ready(function () {
                 delete star_coordinates[star];
 
                 // check sagitarrius lines for star coordinates that are removed (hovered over)
-                for (var line_coordinate in sagittarius_lines) {
-                    var line_coordinate2 = sagittarius_lines[line_coordinate];
+                for (let line_coordinate in sagittarius_lines) {
+                    let line_coordinate2 = sagittarius_lines[line_coordinate];
                     // if both coordinates are hovered over, form a line connecting the two
                     if (!(line_coordinate in star_coordinates) && !(line_coordinate2 in star_coordinates)) {
-                        var starX1 = star_coordinates2[line_coordinate][0] * document.body.clientWidth;
-                        var starY1 = star_coordinates2[line_coordinate][1] * canvasWH;
-                        var starX2 = star_coordinates2[line_coordinate2][0] * document.body.clientWidth;
-                        var starY2 = star_coordinates2[line_coordinate2][1] * canvasWH;
+                        let starX1 = star_coordinates2[line_coordinate][0] * canvasWidth,
+                            starY1 = star_coordinates2[line_coordinate][1] * canvasHeight,
+                            starX2 = star_coordinates2[line_coordinate2][0] * canvasWidth,
+                            starY2 = star_coordinates2[line_coordinate2][1] * canvasHeight;
                         ctx.beginPath();
                         ctx.lineWidth = 3;
                         ctx.strokeStyle = "hsl(240, 90%, 90%)";
@@ -313,9 +315,9 @@ $(document).ready(function () {
 
     })
 
-    
-    $('.modal-button').on("click", 
-        function modalContents() {
+
+    $('.modal-button').on("click",
+        modalContents = () => {
             console.log("hello")
         }
     );
