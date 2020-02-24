@@ -1,0 +1,45 @@
+// animation mixin 
+@mixin animation($animation-name) {
+    -webkit-animation: #{$animation-name};
+    -moz-animation: #{$animation-name};
+    -ms-animation: #{$animation-name};
+    -o-animation: #{$animation-name};
+    animation: #{$animation-name};
+  }
+  
+  // transition mixin 
+  @mixin transition($transition-name) {
+    -webkit-transition: #{$transition-name};
+    -moz-transition: #{$transition-name};
+    -ms-transition: #{$transition-name};
+    -o-transition: #{$transition-name};
+    transition: #{$transition-name};
+  }
+  
+  // transform mixin 
+  @mixin transform($transformation-name) {
+    -webkit-transform: #{$transformation-name};
+    -moz-transform: #{transformation-name};
+    -ms-transform: #{transformation-name};
+    -o-transform: #{transformation-name};
+    transform: #{transformation-name};
+  }
+
+  // keyframes mixin
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+      @content;
+    }
+  
+    @-moz-keyframes #{$animation-name} {
+      @content;
+    }
+  
+    @-ms-keyframes #{$animation-name} {
+      @content;
+    }
+  
+    @keyframes #{$animation-name} {
+      @content;
+    }
+  }

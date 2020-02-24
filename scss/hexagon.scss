@@ -1,0 +1,34 @@
+$hexagon-width: 125px;
+$hexagon-height: $hexagon-width / 1.732;
+$hexagon-margin: $hexagon-width / 3.4642;
+$hexagon-border-tb: $hexagon-margin;
+$hexagon-border-lr: $hexagon-width / 2;
+$hexagon-color: $slate-blue;
+
+.hexagon {
+    position: relative;
+    width: $hexagon-width;
+    height: $hexagon-height;
+    background-color: $hexagon-color;
+    margin: $hexagon-margin 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: $hexagon-border-lr solid transparent;
+    border-right: $hexagon-border-lr solid transparent;
+}
+
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: $hexagon-border-tb solid $hexagon-color;
+}
+
+.hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: $hexagon-border-tb solid $hexagon-color;
+}

@@ -1,0 +1,36 @@
+#hero {
+    // background: url('../images/stars.jpg');
+    background-image: $star-bg;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .container {
+        position: relative;
+        z-index: 999;
+        color: rgb(250, 134, 7);
+        font-weight: 900;
+        // font-size: 10em;
+    }
+
+    #social-media-icons {
+        color: white;
+        font-size: 300%;
+    }
+
+    #starfield {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 500;
+        // background: #111;
+    }
+
+    #sagittarius {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 500;
+        // background:violet;
+    }
+}

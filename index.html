@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- Custom stylesheet  -->
+  <!-- Custom compiled stylesheet  -->
   <link rel="stylesheet" href="css/main.css">
 
   <!-- jQuery -->
@@ -69,15 +69,15 @@
         <h1>Sagitarrius</h1> <br />
         <button>Guess my Horoscope</button>
       </div> -->
-  
+
       <canvas id="starfield" width="750" height="500"></canvas>
       <canvas id="sagittarius" width="800" height="800"></canvas>
-  
+
     </section>
 
     <!-- CONTAINER FOR SCROLLSPY -->
     <div class="main-content">
-     
+
       <!-- FIXED TOP NAVBAR -->
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
         <a class="navbar-brand" href="#">Jun Huang</a>
@@ -96,28 +96,31 @@
           </li>
         </ul>
       </nav>
-      
+
       <!-- ABOUT -->
-      <section class="text-center parallax__group" id="about">
-        <div class="particles-bg parallax__layer parallax__layer--back" id="particles-about"></div>
-  
+      <section class="text-center parallax_group" id="about">
+        <div class="particles-bg parallax_layer parallax_layer_back" id="particles-about"></div>
+
         <h1 class="page-header">About</h1>
-  
-        <div class="container-fluid parallax__layer--base">
+
+        <div class="parallax_layer_base">
           <img id="flip-img" src="images/flipbook/jump1.jpg" alt="flip-img"> <br>
           <h3>Huge Fan of Table Tennis</h3>
         </div>
-  
+
       </section>
-  
+
       <!-- SKILLS -->
-      <section class="text-center parallax__group" id="skills">
-        <div class="particles-bg parallax__layer parallax__layer--back" id="particles-skills"></div>
-        <div class="container-fluid parallax__layer--base">
-  
-          <h1 class="page-header">Skills</h1>
-  
-          <div class="row my-5">
+      <section class="text-center parallax_group" id="skills">
+        <div class="particles-bg parallax_layer parallax_layer_back" id="particles-skills"></div>
+        <div class="parallax_layer_base">
+
+          <h1 class="page-header">
+            Skills
+            <div class="underline"></div>
+          </h1>
+
+          <div class="row my-5 w-75 mx-auto">
             <div class="col-6 col-md-3 flex-center">
               <div class="hexagon flex-center">
                 <i class="fas fa-rocket"></i>
@@ -143,12 +146,20 @@
               <h3 class="mt-2">Responsive</h1>
             </div>
           </div>
-  
+
           <div class="row my-5">
             <div class="col-12 col-md-5 flex-center">
               <div class="img-round flex-center">
                 <img id="profile-pic" src="images/profile.jpg" alt="Jun">
               </div>
+              <h2 class="my-3">
+                Jun Huang
+              </h2>
+              <p class="w-75 text-center">I'm a fullstack developer at Baruch College. I have a passion for designing
+                visually stunning and intuitive web applications. <br>
+                <a href="#projects"><b>Check out some of my projects!</b></a>
+              </p>
+
             </div>
             <div class="col-12 col-md-7 flex-center">
               <div class="container">
@@ -164,7 +175,7 @@
                     <a class="nav-link" data-toggle="pill" href="#software">Software</a>
                   </li>
                 </ul>
-  
+
                 <!-- Tab panes -->
                 <div class="tab-content">
                   <div id="languages" class="container tab-pane active"><br>
@@ -174,7 +185,7 @@
                         <div class="progress-bar" style="width:90%;height:30px">HTML</div>
                       </div>
                       <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:80%;height:30px">CSS</div>
+                        <div class="progress-bar" style="width:80%;height:30px">CSS/SCSS</div>
                       </div>
                       <div class="progress my-3" style="height:30px">
                         <div class="progress-bar" style="width:60%;height:30px">JavaScript</div>
@@ -205,6 +216,12 @@
                       <div class="progress my-3" style="height:30px">
                         <div class="progress-bar" style="width:40%;height:30px">Node.js</div>
                       </div>
+                      <div class="progress my-3 invisible" style="height:30px">
+                        <div class="progress-bar" style="width:40%;height:30px">Filler</div>
+                      </div>
+                      <div class="progress my-3 invisible" style="height:30px">
+                        <div class="progress-bar" style="width:40%;height:30px">Filler</div>
+                      </div>
                     </div>
                   </div>
                   <div id="software" class="container tab-pane fade"><br>
@@ -222,46 +239,171 @@
                       <div class="progress my-3" style="height:30px">
                         <div class="progress-bar" style="width:70%;height:30px">XAMPP</div>
                       </div>
+                      <div class="progress my-3 invisible" style="height:30px">
+                        <div class="progress-bar" style="width:40%;height:30px">Filler</div>
+                      </div>
+                      <div class="progress my-3 invisible" style="height:30px">
+                        <div class="progress-bar" style="width:40%;height:30px">Filler</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-  
+
         </div>
-  
+
       </section>
-  
+
       <!-- PROJECTS -->
       <section class="text-center" id="projects">
-        <div class="particles-bg parallax__layer parallax__layer--back" id="particles-projects"></div>
-        <div class="container-fluid">
-          <h1 class="page-header">Projects</h1>
-  
+        <!-- <div class="tint"></div> -->
+        <div class="particles-bg parallax_layer parallax_layer_back" id="particles-projects"></div>
+        <div class="container-fluid parallax_layer_base">
+          <h1 class="page-header">
+            Projects
+            <div class="underline"></div>
+          </h1>
+
+          <div class="container-fluid project-images mt-5">
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-6 col-xl-4 my-3">
+                <img src="images/projects/queueing/kiosk/kiosk-issue.png" alt="Queueing System">
+                <div class="project-description flex-center">
+                  <h2>Queueing System</h2>
+                  <h4>React / JavaScript</h4>
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
+                    data-target="#myModal">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-4 my-3">
+                <img src="images/projects/firedrop/home.png" alt="FireDrop">
+                <div class="project-description flex-center">
+                  <h2>FireDrop</h2>
+                  <h4>JavaScript</h4>
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
+                    data-target="#myModal">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-4 my-3">
+                <img src="images/projects/ascend/preview.png" alt="Ascend Baruch">
+                <div class="project-description flex-center">
+                  <h2>Ascend Baruch</h2>
+                  <h4>JavaScript</h4>
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
+                    data-target="#myModal">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-4 my-3">
+                <img src="images/projects/ezdoct_django/home.PNG" alt="EZDoct Django">
+                <div class="project-description flex-center">
+                  <h2>EZDoct Django</h2>
+                  <h4>Python-Django</h4>
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
+                    data-target="#myModal">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-4 my-3">
+                <img src="images/projects/ezdoct_php/login.png" alt="EZDoct PHP">
+                <div class="project-description flex-center">
+                  <h2>EZDoct</h2>
+                  <h4>Apache / PHP</h4>
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
+                    data-target="#myModal">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-4 my-3">
+                <img src="images/projects/baruch_donor/home.png" alt="Baruch Donor">
+                <div class="project-description flex-center">
+                  <h2>Baruch Donor</h2>
+                  <h4>Apache / PHP</h4>
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
+                    data-target="#myModal">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-4 my-3">
+                <img src="images/projects/arduino_smarthome/lcd.jpg" alt="Arduino Smarthome">
+                <div class="project-description flex-center">
+                  <h2>Smarthome</h2>
+                  <h4>Arduino C++</h4>
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
+                    data-target="#myModal">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
           <!-- <h3>Appointment Scheduling</h3>
-      <h3>Queueing Software</h3>
-      <h3>Video Upload</h3>
-      <h3>Arduino Smarthome</h3>
-      <h3>Ascend Baruch</h3>
-      <h3>Donor Registry</h3>
-      <h3>Firedrop</h3> -->
+          <h3>Queueing Software</h3>
+          <h3>Video Upload</h3>
+          <h3>EZDoct</h3>
+          <h3>Arduino Smarthome</h3>
+          <h3>Ascend Baruch</h3>
+          <h3>Baruch Donor</h3>
+          <h3>Firedrop</h3> -->
+
+
         </div>
-  
+
       </section>
-  
+
       <!-- CONTACT -->
       <section class="text-center" id="contact">
         <div class="container-fluid">
           <h1 class="page-header">Contact</h1>
         </div>
-  
-      </section>
-  
-    </div> <!-- END SCROLLSPY CONTAINER -->
-  
-</div>
 
+      </section>
+
+    </div> <!-- END SCROLLSPY CONTAINER -->
+
+  </div>
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

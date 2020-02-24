@@ -1,0 +1,70 @@
+#projects {
+    .project-images {
+
+        img {
+            width: 100%; 
+            height:100%;
+        }
+
+        .project-description {
+            position: absolute;
+            width: calc(100% - 30px); //******temporary fix for width 100% extending beyond padding*********
+            height: 100%;
+            top: 0;
+            left: 15px; //******temporary fix for width 100% extending beyond padding*********
+            opacity: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            h2, h4, button {
+                position: relative;
+                color: white;
+            }
+
+            h2, h4 {
+                left: 50%;
+            }
+
+            button {
+                right: 50%;
+            }
+
+            &:hover{
+                @include animation('description-bg-fade-in .5s ease-out forwards');
+
+                h2, h4 {
+                    @include animation('description-slide-in-from-top 0.3s ease-out forwards');
+                }
+
+                button {
+                    @include animation('description-slide-in-from-bottom 0.3s ease-out forwards');
+                }
+            }
+
+            button:hover {
+                color: $font-color !important;
+            }
+
+        }
+
+        @include keyframes(description-bg-fade-in) {
+            to {
+                opacity: 1;
+                background: rgba(95, 95, 194, .9);
+            }
+        }
+
+        @include keyframes(description-slide-in-from-top) {
+            to {
+                left: 0;
+            }
+        }
+
+        @include keyframes(description-slide-in-from-bottom) {
+            to {
+                right: 0;
+            }
+        }
+
+    }
+}
