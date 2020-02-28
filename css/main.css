@@ -25,6 +25,24 @@ h5,
 h6 {
   display: inline-block; }
 
+.custom-button {
+  border: 1px solid white;
+  background: transparent;
+  padding: 0.5em 1em;
+  border-radius: 0;
+  color: white;
+  border-radius: 4px;
+  -webkit-transition: box-shadow .35s ease-out;
+  -moz-transition: box-shadow .35s ease-out;
+  -ms-transition: box-shadow .35s ease-out;
+  -o-transition: box-shadow .35s ease-out;
+  transition: box-shadow .35s ease-out; }
+  .custom-button:hover {
+    box-shadow: inset 0 0 0 99999px #5f5fc2;
+    text-decoration: none;
+    color: white;
+    border-color: #c7c7c7; }
+
 b {
   color: #5f5fc2; }
 
@@ -337,3 +355,35 @@ section {
 @keyframes description-slide-in-from-bottom {
   to {
     right: 0; } }
+
+#contact {
+  color: white;
+  background: #212529; }
+  #contact #contact-form {
+    position: relative;
+    border-radius: 4px;
+    width: 35%;
+    height: 50vh; }
+    #contact #contact-form input, #contact #contact-form textarea {
+      background: #1f1f1f;
+      height: 50px; }
+    #contact #contact-form textarea {
+      height: 150px; }
+  #contact .form-control {
+    color: white; }
+    #contact .form-control:focus {
+      border-color: white;
+      -webkit-transition: box-shadow .35s ease-out;
+      -moz-transition: box-shadow .35s ease-out;
+      -ms-transition: box-shadow .35s ease-out;
+      -o-transition: box-shadow .35s ease-out;
+      transition: box-shadow .35s ease-out;
+      box-shadow: inset 0 0 0 99999px #5f5fc2;
+      color: white; }
+    #contact .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+
+.particles-js-canvas-el {
+  position: absolute;
+  top: 0;
+  left: 0; }

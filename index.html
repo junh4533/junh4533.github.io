@@ -80,7 +80,7 @@
 
       <!-- FIXED TOP NAVBAR -->
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-        <a class="navbar-brand" href="#">Jun Huang</a>
+        <!-- <a class="navbar-brand" href="#">Jun Huang</a> -->
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
@@ -371,10 +371,28 @@
 
       <!-- CONTACT -->
       <section class="text-center" id="contact">
-        <div class="container-fluid">
-          <h1 class="page-header">Contact</h1>
-        </div>
+        <div class="particles-bg" id="particles-contact"></div>
+          <h1 class="page-header mb-5">Contact</h1>
 
+          <form id="contact-form" class="mx-auto" action="https://formspree.io/xbjyywwg" target="_blank" method="POST">
+            
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your Email" id="email" name="_replyto" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="_subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
+              </div>
+              <button class="custom-button" type="submit">Send</button>
+            
+          </form>
+          
+          <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-github-square"></i>
+      
       </section>
 
     </div> <!-- END SCROLLSPY CONTAINER -->

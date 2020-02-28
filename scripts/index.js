@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-    const particlesJSON = {
+    const particlesConfig = {
         "particles": {
             "number": {
                 "value": 5,
@@ -111,9 +111,121 @@ $(document).ready(() => {
         "retina_detect": true
     }
 
-    particlesJS("particles-about", particlesJSON);
-    particlesJS("particles-skills", particlesJSON);
-    particlesJS("particles-projects", particlesJSON);
+    const particlesConfigContact = {
+        "particles": {
+            "number": {
+                "value": 40,
+                "density": {
+                    "enable": true,
+                    "value_area": 1200
+                }
+            },
+            "color": {
+                "value": "#FFFFFF"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": ["#5f5fc2", "#250a63"]
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": .5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 5,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 2,
+                    "size_min": 1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 300,
+                "color": "#FFFFFF",
+                "opacity": .3,
+                "width": 1.5
+            },
+            "move": {
+                "enable": true,
+                "speed": .5,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": false,
+                    "mode": "bubble"
+                },
+                "onclick": {
+                    "enable": false,
+                    "mode": "push"
+                },
+                "resize": false
+            },
+            "modes": {
+                "grab": {
+                    "distance": 800,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 100,
+                    "size": 10,
+                    "duration": 1,
+                    "opacity": 1,
+                    "speed": .2
+                },
+                "repulse": {
+                    "distance": 100,
+                    "duration": 1.5
+                },
+                "push": {
+                    "particles_nb": 2
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    }
+
+    particlesJS("particles-about", particlesConfig);
+    particlesJS("particles-skills", particlesConfig);
+    particlesJS("particles-projects", particlesConfig);
+    particlesJS("particles-contact", particlesConfigContact);
 
     const controller = new ScrollMagic.Controller(); // initialize scrollmagic
 
@@ -321,5 +433,10 @@ $(document).ready(() => {
             console.log("hello")
         }
     );
+
+    // $("#contact-form").onsubmit = () => {
+    //     window.location.href = "http://www.jsfiddle.net";
+    //     return false;
+    // };
 
 });
