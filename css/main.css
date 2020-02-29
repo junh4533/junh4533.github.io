@@ -1,14 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
 body,
 html {
   width: 100%;
   height: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased; }
 
 .main-content {
   background: whitesmoke;
   position: relative;
-  color: #212529; }
+  color: #17191b;
+  font-family: "Rajdhani";
+  font-size: 150%; }
 
 .particles-bg {
   position: absolute;
@@ -23,7 +27,9 @@ h3,
 h4,
 h5,
 h6 {
-  display: inline-block; }
+  display: inline-block;
+  font-size: 150%;
+  font-weight: bolder; }
 
 .custom-button {
   border: 1px solid white;
@@ -95,6 +101,9 @@ section {
   min-height: 100vh;
   scroll-behavior: smooth; }
 
+#top-nav {
+  background: rgba(0, 0, 0, 0.85); }
+
 .hexagon {
   position: relative;
   width: 125px;
@@ -129,18 +138,8 @@ section {
 
 .parallax_group {
   position: relative;
+  min-height: 100vh;
   transform-style: preserve-3d; }
-
-.parallax_layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1; }
-
-.parallax_layer_base {
-  transform: translateZ(0); }
 
 .parallax_layer_back {
   transform: translateZ(-2px) scale(3); }
@@ -302,7 +301,7 @@ section {
       -o-animation: description-slide-in-from-bottom 0.3s ease-out forwards;
       animation: description-slide-in-from-bottom 0.3s ease-out forwards; }
   #projects .project-images .project-description button:hover {
-    color: #212529 !important; }
+    color: #17191b !important; }
 
 @-webkit-keyframes description-bg-fade-in {
   to {
@@ -358,7 +357,7 @@ section {
 
 #contact {
   color: white;
-  background: #212529; }
+  background: #17191b; }
   #contact #contact-form {
     position: relative;
     border-radius: 4px;

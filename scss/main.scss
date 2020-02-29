@@ -1,11 +1,14 @@
 @import 'variables';
 @import 'mixins';
 
+
 body,
 html {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    overflow: hidden; //HIDES SECOND SCROLLBAR FROM PARALLAX
+    -webkit-font-smoothing: antialiased;
 }
 
 .main-content {
@@ -13,6 +16,8 @@ html {
     background: $main-bg;
     position: relative;
     color: $font-color;
+    font-family: $font-family;
+    font-size: 150%;
 }
 
 .particles-bg {
@@ -30,6 +35,8 @@ h4,
 h5,
 h6 {
     display: inline-block;
+    font-size: 150%;
+    font-weight: bolder;
 }
 
 .custom-button {
@@ -117,6 +124,10 @@ section {
     position: relative;
     min-height: 100vh;
     scroll-behavior: smooth;
+}
+
+#top-nav {
+    background: rgba(0,0,0, .85);
 }
 
 @import 'hexagon.scss';

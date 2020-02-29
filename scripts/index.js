@@ -3,7 +3,7 @@ $(document).ready(() => {
     const particlesConfig = {
         "particles": {
             "number": {
-                "value": 5,
+                "value": 7,
                 "density": {
                     "enable": true,
                     "value_area": 1000
@@ -28,12 +28,12 @@ $(document).ready(() => {
                 }
             },
             "opacity": {
-                "value": 1,
+                "value": .5,
                 "random": false,
                 "anim": {
                     "enable": false,
                     "speed": 1,
-                    "opacity_min": 0.3,
+                    "opacity_min": 0.15,
                     "sync": false
                 }
             },
@@ -51,7 +51,7 @@ $(document).ready(() => {
                 "enable": true,
                 "distance": 300,
                 "color": "#0C0E38",
-                "opacity": 1,
+                "opacity": .3,
                 "width": 1.5
             },
             "move": {
@@ -144,7 +144,7 @@ $(document).ready(() => {
                 "anim": {
                     "enable": false,
                     "speed": 1,
-                    "opacity_min": 0.1,
+                    "opacity_min": 0.2,
                     "sync": false
                 }
             },
@@ -162,7 +162,7 @@ $(document).ready(() => {
                 "enable": true,
                 "distance": 300,
                 "color": "#FFFFFF",
-                "opacity": .3,
+                "opacity": .5,
                 "width": 1.5
             },
             "move": {
@@ -429,8 +429,21 @@ $(document).ready(() => {
 
 
     $('.modal-button').on("click",
-        modalContents = () => {
-            console.log("hello")
+        modalContents = (e) => {
+            
+            modalHeading = document.getElementById('modalHeading');
+            modalBody = document.getElementById('modalBody');
+
+            console.log(e.target.id);
+
+            switch (e.target.id.toString()) {
+                case "QueueingSystem":
+                    modalHeading.innerHTML = "Queueing System";
+                    modalBody.innerHTML = "Test Test";
+                    break;
+            }
+            
+            
         }
     );
 
