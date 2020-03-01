@@ -70,10 +70,10 @@ a {
 }
 
 .fas {
-    position: relative;
-    z-index: 999;
-    font-size: 3.5rem;
-    color: white;
+    // position: relative;
+    // z-index: 999;
+    // font-size: 2rem;
+    // color: white;
 }
 
 .flex-center {
@@ -137,3 +137,4 @@ section {
 @import 'skills';
 @import 'projects';
 @import 'contact';
+@import 'modal';

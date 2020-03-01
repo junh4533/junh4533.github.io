@@ -428,66 +428,99 @@ $(document).ready(() => {
 
     })
 
-    let appendProjectImages = (parentFolder, images) => {
-        // reset existing images from the carousel
-        document.getElementById("projectSlides").innerHTML = '';
+    const addText = (heading, subheading, description) => {
+        const modalBody = document.getElementById('modal-body'),
+            modalProjectHeading = '<h3 id="modalProjectHeading">' + heading + '</h3>',
+            modalProjectSubHeading = '<h5 id="modalProjectSubHeading">' + subheading + '</h5>',
+            modalProjectDescription = '<p id="modalProjectDescription">' + description + '</p>',
+            closeButton = '<button type="button" class="close" data-dismiss="modal">&times;</button>';
 
+        modalBody.insertAdjacentHTML('beforeend', modalProjectHeading);
+        modalBody.insertAdjacentHTML('beforeend', modalProjectSubHeading);
+        modalBody.insertAdjacentHTML('beforeend', "<hr>");
+        modalBody.insertAdjacentHTML('beforeend', modalProjectDescription);
+        modalBody.insertAdjacentHTML('beforeend', closeButton);
+    }
+
+    const appendProjectImages = (parentFolder, images) => {
         // Append project images
         for (let image of images) {
 
-            let slideImg = '<img class="w-100 h-100" src="images/projects/' + parentFolder + '/' + image + '.png"' + ' alt="' + image + '">';
-            let carouselItem = document.createElement("DIV");
+            let slideImg = '<div class="carousel-item">' +
+                '<img class="w-100 h-100" src="images/projects/' +
+                parentFolder + '/' + image + '.png"' + ' alt="' + image + '">' +
+                '</div>';
 
-            carouselItem.className = "carousel-item";
-            carouselItem.innerHTML = slideImg;
-
-            document.getElementById("projectSlides").appendChild(carouselItem);
+            document.getElementById("projectSlides").insertAdjacentHTML('beforeend', slideImg);
         }
-        
+
         // add class "active" to ONLY the first slide of the carousel
         document.getElementById("projectSlides").firstElementChild.classList.add("active");
+    }
+
+    const addWebIcon = (link) => {
+        const icon =
+            '<a href="' + link + '" target = "_blank">' +
+            '<i class="fas fa-globe-americas mr-2"></i>' +
+            '</a>';
+
+        document.getElementById("modal-body").insertAdjacentHTML('beforeend', icon);
+    }
+
+    const addGithubIcon = (link) => {
+        const icon =
+            '<a href="' + link + '" target = "_blank">' +
+            '<i class="fab fa-github mr-2"></i>' +
+            '</a>';
+
+        document.getElementById("modal-body").insertAdjacentHTML('beforeend', icon);
     }
 
     //////////////////////////// PROJECTS MODAL ////////////////////////////
     $('.modal-button').on("click",
         modalContents = (e) => {
 
-            modalHeading = document.getElementById('modalHeading');
-            modalBody = document.getElementById('modalBody');
-
-            console.log(e.target.id);
+            // reset existing images/text from the carousel
+            document.getElementById("projectSlides").innerHTML = '';
+            document.getElementById("modal-body").innerHTML = ''
 
             switch (e.target.id.toString()) {
                 case "QueueingSystem":
-                    modalHeading.innerHTML = "Queueing System";
-                    // modalBody.innerHTML = "Test Test";
+                    modalProjectHeading.innerHTML = "Queueing System";
 
                     break;
                 case "FireDrop":
-                    modalHeading.innerHTML = "FireDrop";
-                    modalBody.innerHTML = "Test Test";
+                    modalProjectHeading.innerHTML = "FireDrop";
+
                     break;
                 case "AscendBaruch":
-                    modalHeading.innerHTML = "Ascend Baruch";
-                    // modalBody.innerHTML = "Test Test";
+
                     const images = ["home", "about", "committees", "eboard"];
+                    const heading = "Ascend Baruch"
+                    const subHeading = "Pan-Asian Student Organization";
+                    const desc = "Ascend Baruch's mission is to be the premier professional organization dedicated to enabling its members, business partners and the community to leverage the leadership and global business potential of Pan-Asians.";
+
                     appendProjectImages("ascend", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/ascend");
+                    addWebIcon("http://www.ascendbaruch.org/");
+
                     break;
                 case "EZDoctDjango":
-                    modalHeading.innerHTML = "EZDoct - Django";
-                    modalBody.innerHTML = "Test Test";
+                    modalProjectHeading.innerHTML = "EZDoct - Django";
+
                     break;
                 case "EZDoctPHP":
-                    modalHeading.innerHTML = "EZDoct - PHP";
-                    modalBody.innerHTML = "Test Test";
+                    modalProjectHeading.innerHTML = "EZDoct - PHP";
+
                     break;
                 case "BaruchDonorPHP":
-                    modalHeading.innerHTML = "Baruch Donor";
-                    modalBody.innerHTML = "Test Test";
+                    modalProjectHeading.innerHTML = "Baruch Donor";
+
                     break;
                 case "arduinoSmarthome":
-                    modalHeading.innerHTML = "Arduino Smarthome";
-                    modalBody.innerHTML = "Test Test";
+                    modalProjectHeading.innerHTML = "Arduino Smarthome";
+
                     break;
             }
 

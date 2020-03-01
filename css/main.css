@@ -46,12 +46,6 @@ b {
 a:hover {
   text-decoration: none; }
 
-.fas {
-  position: relative;
-  z-index: 999;
-  font-size: 3.5rem;
-  color: white; }
-
 .flex-center {
   display: flex;
   flex-direction: column;
@@ -134,17 +128,19 @@ section {
 .parallax_layer_front,
 .parallax_layer_back {
   position: relative;
-  top: 0;
+  top: 110%;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1; }
+  height: 100%; }
 
 .parallax_layer_front {
-  transform: translateZ(0); }
+  transform: translateZ(0);
+  z-index: 999; }
 
 .parallax_layer_back {
   position: absolute;
+  z-index: -999;
   transform: translateZ(-2px) scale(3); }
 
 #hero {
@@ -278,10 +274,13 @@ section {
   opacity: 0;
   padding-left: 15px;
   padding-right: 15px; }
-  #projects .project-images .project-description h2, #projects .project-images .project-description h4, #projects .project-images .project-description button {
+  #projects .project-images .project-description h2,
+  #projects .project-images .project-description h4,
+  #projects .project-images .project-description button {
     position: relative;
     color: white; }
-  #projects .project-images .project-description h2, #projects .project-images .project-description h4 {
+  #projects .project-images .project-description h2,
+  #projects .project-images .project-description h4 {
     left: 50%; }
   #projects .project-images .project-description button {
     right: 50%; }
@@ -291,7 +290,8 @@ section {
     -ms-animation: description-bg-fade-in .5s ease-out forwards;
     -o-animation: description-bg-fade-in .5s ease-out forwards;
     animation: description-bg-fade-in .5s ease-out forwards; }
-    #projects .project-images .project-description:hover h2, #projects .project-images .project-description:hover h4 {
+    #projects .project-images .project-description:hover h2,
+    #projects .project-images .project-description:hover h4 {
       -webkit-animation: description-slide-in-from-top 0.3s ease-out forwards;
       -moz-animation: description-slide-in-from-top 0.3s ease-out forwards;
       -ms-animation: description-slide-in-from-top 0.3s ease-out forwards;
@@ -389,3 +389,21 @@ section {
   position: absolute;
   top: 0;
   left: 0; }
+
+#project-modal #modalProjectSubHeading {
+  font-weight: 400;
+  color: #636d77; }
+
+#project-modal i {
+  font-size: 2rem; }
+
+#project-modal a {
+  color: #5f5fc2; }
+  #project-modal a:hover {
+    color: #282852; }
+
+#project-modal h3 {
+  display: block; }
+
+.modal-backdrop {
+  opacity: .9 !important; }

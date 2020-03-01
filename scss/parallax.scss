@@ -17,18 +17,21 @@
 .parallax_layer_front,
 .parallax_layer_back {
     position: relative;
-    top: 0;
+    top: 110%; // temporary fix: to push layers down so they dont cover the 
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    height: 100%;
 }
 
 .parallax_layer_front {
     transform: translateZ(0);
+    z-index: 999;
 }
 
 .parallax_layer_back {
+    
     position: absolute;
+    z-index: -999;
     transform: translateZ(-2px) scale(3); //scale factor = 1 + (translateZ * -1) / perspective
 }
