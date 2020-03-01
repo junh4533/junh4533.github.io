@@ -11,8 +11,7 @@ html {
   background: whitesmoke;
   position: relative;
   color: #17191b;
-  font-family: "Rajdhani";
-  font-size: 150%; }
+  font-family: "Rajdhani"; }
 
 .particles-bg {
   position: absolute;
@@ -28,7 +27,6 @@ h4,
 h5,
 h6 {
   display: inline-block;
-  font-size: 150%;
   font-weight: bolder; }
 
 .custom-button {
@@ -140,6 +138,18 @@ section {
   position: relative;
   min-height: 100vh;
   transform-style: preserve-3d; }
+
+.parallax_layer_front,
+.parallax_layer_back {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1; }
+
+.parallax_layer_front {
+  transform: translateZ(0); }
 
 .parallax_layer_back {
   transform: translateZ(-2px) scale(3); }

@@ -81,7 +81,7 @@
       <!-- FIXED TOP NAVBAR -->
       <nav id="top-nav" class="navbar navbar-expand-sm navbar-dark sticky-top">
         <!-- <a class="navbar-brand" href="#">Jun Huang</a> -->
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" role="tablist">
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
           </li>
@@ -99,9 +99,9 @@
 
       <!-- ABOUT -->
       <section class="text-center parallax_group" id="about">
-        <div class="particles-bg parallax_layer parallax_layer_back" id="particles-about"></div>
+        <div class="particles-bg parallax_layer_back" id="particles-about"></div>
 
-        <div class="">
+        <div class="parallax_layer_front">
           <h1 class="page-header">
             About
             <div class="underline"></div>
@@ -115,8 +115,8 @@
 
       <!-- SKILLS -->
       <section class="text-center parallax_group" id="skills">
-        <div class="particles-bg parallax_layer parallax_layer_back" id="particles-skills"></div>
-        <div class="">
+        <div class="particles-bg parallax_layer_back" id="particles-skills"></div>
+        <div class="parallax_layer_front">
 
           <h1 class="page-header">
             Skills
@@ -267,8 +267,8 @@
       <!-- PROJECTS -->
       <section class="text-center parallax_group" id="projects">
         <!-- <div class="tint"></div> -->
-        <div class="particles-bg parallax_layer parallax_layer_back" id="particles-projects"></div>
-        <div class="container-fluid ">
+        <div class="particles-bg parallax_layer_back" id="particles-projects"></div>
+        <div class="parallax_layer_front">
           <h1 class="page-header">
             Projects
             <div class="underline"></div>
@@ -418,7 +418,28 @@
 
         <!-- Modal body -->
         <div id="modalBody" class="modal-body">
-          Modal body..
+          <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <!-- <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul> -->
+          
+            <!-- The slideshow -->
+            <div id="projectSlides" class="carousel-inner">
+            </div>
+          
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          
+          </div>
         </div>
 
         <!-- Modal footer -->

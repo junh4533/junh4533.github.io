@@ -368,6 +368,7 @@ $(document).ready(() => {
         }
     };
 
+    //////////////////////////// STARFIELD ////////////////////////////
     document.body.addEventListener("mousemove", (e) => {
 
         //if mouse moves the minimum x or y distance
@@ -427,10 +428,30 @@ $(document).ready(() => {
 
     })
 
+    let appendProjectImages = (parentFolder, images) => {
+        // reset existing images from the carousel
+        document.getElementById("projectSlides").innerHTML = '';
 
+        // Append project images
+        for (let image of images) {
+
+            let slideImg = '<img class="w-100 h-100" src="images/projects/' + parentFolder + '/' + image + '.png"' + ' alt="' + image + '">';
+            let carouselItem = document.createElement("DIV");
+
+            carouselItem.className = "carousel-item";
+            carouselItem.innerHTML = slideImg;
+
+            document.getElementById("projectSlides").appendChild(carouselItem);
+        }
+        
+        // add class "active" to ONLY the first slide of the carousel
+        document.getElementById("projectSlides").firstElementChild.classList.add("active");
+    }
+
+    //////////////////////////// PROJECTS MODAL ////////////////////////////
     $('.modal-button').on("click",
         modalContents = (e) => {
-            
+
             modalHeading = document.getElementById('modalHeading');
             modalBody = document.getElementById('modalBody');
 
@@ -439,11 +460,38 @@ $(document).ready(() => {
             switch (e.target.id.toString()) {
                 case "QueueingSystem":
                     modalHeading.innerHTML = "Queueing System";
+                    // modalBody.innerHTML = "Test Test";
+
+                    break;
+                case "FireDrop":
+                    modalHeading.innerHTML = "FireDrop";
+                    modalBody.innerHTML = "Test Test";
+                    break;
+                case "AscendBaruch":
+                    modalHeading.innerHTML = "Ascend Baruch";
+                    // modalBody.innerHTML = "Test Test";
+                    const images = ["home", "about", "committees", "eboard"];
+                    appendProjectImages("ascend", images);
+                    break;
+                case "EZDoctDjango":
+                    modalHeading.innerHTML = "EZDoct - Django";
+                    modalBody.innerHTML = "Test Test";
+                    break;
+                case "EZDoctPHP":
+                    modalHeading.innerHTML = "EZDoct - PHP";
+                    modalBody.innerHTML = "Test Test";
+                    break;
+                case "BaruchDonorPHP":
+                    modalHeading.innerHTML = "Baruch Donor";
+                    modalBody.innerHTML = "Test Test";
+                    break;
+                case "arduinoSmarthome":
+                    modalHeading.innerHTML = "Arduino Smarthome";
                     modalBody.innerHTML = "Test Test";
                     break;
             }
-            
-            
+
+
         }
     );
 

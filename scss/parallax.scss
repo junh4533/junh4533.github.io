@@ -15,18 +15,19 @@
     transform-style: preserve-3d;
 }
 
-// .parallax_layer {
-//     position: relative;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     z-index: -1;
-// }
+.parallax_layer_front,
+.parallax_layer_back {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
 
-// .parallax_layer_base {
-//     transform: translateZ(0);
-// }
+.parallax_layer_front {
+    transform: translateZ(0);
+}
 
 .parallax_layer_back {
     //scale factor = 1 + (translateZ * -1) / perspective
