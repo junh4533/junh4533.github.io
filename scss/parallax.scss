@@ -1,8 +1,7 @@
 // parent container for the entire parallax page 
 .parallax {
-    height: 100vh;
+    height: 100%;
     overflow-x: hidden;
-    overflow-y: auto;
     -webkit-perspective: 1px;
     perspective: 1px;
     scroll-behavior: smooth;
@@ -11,7 +10,6 @@
 // parallax sections
 .parallax_group {
     position: relative;
-    // min-height: 100vh;
     transform-style: preserve-3d;
 }
 

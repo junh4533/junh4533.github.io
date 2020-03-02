@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
-body,
-html {
+html, body {
   width: 100%;
   height: 100%;
   box-sizing: border-box; }
@@ -15,7 +14,8 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 h1,
 h2,
@@ -102,9 +102,8 @@ section {
   border-top: 36.08337px solid #5f5fc2; }
 
 .parallax {
-  height: 100vh;
+  height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
   -webkit-perspective: 1px;
   perspective: 1px;
   scroll-behavior: smooth; }
@@ -140,6 +139,8 @@ section {
   #hero #social-media-icons {
     color: white;
     font-size: 300%; }
+  #hero #starfield, #hero #sagittarius {
+    width: 100%; }
   #hero #starfield {
     position: absolute;
     left: 0;

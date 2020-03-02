@@ -1,5 +1,4 @@
 #hero {
-    // background: url('../images/stars.jpg');
     background-image: $star-bg;
     background-position: center;
     background-size: cover;
@@ -16,6 +15,10 @@
     #social-media-icons {
         color: white;
         font-size: 300%;
+    }
+
+    #starfield, #sagittarius {
+        width: 100%;
     }
 
     #starfield {
