@@ -2,13 +2,15 @@
     color: white;
     // background: rgb(25,25,25);
     background: $font-color;
-    
+
     #contact-form {
         position: relative;
         border-radius: $border-radius;
         width: 35%;
         height: 50vh;
-        input, textarea {
+
+        input,
+        textarea {
             background: rgb(31, 31, 31);
             height: 50px;
         }
@@ -16,6 +18,18 @@
         textarea {
             height: 150px;
         }
+
+        // changes autofill background color to none and text color to white
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px rgb(31,31,31) inset;
+            -webkit-text-fill-color: white;
+        }
+
     }
 
     .form-control {
@@ -23,22 +37,39 @@
 
         &:focus {
             border-color: white;
-        @include transition('box-shadow .35s ease-out');
-        box-shadow: inset 0 0 0 99999px $slate-blue-dark;
-        color: white;
+            @include transition('box-shadow .35s ease-out');
+            box-shadow: inset 0 0 0 99999px $slate-blue-dark;
+            color: white;
         }
-        
+
         &::placeholder {
             color: rgba(255, 255, 255, 0.5);
         }
-      }
+    }
+
+    .contact-icons {
+        position: absolute;
+        left: 1%;
+        bottom: 1%;
+
+        a {
+            display: block;
+            font-size: 300%;
+        }
+    }
+
+    footer {
+        position: absolute;
+        font-size: 150%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+    }
+
+    .particles-js-canvas-el {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
-
-.particles-js-canvas-el{
-    position: absolute;
-    top: 0;
-    left: 0;
-
-}
-
-

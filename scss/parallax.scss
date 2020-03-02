@@ -25,15 +25,11 @@
 }
 
 .parallax_layer_front {
-    // transform: translate3d(0,0, 1px);
     transform: translateZ(0px);
-    // z-index: 999;
 }
 
 .parallax_layer_back {
-    
     position: absolute;
-    z-index: -999;
-    // transform: translateZ(-1px) scale(2); //scale factor = 1 + (translateZ * -1) / perspective
-    transform: translateZ(-1px); 
+    transform: translateZ(-1px) scale(2); //scale factor = 1 + (translateZ * -1) / perspective
+    // transform: translateZ(-1px); 
 }

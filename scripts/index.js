@@ -114,10 +114,10 @@ $(document).ready(() => {
     const particlesConfigContact = {
         "particles": {
             "number": {
-                "value": 40,
+                "value": 35,
                 "density": {
                     "enable": true,
-                    "value_area": 1200
+                    "value_area": 1500
                 }
             },
             "color": {
@@ -139,7 +139,7 @@ $(document).ready(() => {
                 }
             },
             "opacity": {
-                "value": .5,
+                "value": .3,
                 "random": false,
                 "anim": {
                     "enable": false,
@@ -162,7 +162,7 @@ $(document).ready(() => {
                 "enable": true,
                 "distance": 300,
                 "color": "#FFFFFF",
-                "opacity": .5,
+                "opacity": .2,
                 "width": 1.5
             },
             "move": {
@@ -225,7 +225,7 @@ $(document).ready(() => {
     particlesJS("particles-about", particlesConfig);
     particlesJS("particles-skills", particlesConfig);
     // particlesJS("particles-projects", particlesConfig);
-    // particlesJS("particles-contact", particlesConfigContact);
+    particlesJS("particles-contact", particlesConfigContact);
 
     const controller = new ScrollMagic.Controller(); // initialize scrollmagic
 

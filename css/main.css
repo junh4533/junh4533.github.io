@@ -43,8 +43,11 @@ h6 {
 b {
   color: #5f5fc2; }
 
-a:hover {
-  text-decoration: none; }
+a {
+  color: #5f5fc2; }
+  a:hover {
+    text-decoration: none;
+    color: #282852; }
 
 .flex-center {
   display: flex;
@@ -62,8 +65,8 @@ a:hover {
   height: 100%;
   left: 0;
   top: 0;
-  background: rgba(215, 215, 249, 0.3);
-  z-index: 700; }
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1; }
 
 .underline {
   height: 4px;
@@ -143,8 +146,7 @@ section {
 
 .parallax_layer_back {
   position: absolute;
-  z-index: -999;
-  transform: translateZ(-1px); }
+  transform: translateZ(-1px) scale(2); }
 
 #hero {
   background-image: linear-gradient(to top, #1b0b3d, #0f1242, #050522, #010108);
@@ -371,11 +373,20 @@ section {
     border-radius: 0.25rem;
     width: 35%;
     height: 50vh; }
-    #contact #contact-form input, #contact #contact-form textarea {
+    #contact #contact-form input,
+    #contact #contact-form textarea {
       background: #1f1f1f;
       height: 50px; }
     #contact #contact-form textarea {
       height: 150px; }
+    #contact #contact-form input:-webkit-autofill:hover,
+    #contact #contact-form input:-webkit-autofill:focus,
+    #contact #contact-form textarea:-webkit-autofill:hover,
+    #contact #contact-form textarea:-webkit-autofill:focus,
+    #contact #contact-form textarea:-webkit-autofill,
+    #contact #contact-form input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px #1f1f1f inset;
+      -webkit-text-fill-color: white; }
   #contact .form-control {
     color: white; }
     #contact .form-control:focus {
@@ -389,11 +400,24 @@ section {
       color: white; }
     #contact .form-control::placeholder {
       color: rgba(255, 255, 255, 0.5); }
-
-.particles-js-canvas-el {
-  position: absolute;
-  top: 0;
-  left: 0; }
+  #contact .contact-icons {
+    position: absolute;
+    left: 1%;
+    bottom: 1%; }
+    #contact .contact-icons a {
+      display: block;
+      font-size: 300%; }
+  #contact footer {
+    position: absolute;
+    font-size: 150%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto; }
+  #contact .particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0; }
 
 #project-modal #modalProjectSubHeading {
   font-weight: 400;

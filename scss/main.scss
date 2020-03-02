@@ -51,10 +51,11 @@ b {
 }
 
 a {
+    color: $slate-blue;
 
-    // color: $slate-blue;
     &:hover {
         text-decoration: none;
+        color: $slate-blue-dark;
     }
 }
 
@@ -83,8 +84,8 @@ a {
     height: 100%;
     left: 0;
     top: 0;
-    background: rgba(215, 215, 249, .3);
-    z-index: 700;
+    background: rgba(0,0,0, .3);
+    z-index: -1;
 }
 
 .underline {
