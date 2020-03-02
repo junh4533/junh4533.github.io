@@ -91,27 +91,32 @@ section {
 
 .hexagon {
   position: relative;
-  width: 125px;
-  height: 72.1709px;
-  background-color: #5f5fc2;
-  margin: 36.08337px 0; }
-
-.hexagon:before,
-.hexagon:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 62.5px solid transparent;
-  border-right: 62.5px solid transparent; }
-
-.hexagon:before {
-  bottom: 100%;
-  border-bottom: 36.08337px solid #5f5fc2; }
-
-.hexagon:after {
-  top: 100%;
-  width: 0;
-  border-top: 36.08337px solid #5f5fc2; }
+  margin: 0.5rem auto;
+  width: 5rem;
+  height: 8.66rem;
+  border-radius: 0.5rem / 0.25rem;
+  background: #5f5fc2;
+  transition: opacity .5s;
+  transform: rotate(90deg);
+  z-index: -1; }
+  .hexagon:before, .hexagon:after {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+    content: '';
+    z-index: -1; }
+  .hexagon:before {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
+  .hexagon:after {
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg); }
+  .hexagon i {
+    transform: rotate(-90deg);
+    font-size: 300%;
+    color: whitesmoke; }
 
 .parallax {
   height: 100vh;
@@ -128,20 +133,18 @@ section {
 .parallax_layer_front,
 .parallax_layer_back {
   position: relative;
-  top: 110%;
   right: 0;
   bottom: 0;
   left: 0;
   height: 100%; }
 
 .parallax_layer_front {
-  transform: translateZ(0);
-  z-index: 999; }
+  transform: translateZ(0px); }
 
 .parallax_layer_back {
   position: absolute;
   z-index: -999;
-  transform: translateZ(-2px) scale(3); }
+  transform: translateZ(-1px); }
 
 #hero {
   background-image: linear-gradient(to top, #1b0b3d, #0f1242, #050522, #010108);
@@ -263,7 +266,8 @@ section {
 
 #projects .project-images img {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  border-radius: 0.25rem; }
 
 #projects .project-images .project-description {
   position: absolute;
@@ -273,7 +277,8 @@ section {
   left: 15px;
   opacity: 0;
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+  border-radius: 0.25rem; }
   #projects .project-images .project-description h2,
   #projects .project-images .project-description h4,
   #projects .project-images .project-description button {
@@ -363,7 +368,7 @@ section {
   background: #17191b; }
   #contact #contact-form {
     position: relative;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     width: 35%;
     height: 50vh; }
     #contact #contact-form input, #contact #contact-form textarea {
@@ -380,7 +385,7 @@ section {
       -ms-transition: box-shadow .35s ease-out;
       -o-transition: box-shadow .35s ease-out;
       transition: box-shadow .35s ease-out;
-      box-shadow: inset 0 0 0 99999px #5f5fc2;
+      box-shadow: inset 0 0 0 99999px #282852;
       color: white; }
     #contact .form-control::placeholder {
       color: rgba(255, 255, 255, 0.5); }

@@ -1,34 +1,46 @@
-$hexagon-width: 125px;
-$hexagon-height: $hexagon-width / 1.732;
-$hexagon-margin: $hexagon-width / 3.4642;
-$hexagon-border-tb: $hexagon-margin;
-$hexagon-border-lr: $hexagon-width / 2;
+$hexagon-width: 5rem;
+$hexagon-height: $hexagon-width * 1.732;
+$hexagon-margin: $hexagon-width / 10;
+$hexagon-margin-half: $hexagon-margin / 2;
 $hexagon-color: $slate-blue;
+
 
 .hexagon {
     position: relative;
+    margin: $hexagon-margin auto;
     width: $hexagon-width;
     height: $hexagon-height;
-    background-color: $hexagon-color;
-    margin: $hexagon-margin 0;
-}
+    border-radius: #{$hexagon-margin} / #{$hexagon-margin-half};
+    background: $hexagon-color;
+    transition: opacity .5s;
+    transform: rotate(90deg);
+    z-index: -1;
 
-.hexagon:before,
-.hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    border-left: $hexagon-border-lr solid transparent;
-    border-right: $hexagon-border-lr solid transparent;
-}
+    &:before,
+    &:after {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        background: inherit;
+        content: '';
 
-.hexagon:before {
-    bottom: 100%;
-    border-bottom: $hexagon-border-tb solid $hexagon-color;
-}
+        z-index: -1;
+    }
 
-.hexagon:after {
-    top: 100%;
-    width: 0;
-    border-top: $hexagon-border-tb solid $hexagon-color;
+    &:before {
+        -webkit-transform: rotate(60deg);
+        transform: rotate(60deg);
+    }
+
+    &:after {
+        -webkit-transform: rotate(-60deg);
+        transform: rotate(-60deg);
+    }
+
+    i {
+        transform: rotate(-90deg);
+        font-size: 300%;
+        color: $main-bg;
+    }
 }

@@ -17,7 +17,7 @@
 .parallax_layer_front,
 .parallax_layer_back {
     position: relative;
-    top: 110%; // temporary fix: to push layers down so they dont cover the 
+    // top: 110%; // temporary fix: to push layers down so they dont cover the 
     right: 0;
     bottom: 0;
     left: 0;
@@ -25,13 +25,15 @@
 }
 
 .parallax_layer_front {
-    transform: translateZ(0);
-    z-index: 999;
+    // transform: translate3d(0,0, 1px);
+    transform: translateZ(0px);
+    // z-index: 999;
 }
 
 .parallax_layer_back {
     
     position: absolute;
     z-index: -999;
-    transform: translateZ(-2px) scale(3); //scale factor = 1 + (translateZ * -1) / perspective
+    // transform: translateZ(-1px) scale(2); //scale factor = 1 + (translateZ * -1) / perspective
+    transform: translateZ(-1px); 
 }

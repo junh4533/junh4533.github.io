@@ -3,10 +3,10 @@ $(document).ready(() => {
     const particlesConfig = {
         "particles": {
             "number": {
-                "value": 7,
+                "value": 40,
                 "density": {
                     "enable": true,
-                    "value_area": 1000
+                    "value_area": 2500
                 }
             },
             "color": {
@@ -33,7 +33,7 @@ $(document).ready(() => {
                 "anim": {
                     "enable": false,
                     "speed": 1,
-                    "opacity_min": 0.15,
+                    "opacity_min": .3,
                     "sync": false
                 }
             },
@@ -224,8 +224,8 @@ $(document).ready(() => {
 
     particlesJS("particles-about", particlesConfig);
     particlesJS("particles-skills", particlesConfig);
-    particlesJS("particles-projects", particlesConfig);
-    particlesJS("particles-contact", particlesConfigContact);
+    // particlesJS("particles-projects", particlesConfig);
+    // particlesJS("particles-contact", particlesConfigContact);
 
     const controller = new ScrollMagic.Controller(); // initialize scrollmagic
 
@@ -484,21 +484,40 @@ $(document).ready(() => {
             document.getElementById("projectSlides").innerHTML = '';
             document.getElementById("modal-body").innerHTML = ''
 
+            let images,
+                heading,
+                subHeading,
+                desc;
+
             switch (e.target.id.toString()) {
+
                 case "QueueingSystem":
-                    modalProjectHeading.innerHTML = "Queueing System";
+                    images = ["kiosk-issue", "kiosk-swipe", "kiosk-text", "kiosk-wait", "order", "portal", "performance"],
+                        heading = "Queueing System",
+                        subHeading = "Queue Management and Appointment Scheduling",
+                        desc = "Managing long lines of customers with pen and paper can be a daunting task. With a queueing system, customers can schedule an appointment and receive status updates with ease.";
+
+                    appendProjectImages("queueing", images);
+                    addText(heading, subHeading, desc);
 
                     break;
                 case "FireDrop":
-                    modalProjectHeading.innerHTML = "FireDrop";
+                    images = ["home"],
+                        heading = "Fire Drop",
+                        subHeading = "Online Sneaker Marketplace",
+                        desc = "FireDrop is a static website with front-end form validation. I created this as my final project for a web design class at Baruch.";
+
+                    appendProjectImages("firedrop", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/firedrop");
+                    addWebIcon("firedrop-master/index.html");
 
                     break;
                 case "AscendBaruch":
-
-                    const images = ["home", "about", "committees", "eboard"];
-                    const heading = "Ascend Baruch"
-                    const subHeading = "Pan-Asian Student Organization";
-                    const desc = "Ascend Baruch's mission is to be the premier professional organization dedicated to enabling its members, business partners and the community to leverage the leadership and global business potential of Pan-Asians.";
+                    images = ["home", "about", "committees", "eboard"],
+                        heading = "Ascend Baruch",
+                        subHeading = "Pan-Asian Student Organization",
+                        desc = "Ascend Baruch's mission is to be the premier professional organization dedicated to enabling its members, business partners and the community to leverage the leadership and global business potential of Pan-Asians.";
 
                     appendProjectImages("ascend", images);
                     addText(heading, subHeading, desc);
@@ -507,19 +526,47 @@ $(document).ready(() => {
 
                     break;
                 case "EZDoctDjango":
-                    modalProjectHeading.innerHTML = "EZDoct - Django";
+                    images = ["home", "dashboard", "profile", "add_user", "search_appointment", "schedule_appointment", "doctor_dashboard", "doctor_appointments", "patient", "django"],
+                        heading = "EZDoct - Django",
+                        subHeading = "Appointment Scheduling",
+                        desc = "After learning the basics of client and server side development, I decided to use a more modern development stack improve upon the EZDoct app I've built previously.";
+
+                    appendProjectImages("ezdoct_django", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/masters");
 
                     break;
                 case "EZDoctPHP":
-                    modalProjectHeading.innerHTML = "EZDoct - PHP";
+                    images = ["doctor", "assistant", "doctor", "patient", "db", "xampp"],
+                        heading = "EZDoct - PHP",
+                        subHeading = "Appointment Scheduling",
+                        desc = "One of the first web application I've created. I was beginning to understand how fullstack development involves front end UI/UX design and backend database engineering.";
+
+                    appendProjectImages("ezdoct_php", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/ezdoc");
 
                     break;
                 case "BaruchDonorPHP":
-                    modalProjectHeading.innerHTML = "Baruch Donor";
+                    images = ["home", "view_donors", "view_pc"],
+                        heading = "Baruch Donor",
+                        subHeading = "Baruch Donor Appreciation",
+                        desc = "Baruch decided to honor their supporters by adding their names to desktop backgrounds across the computer labs. This application manages donor information and automatically generates desktop backgrounds.";
+
+                    appendProjectImages("baruch_donor", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/Baruch_Donor");
 
                     break;
                 case "arduinoSmarthome":
-                    modalProjectHeading.innerHTML = "Arduino Smarthome";
+                    images = ["entire_system", "lcd", "mockup"],
+                        heading = "Arduino Smarthome",
+                        subHeading = "All in One RFID Door Lock",
+                        desc = "During my last semester of high school, I had the opportunity to research any one programming language of my choice. Rather than limiting myself to only software development, I decided to build a smarthome system using the Arduino platform.";
+
+                    appendProjectImages("arduino_smarthome", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/independent_study-arduino");
 
                     break;
             }
