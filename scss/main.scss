@@ -1,26 +1,21 @@
 @import 'variables';
 @import 'mixins';
 
-html, body {
+
+body,
+html {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    overflow: hidden; //HIDES SECOND SCROLLBAR FROM PARALLAX
+    -webkit-font-smoothing: antialiased;
 }
 
 .main-content {
-    // background-image: linear-gradient(to top, rgb(27, 11, 61), rgb(15, 18, 66), rgb(5, 5, 34), rgb(1, 1, 8));
     background: $main-bg;
     position: relative;
     color: $font-color;
-}
-
-.particles-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow:hidden;
+    font-family: $font-family;
 }
 
 h1,
@@ -30,6 +25,25 @@ h4,
 h5,
 h6 {
     display: inline-block;
+    font-weight: bolder;
+}
+
+.custom-button {
+    border: 1px solid white;
+    background: transparent;
+    padding: 0.5em 1em;
+    border-radius: 0;
+    color: white;
+    border-radius: 4px;
+    @include transition('box-shadow .35s ease-out');
+
+    // darkens button on hover 
+    &:hover {
+        box-shadow: inset 0 0 0 99999px $slate-blue;
+        text-decoration: none;
+        color: white;
+        border-color: rgb(199, 199, 199);
+    }
 }
 
 b {
@@ -37,18 +51,19 @@ b {
 }
 
 a {
+    color: $slate-blue;
 
-    // color: $slate-blue;
     &:hover {
         text-decoration: none;
+        color: $slate-blue-dark;
     }
 }
 
 .fas {
-    position: relative;
-    z-index: 999;
-    font-size: 3.5rem;
-    color: white;
+    // position: relative;
+    // z-index: 999;
+    // font-size: 2rem;
+    // color: white;
 }
 
 .flex-center {
@@ -69,8 +84,8 @@ a {
     height: 100%;
     left: 0;
     top: 0;
-    background: rgba(215, 215, 249, .3);
-    z-index: 700;
+    background: rgba(0,0,0, .3);
+    z-index: -1;
 }
 
 .underline {
@@ -101,10 +116,15 @@ section {
     scroll-behavior: smooth;
 }
 
+#top-nav {
+    background: rgba(0,0,0, .85);
+}
+
 @import 'hexagon.scss';
 @import 'parallax';
 @import 'hero';
 @import 'about';
 @import 'skills';
 @import 'projects';
-
+@import 'contact';
+@import 'modal';

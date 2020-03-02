@@ -51,8 +51,12 @@
   <script src="scripts/index.js"></script>
 </head>
 
+<<<<<<< HEAD
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
   
+=======
+<body data-spy="scroll" data-target="#top-nav" data-offset="50">
+>>>>>>> 8ade4dd862e3beab8194fa939518323d33986395
   <div class="parallax">
 
     <!-- HERO -->
@@ -81,9 +85,9 @@
     <div class="main-content">
 
       <!-- FIXED TOP NAVBAR -->
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-        <a class="navbar-brand" href="#hero">Jun Huang</a>
-        <ul class="navbar-nav">
+      <nav id="top-nav" class="navbar navbar-expand-sm navbar-dark sticky-top">
+        <!-- <a class="navbar-brand" href="#">Jun Huang</a> -->
+        <ul class="navbar-nav" role="tablist">
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
           </li>
@@ -101,11 +105,14 @@
 
       <!-- ABOUT -->
       <section class="text-center parallax_group" id="about">
-        <div class="particles-bg parallax_layer parallax_layer_back" id="particles-about"></div>
+        <div class="particles-bg parallax_layer_back" id="particles-about"></div>
 
-        <h1 class="page-header">About</h1>
-
-        <div class="parallax_layer_base">
+        <div class="parallax_layer_front">
+          <h1 class="page-header">
+            About
+            <div class="underline"></div>
+          </h1>
+          <br>
           <img id="flip-img" src="images/flipbook/jump1.jpg" alt="flip-img"> <br>
           <h3>Huge Fan of Table Tennis</h3>
         </div>
@@ -113,8 +120,8 @@
 
       <!-- SKILLS -->
       <section class="text-center parallax_group" id="skills">
-        <div class="particles-bg parallax_layer parallax_layer_back" id="particles-skills"></div>
-        <div class="parallax_layer_base">
+        <div class="particles-bg parallax_layer_back" id="particles-skills"></div>
+        <div class="parallax_layer_front">
 
           <h1 class="page-header">
             Skills
@@ -122,29 +129,34 @@
           </h1>
 
           <div class="row my-5 w-75 mx-auto">
-            <div class="col-6 col-md-3 flex-center">
+            <div class="col-6 col-md-3 flex-center justify-content-start">
               <div class="hexagon flex-center">
-                <i class="fas fa-rocket"></i>
+                <i class="fas fa-flask"></i>
               </div>
-              <h3>Efficient</h1>
+              <h3 class="my-2">Practical</h1>
+                <p>Every project is a solution, not a problem.</p>
             </div>
-            <div class="col-6 col-md-3 flex-center">
+            <div class="col-6 col-md-3 flex-center justify-content-start">
               <div class="hexagon flex-center">
                 <i class="fas fa-lightbulb"></i>
               </div>
-              <h3 class="mt-2">Creative</h1>
+              <h3 class="my-2">Creative</h1>
+                <p>Every project should be visually and functionally unique.</p>
             </div>
-            <div class="col-6 col-md-3 flex-center">
+            <div class="col-6 col-md-3 flex-center justify-content-start">
               <div class="hexagon flex-center">
                 <i class="fas fa-hand-pointer"></i>
               </div>
-              <h3 class="mt-2">Interactive</h1>
+              <h3 class="my-2">Interactive</h1>
+                <p>A website should do more than just present information.
+                  It should come to life.</p>
             </div>
-            <div class="col-6 col-md-3 flex-center">
+            <div class="col-6 col-md-3 flex-center justify-content-start">
               <div class="hexagon flex-center">
                 <i class="fas fa-laptop-code"></i>
               </div>
-              <h3 class="mt-2">Responsive</h1>
+              <h3 class="my-2">Responsive</h1>
+                <p>Same content across every device.</p>
             </div>
           </div>
 
@@ -258,10 +270,10 @@
       </section>
 
       <!-- PROJECTS -->
-      <section class="text-center" id="projects">
+      <section class="text-center parallax_group" id="projects">
         <!-- <div class="tint"></div> -->
-        <div class="particles-bg parallax_layer parallax_layer_back" id="particles-projects"></div>
-        <div class="container-fluid parallax_layer_base">
+        <!-- <div class="particles-bg parallax_layer_back" id="particles-projects"></div> -->
+        <div class="parallax_layer_front">
           <h1 class="page-header">
             Projects
             <div class="underline"></div>
@@ -270,12 +282,12 @@
           <div class="container-fluid project-images mt-5">
             <div class="row justify-content-center">
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img src="images/projects/queueing/kiosk/kiosk-issue.png" alt="Queueing System">
+                <img src="images/projects/queueing/kiosk-issue.png" alt="Queueing System">
                 <div class="project-description flex-center">
                   <h2>Queueing System</h2>
                   <h4>React / JavaScript</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
-                    data-target="#myModal">
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="QueueingSystem"
+                    data-toggle="modal" data-target="#project-modal">
                     Learn More
                   </button>
                 </div>
@@ -286,8 +298,8 @@
                 <div class="project-description flex-center">
                   <h2>FireDrop</h2>
                   <h4>JavaScript</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
-                    data-target="#myModal">
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="FireDrop"
+                    data-toggle="modal" data-target="#project-modal">
                     Learn More
                   </button>
                 </div>
@@ -298,8 +310,8 @@
                 <div class="project-description flex-center">
                   <h2>Ascend Baruch</h2>
                   <h4>JavaScript</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
-                    data-target="#myModal">
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="AscendBaruch"
+                    data-toggle="modal" data-target="#project-modal">
                     Learn More
                   </button>
                 </div>
@@ -310,8 +322,8 @@
                 <div class="project-description flex-center">
                   <h2>EZDoct Django</h2>
                   <h4>Python-Django</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
-                    data-target="#myModal">
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="EZDoctDjango"
+                    data-toggle="modal" data-target="#project-modal">
                     Learn More
                   </button>
                 </div>
@@ -322,32 +334,32 @@
                 <div class="project-description flex-center">
                   <h2>EZDoct</h2>
                   <h4>Apache / PHP</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
-                    data-target="#myModal">
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="EZDoctPHP"
+                    data-toggle="modal" data-target="#project-modal">
                     Learn More
                   </button>
                 </div>
               </div>
 
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img src="images/projects/baruch_donor/home.png" alt="Baruch Donor">
+                <img src="images/projects/baruch_donor/preview.png" alt="Baruch Donor">
                 <div class="project-description flex-center">
                   <h2>Baruch Donor</h2>
                   <h4>Apache / PHP</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
-                    data-target="#myModal">
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="BaruchDonorPHP"
+                    data-toggle="modal" data-target="#project-modal">
                     Learn More
                   </button>
                 </div>
               </div>
 
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img src="images/projects/arduino_smarthome/lcd.jpg" alt="Arduino Smarthome">
+                <img src="images/projects/arduino_smarthome/lcd.png" alt="Arduino Smarthome">
                 <div class="project-description flex-center">
                   <h2>Smarthome</h2>
                   <h4>Arduino C++</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" data-toggle="modal"
-                    data-target="#myModal">
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="arduinoSmarthome"
+                    data-toggle="modal" data-target="#project-modal">
                     Learn More
                   </button>
                 </div>
@@ -365,46 +377,78 @@
           <h3>Baruch Donor</h3>
           <h3>Firedrop</h3> -->
 
-
         </div>
-
       </section>
 
       <!-- CONTACT -->
-      <section class="text-center" id="contact">
-        <div class="container-fluid">
-          <h1 class="page-header">Contact</h1>
+      <section class="text-center parallax_group" id="contact">
+        <!-- <div class="tint"></div> -->
+        <div class="particles-bg" id="particles-contact"></div>
+        <h1 class="page-header mb-5">Contact</h1>
+
+        <form id="contact-form" class="mx-auto" action="https://formspree.io/xbjyywwg" target="_blank" method="POST">
+
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Your Email" id="email" name="_replyto" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="_subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
+          </div>
+          <button class="custom-button" type="submit">Send</button>
+
+        </form>
+
+        <div class="contact-icons">
+          <a href="https://www.facebook.com/JunHuang22" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://www.linkedin.com/in/jun-huang1/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/junh4533" target="_blank"><i class="fab fa-github-square"></i></a>
         </div>
+        
+
+        <footer>
+          <p><b>Jun Huang</b> &copy; 2020</p>
+        </footer>
 
       </section>
 
     </div> <!-- END SCROLLSPY CONTAINER -->
 
   </div>
+
   <!-- The Modal -->
-  <div class="modal fade" id="myModal">
+  <div class="modal fade" id="project-modal">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
 
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Modal Heading</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!-- Modal Image -->
+        <div id="modal-image">
+          <div id="modal-carousel" class="carousel slide" data-ride="carousel">
+
+            <!-- The slideshow -->
+            <div id="projectSlides" class="carousel-inner"></div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#modal-carousel" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#modal-carousel" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+
+          </div>
         </div>
 
-        <!-- Modal body -->
-        <div class="modal-body">
-          Modal body..
-        </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
+        <!-- Modal Body-->
+        <div id="modal-body" class="p-3"></div>
 
       </div>
     </div>
   </div>
+
+
 </body>
 
 </html>

@@ -1,12 +1,12 @@
 $(document).ready(() => {
 
-    const particlesJSON = {
+    const particlesConfig = {
         "particles": {
             "number": {
-                "value": 5,
+                "value": 40,
                 "density": {
                     "enable": true,
-                    "value_area": 1000
+                    "value_area": 2500
                 }
             },
             "color": {
@@ -28,12 +28,12 @@ $(document).ready(() => {
                 }
             },
             "opacity": {
-                "value": 1,
+                "value": .5,
                 "random": false,
                 "anim": {
                     "enable": false,
                     "speed": 1,
-                    "opacity_min": 0.3,
+                    "opacity_min": .3,
                     "sync": false
                 }
             },
@@ -51,7 +51,7 @@ $(document).ready(() => {
                 "enable": true,
                 "distance": 300,
                 "color": "#0C0E38",
-                "opacity": 1,
+                "opacity": .3,
                 "width": 1.5
             },
             "move": {
@@ -111,9 +111,121 @@ $(document).ready(() => {
         "retina_detect": true
     }
 
-    particlesJS("particles-about", particlesJSON);
-    particlesJS("particles-skills", particlesJSON);
-    particlesJS("particles-projects", particlesJSON);
+    const particlesConfigContact = {
+        "particles": {
+            "number": {
+                "value": 35,
+                "density": {
+                    "enable": true,
+                    "value_area": 1500
+                }
+            },
+            "color": {
+                "value": "#FFFFFF"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": ["#5f5fc2", "#250a63"]
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": .3,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.2,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 5,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 2,
+                    "size_min": 1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 300,
+                "color": "#FFFFFF",
+                "opacity": .2,
+                "width": 1.5
+            },
+            "move": {
+                "enable": true,
+                "speed": .5,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": false,
+                    "mode": "bubble"
+                },
+                "onclick": {
+                    "enable": false,
+                    "mode": "push"
+                },
+                "resize": false
+            },
+            "modes": {
+                "grab": {
+                    "distance": 800,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 100,
+                    "size": 10,
+                    "duration": 1,
+                    "opacity": 1,
+                    "speed": .2
+                },
+                "repulse": {
+                    "distance": 100,
+                    "duration": 1.5
+                },
+                "push": {
+                    "particles_nb": 2
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    }
+
+    particlesJS("particles-about", particlesConfig);
+    particlesJS("particles-skills", particlesConfig);
+    // particlesJS("particles-projects", particlesConfig);
+    particlesJS("particles-contact", particlesConfigContact);
 
     const controller = new ScrollMagic.Controller(); // initialize scrollmagic
 
@@ -256,6 +368,7 @@ $(document).ready(() => {
         }
     };
 
+    //////////////////////////// STARFIELD ////////////////////////////
     document.body.addEventListener("mousemove", (e) => {
 
         //if mouse moves the minimum x or y distance
@@ -315,11 +428,156 @@ $(document).ready(() => {
 
     })
 
+    const addText = (heading, subheading, description) => {
+        const modalBody = document.getElementById('modal-body'),
+            modalProjectHeading = '<h3 id="modalProjectHeading">' + heading + '</h3>',
+            modalProjectSubHeading = '<h5 id="modalProjectSubHeading">' + subheading + '</h5>',
+            modalProjectDescription = '<p id="modalProjectDescription">' + description + '</p>',
+            closeButton = '<button type="button" class="close" data-dismiss="modal">&times;</button>';
 
+        modalBody.insertAdjacentHTML('beforeend', modalProjectHeading);
+        modalBody.insertAdjacentHTML('beforeend', modalProjectSubHeading);
+        modalBody.insertAdjacentHTML('beforeend', "<hr>");
+        modalBody.insertAdjacentHTML('beforeend', modalProjectDescription);
+        modalBody.insertAdjacentHTML('beforeend', closeButton);
+    }
+
+    const appendProjectImages = (parentFolder, images) => {
+        // Append project images
+        for (let image of images) {
+
+            let slideImg = '<div class="carousel-item">' +
+                '<img class="w-100 h-100" src="images/projects/' +
+                parentFolder + '/' + image + '.png"' + ' alt="' + image + '">' +
+                '</div>';
+
+            document.getElementById("projectSlides").insertAdjacentHTML('beforeend', slideImg);
+        }
+
+        // add class "active" to ONLY the first slide of the carousel
+        document.getElementById("projectSlides").firstElementChild.classList.add("active");
+    }
+
+    const addWebIcon = (link) => {
+        const icon =
+            '<a href="' + link + '" target = "_blank">' +
+            '<i class="fas fa-globe-americas mr-2"></i>' +
+            '</a>';
+
+        document.getElementById("modal-body").insertAdjacentHTML('beforeend', icon);
+    }
+
+    const addGithubIcon = (link) => {
+        const icon =
+            '<a href="' + link + '" target = "_blank">' +
+            '<i class="fab fa-github mr-2"></i>' +
+            '</a>';
+
+        document.getElementById("modal-body").insertAdjacentHTML('beforeend', icon);
+    }
+
+    //////////////////////////// PROJECTS MODAL ////////////////////////////
     $('.modal-button').on("click",
-        modalContents = () => {
-            console.log("hello")
+        modalContents = (e) => {
+
+            // reset existing images/text from the carousel
+            document.getElementById("projectSlides").innerHTML = '';
+            document.getElementById("modal-body").innerHTML = ''
+
+            let images,
+                heading,
+                subHeading,
+                desc;
+
+            switch (e.target.id.toString()) {
+
+                case "QueueingSystem":
+                    images = ["kiosk-issue", "kiosk-swipe", "kiosk-text", "kiosk-wait", "order", "portal", "performance"],
+                        heading = "Queueing System",
+                        subHeading = "Queue Management and Appointment Scheduling",
+                        desc = "Managing long lines of customers with pen and paper can be a daunting task. With a queueing system, customers can schedule an appointment and receive status updates with ease.";
+
+                    appendProjectImages("queueing", images);
+                    addText(heading, subHeading, desc);
+
+                    break;
+                case "FireDrop":
+                    images = ["home"],
+                        heading = "Fire Drop",
+                        subHeading = "Online Sneaker Marketplace",
+                        desc = "FireDrop is a static website with front-end form validation. I created this as my final project for a web design class at Baruch.";
+
+                    appendProjectImages("firedrop", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/firedrop");
+                    addWebIcon("firedrop-master/index.html");
+
+                    break;
+                case "AscendBaruch":
+                    images = ["home", "about", "committees", "eboard"],
+                        heading = "Ascend Baruch",
+                        subHeading = "Pan-Asian Student Organization",
+                        desc = "Ascend Baruch's mission is to be the premier professional organization dedicated to enabling its members, business partners and the community to leverage the leadership and global business potential of Pan-Asians.";
+
+                    appendProjectImages("ascend", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/ascend");
+                    addWebIcon("http://www.ascendbaruch.org/");
+
+                    break;
+                case "EZDoctDjango":
+                    images = ["home", "dashboard", "profile", "add_user", "search_appointment", "schedule_appointment", "doctor_dashboard", "doctor_appointments", "patient", "django"],
+                        heading = "EZDoct - Django",
+                        subHeading = "Appointment Scheduling",
+                        desc = "After learning the basics of client and server side development, I decided to use a more modern development stack improve upon the EZDoct app I've built previously.";
+
+                    appendProjectImages("ezdoct_django", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/masters");
+
+                    break;
+                case "EZDoctPHP":
+                    images = ["doctor", "assistant", "doctor", "patient", "db", "xampp"],
+                        heading = "EZDoct - PHP",
+                        subHeading = "Appointment Scheduling",
+                        desc = "One of the first web application I've created. I was beginning to understand how fullstack development involves front end UI/UX design and backend database engineering.";
+
+                    appendProjectImages("ezdoct_php", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/ezdoc");
+
+                    break;
+                case "BaruchDonorPHP":
+                    images = ["home", "view_donors", "view_pc"],
+                        heading = "Baruch Donor",
+                        subHeading = "Baruch Donor Appreciation",
+                        desc = "Baruch decided to honor their supporters by adding their names to desktop backgrounds across the computer labs. This application manages donor information and automatically generates desktop backgrounds.";
+
+                    appendProjectImages("baruch_donor", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/Baruch_Donor");
+
+                    break;
+                case "arduinoSmarthome":
+                    images = ["entire_system", "lcd", "mockup"],
+                        heading = "Arduino Smarthome",
+                        subHeading = "All in One RFID Door Lock",
+                        desc = "During my last semester of high school, I had the opportunity to research any one programming language of my choice. Rather than limiting myself to only software development, I decided to build a smarthome system using the Arduino platform.";
+
+                    appendProjectImages("arduino_smarthome", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/independent_study-arduino");
+
+                    break;
+            }
+
+
         }
     );
+
+    // $("#contact-form").onsubmit = () => {
+    //     window.location.href = "http://www.jsfiddle.net";
+    //     return false;
+    // };
 
 });

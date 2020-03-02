@@ -13,20 +13,22 @@
     transform-style: preserve-3d;
 }
 
-.parallax_layer {
-    position: absolute;
-    top: 0;
+.parallax_layer_front,
+.parallax_layer_back {
+    position: relative;
+    // top: 110%; // temporary fix: to push layers down so they dont cover the 
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    height: 100%;
 }
 
-.parallax_layer_base {
-    transform: translateZ(0);
+.parallax_layer_front {
+    transform: translateZ(0px);
 }
 
 .parallax_layer_back {
-    //scale factor = 1 + (translateZ * -1) / perspective
-    transform: translateZ(-2px) scale(3);
+    position: absolute;
+    transform: translateZ(-1px) scale(2); //scale factor = 1 + (translateZ * -1) / perspective
+    // transform: translateZ(-1px); 
 }
