@@ -224,7 +224,7 @@ $(document).ready(() => {
 
     particlesJS("particles-about", particlesConfig);
     // particlesJS("particles-skills", particlesConfig);
-    // particlesJS("particles-projects", particlesConfig);
+    particlesJS("particles-projects", particlesConfig);
     particlesJS("particles-contact", particlesConfigContact);
 
     const controller = new ScrollMagic.Controller(); // initialize scrollmagic
@@ -263,43 +263,170 @@ $(document).ready(() => {
             name: "table tennis"
         })
         .addTo(controller);
-    
-    ////////////////////// skills icon rotate //////////////////////
-    let skillsIconTween = TweenMax.to(".hexagon", .5, {
-        rotate: 450,
-        translateX: 0,
-        opacity: 1,
-        ease: "SlowMo.ease.config(0.3, 0.4, false)"
-    });
+
+    const vw = document.body.clientWidth;
+    const vh = document.body.clientHeight;
+
+    const headerSlideIn = (header, easing) => {
+        return TweenMax.fromTo(header, 1, {
+            translateX: -(vw / 4),
+            opacity: 0
+        }, {
+            translateX: 0,
+            opacity: 1,
+            ease: easing
+        })
+    };
+
+    ////////////////////// skills section //////////////////////
+
+    const skillsEasing = "circ.inOut";
+
+    let skillsTweenTimeline = new TimelineMax().add([
+        headerSlideIn("#skills-header", skillsEasing)
+    ], 0).add([
+        // hexagon rotate in  
+        TweenMax.fromTo(".hexagon", 1, {
+            translateX: -(vw / 2),
+            opacity: 0
+        }, {
+            rotate: 450,
+            translateX: 0,
+            opacity: 1,
+            ease: skillsEasing
+        })
+    ], 0.5).add([
+        // hexagon description slide in to left
+        headerSlideIn(".hexagon-description", skillsEasing)
+    ], 0.5).add([
+        // profile picture slide in to right
+        TweenMax.fromTo(".slide-to-right", 1, {
+            translateX: -(vw / 4),
+            opacity: 0
+        }, {
+            translateX: 0,
+            opacity: 1,
+            ease: skillsEasing
+        })
+    ], 1.5).add([
+        // skills level slide in to left
+        TweenMax.fromTo(".slide-to-left", 1, {
+            translateX: (vw / 4),
+            opacity: 0
+        }, {
+            translateX: 0,
+            opacity: 1,
+            ease: skillsEasing
+        }),
+    ], 1.5).add([
+        // progress bar expand
+        TweenMax.fromTo(".progress-bar", 1, {
+            scaleX: 0
+        }, {
+            scaleX: 1,
+            ease: skillsEasing
+        }),
+    ], 2);
 
     new ScrollMagic.Scene({
             triggerElement: "#skills",
-            duration: 400,
+            duration: 0,
         })
-        .setTween(skillsIconTween)
+        .setTween(skillsTweenTimeline)
         .addIndicators({
-            name: "roll in"
+            name: "skills"
         })
         .addTo(controller);
-    ////////////////////// skills icon rotate end //////////////////////
-    
-    ////////////////////// skills slide in //////////////////////
-    let skillsDescTween = TweenMax.to(".slide-in", .5, {
-        translateX: 0,
-        opacity: 1,
-        ease: "SlowMo.ease.config(0.3, 0.4, false)"
-    });
+
+    ////////////////////// end skills section //////////////////////
+
+    ////////////////////// Projects section //////////////////////
+
+    const projectsEasing = "circ.inOut";
+
+    const projectsTweenTimeline = new TimelineMax().add(
+        TweenMax.fromTo([".project-image"], 1, {
+            scale: 0,
+            opacity: 0,
+            translateY: (vh / 2)
+        }, {
+            scale: 1,
+            opacity: 1,
+            translateY: 0,
+            ease: projectsEasing
+        })
+    )
 
     new ScrollMagic.Scene({
-            triggerElement: ".hexagon",
-            duration: 400,
+            triggerElement: "#projects",
+            duration: 0,
         })
-        .setTween(skillsDescTween)
+        .setTween(projectsTweenTimeline)
         .addIndicators({
-            name: "slide from left/right"
+            name: "projects"
         })
         .addTo(controller);
-    ////////////////////// end skills slide in //////////////////////
+
+    ////////////////////// End Projects section //////////////////////
+
+    ////////////////////// Contact section //////////////////////
+
+    const contactEasing = "power2.inOut";
+
+    const contactTweenTimeline = new TimelineMax().add(
+        TweenMax.fromTo(["#contact-header"], 1, {
+            scale: 0,
+            opacity: 0,
+            translateY: -(vh / 5)
+        }, {
+            scale: 1,
+            opacity: 1,
+            translateY: 0,
+            ease: contactEasing
+        })
+    ).add([
+            TweenMax.fromTo(["#contact-form"], 1, {
+                scale: 0,
+                opacity: 0,
+                translateY: -(vh / 5)
+            }, {
+                scale: 1,
+                opacity: 1,
+                translateY: 0,
+                ease: contactEasing
+            })
+        ], 0 //add tween 0 seconds after previous tween
+    ).add([
+        TweenMax.fromTo([".contact-icons"], 1, {
+            scale: 0,
+            opacity: 0,
+            translateX: -(vw / 5)
+        }, {
+            scale: 1,
+            opacity: 1,
+            translateX: 0,
+            ease: contactEasing
+        })
+    ], 1).add([
+        TweenMax.fromTo(["footer"], 1, {
+            opacity: 0,
+        }, {
+            opacity: 1,
+            ease: contactEasing
+        })
+    ], 0.5);
+
+    new ScrollMagic.Scene({
+            triggerElement: "#contact",
+            duration: 0,
+        })
+        .setTween(contactTweenTimeline)
+        .addIndicators({
+            name: "contact"
+        })
+        .addTo(controller);
+
+    ////////////////////// End Projects section //////////////////////
 
     // randomize star appearance on mouse move
     let getRandom = (min, max) => {
@@ -308,8 +435,6 @@ $(document).ready(() => {
 
     const starfield = document.getElementById("starfield"),
         sagittarius = document.getElementById("sagittarius"),
-        canvasHeight = document.body.clientHeight,
-        canvasWidth = document.body.clientWidth,
         mouseTravel = 15,
         mouseDistance = 45;
 
@@ -317,14 +442,14 @@ $(document).ready(() => {
         mouseY = 0;
 
     //set background starfield to fullscreen
-    starfield.width = canvasWidth;
-    starfield.height = document.body.clientHeight;
+    starfield.width = vw;
+    starfield.height = vh;
 
     //set sag map to fullscreen
-    sagittarius.width = canvasWidth;
-    sagittarius.height = canvasHeight;
+    sagittarius.width = vw;
+    sagittarius.height = vh;
 
-    // x times a square canvasHeight will give coordinate
+    // x times a square vh will give coordinate
     const star_coordinates = {
         1: [.4, .9],
         2: [.39, .8],
@@ -393,21 +518,33 @@ $(document).ready(() => {
 
     let animateCanvas = (canvas, x, y, radius, saturation, lightness, interval, delay) => {
         ctx = canvas.getContext("2d");
+
+        let drawStars = (i) => {
+            ctx.beginPath();
+            ctx.arc(x, y, i, 0, 360); //draws a circle
+            ctx.shadowBlur = lightness / 10;
+            ctx.shadowColor = "hsl(240, " + saturation + "%, " + lightness + "%)";
+            ctx.fillStyle = "hsl(240, " + saturation + "%, " + lightness + "%)";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        let runOnce = false; //temp variable to let the initial star draw
+
         for (let i = radius / interval; i <= radius; i += radius / interval) {
+            if (runOnce == false) {
+                drawStars(i);
+                runOnce = true;
+            }
             setTimeout(() => {
-                ctx.beginPath();
-                ctx.arc(x, y, i, 0, 360); //draws a circle
-                ctx.shadowBlur = lightness / 10;
-                ctx.shadowColor = "hsl(240, " + saturation + "%, " + lightness + "%)";
-                ctx.fillStyle = "hsl(240, " + saturation + "%, " + lightness + "%)";
-                ctx.fill();
-                ctx.closePath();
+                drawStars(i);
             }, delay * i);
         }
     };
 
     //////////////////////////// STARFIELD ////////////////////////////
-    document.body.addEventListener("mousemove", (e) => {
+
+    document.body.addEventListener("mousemove", function handler(e) {
 
         //if mouse moves the minimum x or y distance
         if (Math.abs(e.pageX - mouseX) > mouseTravel || Math.abs(e.pageY - mouseY) > mouseTravel) {
@@ -426,8 +563,8 @@ $(document).ready(() => {
 
         // check each star coordinate everytime the mouse moves 
         for (let star in star_coordinates) {
-            let starX = star_coordinates[star][0] * canvasWidth;
-            let starY = star_coordinates[star][1] * canvasHeight;
+            let starX = star_coordinates[star][0] * vw;
+            let starY = star_coordinates[star][1] * vh;
 
             // if mouse is within mouseDistance of star coordinate
             if (Math.abs(e.pageX - starX) <= mouseDistance && Math.abs(e.pageY - starY) <= mouseDistance) {
@@ -447,10 +584,10 @@ $(document).ready(() => {
                     let line_coordinate2 = sagittarius_lines[line_coordinate];
                     // if both coordinates are hovered over, form a line connecting the two
                     if (!(line_coordinate in star_coordinates) && !(line_coordinate2 in star_coordinates)) {
-                        let starX1 = star_coordinates2[line_coordinate][0] * canvasWidth,
-                            starY1 = star_coordinates2[line_coordinate][1] * canvasHeight,
-                            starX2 = star_coordinates2[line_coordinate2][0] * canvasWidth,
-                            starY2 = star_coordinates2[line_coordinate2][1] * canvasHeight;
+                        let starX1 = star_coordinates2[line_coordinate][0] * vw,
+                            starY1 = star_coordinates2[line_coordinate][1] * vh,
+                            starX2 = star_coordinates2[line_coordinate2][0] * vw,
+                            starY2 = star_coordinates2[line_coordinate2][1] * vh;
                         ctx.beginPath();
                         ctx.lineWidth = 3;
                         ctx.strokeStyle = "hsl(240, 90%, 90%)";
@@ -461,10 +598,16 @@ $(document).ready(() => {
                     }
                 }
             }
+
+            // When user finds all of the stars
+            if (Object.keys(star_coordinates).length === 0) {
+                console.log("Found all stars");
+                e.currentTarget.removeEventListener(e.type, handler);
+            }
+
         }
 
-
-    })
+    });
 
     const addText = (heading, subheading, description) => {
         const modalBody = document.getElementById('modal-body'),

@@ -13,9 +13,8 @@ $hexagon-color: $slate-blue;
     border-radius: #{$hexagon-margin} / #{$hexagon-margin-half};
     background: $hexagon-color;
     transition: opacity .5s;
-    transform: translateX(-100vw) rotate(90deg);
+    transform: rotate(90deg);
     z-index: -1;
-    opacity: 0;
 
     &:before,
     &:after {

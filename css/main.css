@@ -5,13 +5,19 @@ html {
   height: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  font-family: "Rajdhani"; }
+
+@media only screen and (max-width: 769px) {
+  body,
+  html {
+    font-size: 16px; } }
 
 .main-content {
   background: whitesmoke;
   position: relative;
-  color: #17191b;
-  font-family: "Rajdhani"; }
+  color: #17191b; }
 
 h1,
 h2,
@@ -56,8 +62,10 @@ a {
   justify-content: center; }
 
 .page-header {
+  position: relative;
   font-size: 3.5rem;
-  margin-top: 10vh; }
+  margin-top: 8vh;
+  margin-bottom: 8vh; }
 
 .tint {
   position: absolute;
@@ -65,8 +73,8 @@ a {
   height: 100%;
   left: 0;
   top: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: -1; }
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 501; }
 
 .underline {
   height: 4px;
@@ -100,9 +108,8 @@ section {
   border-radius: 0.5rem / 0.25rem;
   background: #5f5fc2;
   transition: opacity .5s;
-  transform: translateX(-100vw) rotate(90deg);
-  z-index: -1;
-  opacity: 0; }
+  transform: rotate(90deg);
+  z-index: -1; }
   .hexagon:before, .hexagon:after {
     position: absolute;
     width: inherit;
@@ -155,12 +162,16 @@ section {
   background-repeat: no-repeat; }
   #hero .container {
     position: relative;
-    z-index: 999;
-    color: #fa8607;
-    font-weight: 900; }
-  #hero #social-media-icons {
-    color: white;
-    font-size: 300%; }
+    z-index: 99999;
+    color: #5f5fc2;
+    font-weight: 900;
+    font-size: 1em !important; }
+  #hero #hero-text h1 {
+    font-size: 5rem !important; }
+  #hero #hero-text i {
+    font-size: 250%; }
+  #hero #guess_horoscope {
+    display: none; }
   #hero #starfield, #hero #sagittarius {
     width: 100%; }
   #hero #starfield {
@@ -254,12 +265,6 @@ section {
   position: relative;
   opacity: 0; }
 
-#skills .slide-to-right {
-  transform: translateX(-100vw); }
-
-#skills .slide-to-left {
-  transform: translateX(100vw); }
-
 #skills .img-round {
   width: 400px;
   height: 400px;
@@ -278,10 +283,15 @@ section {
 #skills .nav-pills .nav-link.active {
   background-color: #5f5fc2; }
 
+#projects #particles-projects {
+  top: 50%;
+  height: 50%; }
+
 #projects .project-images img {
   width: 100%;
   height: 100%;
-  border-radius: 0.25rem; }
+  border-radius: 0.25rem;
+  position: relative; }
 
 #projects .project-images .project-description {
   position: absolute;
@@ -414,7 +424,7 @@ section {
       color: rgba(255, 255, 255, 0.5); }
   #contact .contact-icons {
     position: absolute;
-    left: 1%;
+    left: 25px;
     bottom: 1%; }
     #contact .contact-icons a {
       display: block;
