@@ -223,7 +223,7 @@ $(document).ready(() => {
     }
 
     particlesJS("particles-about", particlesConfig);
-    particlesJS("particles-skills", particlesConfig);
+    // particlesJS("particles-skills", particlesConfig);
     // particlesJS("particles-projects", particlesConfig);
     particlesJS("particles-contact", particlesConfigContact);
 
@@ -238,13 +238,12 @@ $(document).ready(() => {
         "../images/flipbook/jump6.jpg",
     ];
 
-    // TweenMax can tween any property of any object. We use this object to cycle through the array
     let obj = {
         curImg: 0
     };
 
-    // create tween
-    let tween = TweenMax.to(obj, 0.5, {
+    // create tween for table tennis image animation
+    let TTtween = TweenMax.to(obj, 0.5, {
         curImg: images.length - 1, // animate propery curImg to number of images
         roundProps: "curImg", // only integers so it can be used as an array index
         immediateRender: true, // load first image automatically
@@ -254,16 +253,55 @@ $(document).ready(() => {
         }
     });
 
-    // build scene
     new ScrollMagic.Scene({
             triggerElement: "#about",
             duration: '60%',
             triggerHook: .6
         })
-        .setTween(tween)
-        .addIndicators() // add indicators (requires plugin)
+        .setTween(TTtween)
+        .addIndicators({
+            name: "table tennis"
+        })
         .addTo(controller);
+    
+    ////////////////////// skills icon rotate //////////////////////
+    let skillsIconTween = TweenMax.to(".hexagon", .5, {
+        rotate: 450,
+        translateX: 0,
+        opacity: 1,
+        ease: "SlowMo.ease.config(0.3, 0.4, false)"
+    });
 
+    new ScrollMagic.Scene({
+            triggerElement: "#skills",
+            duration: 400,
+        })
+        .setTween(skillsIconTween)
+        .addIndicators({
+            name: "roll in"
+        })
+        .addTo(controller);
+    ////////////////////// skills icon rotate end //////////////////////
+    
+    ////////////////////// skills slide in //////////////////////
+    let skillsDescTween = TweenMax.to(".slide-in", .5, {
+        translateX: 0,
+        opacity: 1,
+        ease: "SlowMo.ease.config(0.3, 0.4, false)"
+    });
+
+    new ScrollMagic.Scene({
+            triggerElement: ".hexagon",
+            duration: 400,
+        })
+        .setTween(skillsDescTween)
+        .addIndicators({
+            name: "slide from left/right"
+        })
+        .addTo(controller);
+    ////////////////////// end skills slide in //////////////////////
+
+    // randomize star appearance on mouse move
     let getRandom = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1)) + min
     };

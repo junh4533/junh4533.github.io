@@ -100,8 +100,9 @@ section {
   border-radius: 0.5rem / 0.25rem;
   background: #5f5fc2;
   transition: opacity .5s;
-  transform: rotate(90deg);
-  z-index: -1; }
+  transform: translateX(-100vw) rotate(90deg);
+  z-index: -1;
+  opacity: 0; }
   .hexagon:before, .hexagon:after {
     position: absolute;
     width: inherit;
@@ -247,6 +248,16 @@ section {
         grid-area: 7 / 1 / 8 / 2; }
       #about #food-gallery .parent .div10 {
         grid-area: 7 / 2 / 8 / 3; } }
+
+#skills .slide-in {
+  position: relative;
+  opacity: 0; }
+
+#skills .slide-to-right {
+  transform: translateX(-100vw); }
+
+#skills .slide-to-left {
+  transform: translateX(100vw); }
 
 #skills .img-round {
   width: 400px;
