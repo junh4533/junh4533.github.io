@@ -1,8 +1,7 @@
 // parent container for the entire parallax page 
 .parallax {
-    height: 100vh;
+    height: 100%;
     overflow-x: hidden;
-    overflow-y: auto;
     -webkit-perspective: 1px;
     perspective: 1px;
     scroll-behavior: smooth;
