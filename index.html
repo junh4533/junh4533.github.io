@@ -57,22 +57,22 @@
     <!-- HERO -->
     <section class="flex-center" id="hero">
 
-      <!-- <div class="tint"></div>
-    <aside id="social-media-icons">
-      <i class="fab fa-facebook-square"></i>
-      <i class="fab fa-linkedin"></i>
-      <i class="fab fa-github-square"></i>
-    </aside>
+      <div class="container flex-center" id="hero-text">
+        <h1>Hi! My name is Jun Huang.</h1> <br />
+        <h1>Sagitarrius</h1>
+        <a href="#about"><i class="fas fa-chevron-circle-down mt-5 fa-2x" aria-hidden="true"></i></a>
+      </div>
 
-    <div class="container flex-center">
-      <h1></h1> <br />
-      <h1>Hi! My name is Jun Huang.</h1> <br />
-      <h1>Sagitarrius</h1> <br />
-      <button>Guess my Horoscope</button>
-    </div> -->
+      <div class="container flex-center">
+        <button type="button" class="btn btn-outline-light mt-4" id="guess_horoscope">
+          Guess my Horoscope
+        </button>
+      </div>
 
       <canvas id="starfield" width="750" height="500"></canvas>
       <canvas id="sagittarius" width="800" height="800"></canvas>
+
+      <div class="tint"></div>
 
     </section>
 
@@ -103,7 +103,7 @@
         <div class="particles-bg parallax_layer_back" id="particles-about"></div>
 
         <div class="parallax_layer_front">
-          <h1 class="page-header">
+          <h1 class="page-header" id="about-header">
             About
             <div class="underline"></div>
           </h1>
@@ -118,146 +118,161 @@
         <div class="particles-bg parallax_layer_back" id="particles-skills"></div>
         <div class="parallax_layer_front">
 
-          <h1 class="page-header">
+          <h1 class="page-header" id="skills-header">
             Skills
             <div class="underline"></div>
           </h1>
 
-          <div class="row my-5 w-75 mx-auto">
-            <div class="col-6 col-md-3 flex-center justify-content-start">
-              <div class="hexagon flex-center">
-                <i class="fas fa-flask"></i>
+          <div class="container-fluid">
+            <div class="row my-5 w-75 mx-auto">
+              <div class="col-6 col-md-3 flex-center justify-content-start">
+                <div class="hexagon flex-center">
+                  <i class="fas fa-flask"></i>
+                </div>
+                <div class="hexagon-description my-3">
+                  <h3 class="my-1">Practical</h1>
+                    <p>Every project is a solution, not a problem.</p>
+                </div>
               </div>
-              <h3 class="my-2">Practical</h1>
-                <p>Every project is a solution, not a problem.</p>
-            </div>
-            <div class="col-6 col-md-3 flex-center justify-content-start">
-              <div class="hexagon flex-center">
-                <i class="fas fa-lightbulb"></i>
+              <div class="col-6 col-md-3 flex-center justify-content-start">
+                <div class="hexagon flex-center">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="hexagon-description my-3">
+                  <h3 class="my-1">Creative</h1>
+                    <p>Every project should be visually and functionally unique.</p>
+                </div>
               </div>
-              <h3 class="my-2">Creative</h1>
-                <p>Every project should be visually and functionally unique.</p>
-            </div>
-            <div class="col-6 col-md-3 flex-center justify-content-start">
-              <div class="hexagon flex-center">
-                <i class="fas fa-hand-pointer"></i>
+              <div class="col-6 col-md-3 flex-center justify-content-start">
+                <div class="hexagon flex-center">
+                  <i class="fas fa-hand-pointer"></i>
+                </div>
+                <div class="hexagon-description my-3">
+                  <h3 class="my-1">Interactive</h1>
+                    <p>A website should do more than just present information.
+                      It should come to life.</p>
+                </div>
               </div>
-              <h3 class="my-2">Interactive</h1>
-                <p>A website should do more than just present information.
-                  It should come to life.</p>
-            </div>
-            <div class="col-6 col-md-3 flex-center justify-content-start">
-              <div class="hexagon flex-center">
-                <i class="fas fa-laptop-code"></i>
+              <div class="col-6 col-md-3 flex-center justify-content-start">
+                <div class="hexagon flex-center">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="hexagon-description my-3">
+                  <h3 class="my-1">Responsive</h1>
+                    <p>Same content across every device.</p>
+                </div>
               </div>
-              <h3 class="my-2">Responsive</h1>
-                <p>Same content across every device.</p>
             </div>
-          </div>
 
-          <div class="row my-5">
-            <div class="col-12 col-md-5 flex-center">
-              <div class="img-round flex-center">
-                <img id="profile-pic" src="images/profile.jpg" alt="Jun">
+            <div class="row my-5">
+              <div class="col-12 col-md-6 col-xl-5 flex-center">
+                <div class="slide-in slide-to-right">
+                  <div class="img-round flex-center">
+                    <img id="profile-pic" src="images/profile.jpg" alt="Jun">
+                  </div>
+                </div>
+                <div class="slide-in slide-to-right text-center">
+                  <h2 class="my-3">
+                    Jun Huang
+                  </h2>
+                  <p class="w-75 mx-auto">I'm a fullstack developer at Baruch College. I have a passion for
+                    designing
+                    visually stunning and intuitive web applications. <br>
+                    <a href="#projects"><b>Check out some of my projects!</b></a>
+                  </p>
+                </div>
               </div>
-              <h2 class="my-3">
-                Jun Huang
-              </h2>
-              <p class="w-75 text-center">I'm a fullstack developer at Baruch College. I have a passion for designing
-                visually stunning and intuitive web applications. <br>
-                <a href="#projects"><b>Check out some of my projects!</b></a>
-              </p>
+              <div class="col-12 col-md-6 col-xl-7 flex-center">
+                <div class="container slide-in slide-to-left">
+                  <!-- Nav pills -->
+                  <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="pill" href="#languages">Languages</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#frameworks">Frameworks</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#software">Software</a>
+                    </li>
+                  </ul>
 
-            </div>
-            <div class="col-12 col-md-7 flex-center">
-              <div class="container">
-                <!-- Nav pills -->
-                <ul class="nav nav-pills" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-toggle="pill" href="#languages">Languages</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#frameworks">Frameworks</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#software">Software</a>
-                  </li>
-                </ul>
-
-                <!-- Tab panes -->
-                <div class="tab-content">
-                  <div id="languages" class="container tab-pane active"><br>
-                    <h3>Languages</h3>
-                    <div class="container">
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:90%;height:30px">HTML</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:80%;height:30px">CSS/SCSS</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:60%;height:30px">JavaScript</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:50%;height:30px">Python</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:40%;height:30px">SQL</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:40%;height:30px">PHP</div>
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div id="languages" class="container tab-pane active"><br>
+                      <h3>Languages</h3>
+                      <div class="container">
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:90%;height:30px">HTML</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:80%;height:30px">CSS/SCSS</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:60%;height:30px">JavaScript</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:50%;height:30px">Python</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:40%;height:30px">SQL</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:40%;height:30px">PHP</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div id="frameworks" class="container tab-pane fade"><br>
-                    <h3>Frameworks</h3>
-                    <div class="container">
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:90%;height:30px">Bootstrap</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:60%;height:30px">Python-Django</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:50%;height:30px">React</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:40%;height:30px">Node.js</div>
-                      </div>
-                      <div class="progress my-3 invisible" style="height:30px">
-                        <div class="progress-bar" style="width:40%;height:30px">Filler</div>
-                      </div>
-                      <div class="progress my-3 invisible" style="height:30px">
-                        <div class="progress-bar" style="width:40%;height:30px">Filler</div>
+                    <div id="frameworks" class="container tab-pane fade"><br>
+                      <h3>Frameworks</h3>
+                      <div class="container">
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:90%;height:30px">Bootstrap</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:60%;height:30px">Python-Django</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:50%;height:30px">React</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:40%;height:30px">Node.js</div>
+                        </div>
+                        <div class="progress my-3 invisible" style="height:30px">
+                          <div class="progress-bar" style="width:40%;height:30px">Filler</div>
+                        </div>
+                        <div class="progress my-3 invisible" style="height:30px">
+                          <div class="progress-bar" style="width:40%;height:30px">Filler</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div id="software" class="container tab-pane fade"><br>
-                    <h3>Software</h3>
-                    <div class="container">
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:90%;height:30px">Visual Studio Code</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:80%;height:30px">Git</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:75%;height:30px">MYSQL Workbench</div>
-                      </div>
-                      <div class="progress my-3" style="height:30px">
-                        <div class="progress-bar" style="width:70%;height:30px">XAMPP</div>
-                      </div>
-                      <div class="progress my-3 invisible" style="height:30px">
-                        <div class="progress-bar" style="width:40%;height:30px">Filler</div>
-                      </div>
-                      <div class="progress my-3 invisible" style="height:30px">
-                        <div class="progress-bar" style="width:40%;height:30px">Filler</div>
+                    <div id="software" class="container tab-pane fade"><br>
+                      <h3>Software</h3>
+                      <div class="container">
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:90%;height:30px">Visual Studio Code</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:80%;height:30px">Git</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:75%;height:30px">MYSQL Workbench</div>
+                        </div>
+                        <div class="progress my-3" style="height:30px">
+                          <div class="progress-bar" style="width:70%;height:30px">XAMPP</div>
+                        </div>
+                        <div class="progress my-3 invisible" style="height:30px">
+                          <div class="progress-bar" style="width:40%;height:30px">Filler</div>
+                        </div>
+                        <div class="progress my-3 invisible" style="height:30px">
+                          <div class="progress-bar" style="width:40%;height:30px">Filler</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
 
         </div>
@@ -267,17 +282,17 @@
       <!-- PROJECTS -->
       <section class="text-center parallax_group" id="projects">
         <!-- <div class="tint"></div> -->
-        <!-- <div class="particles-bg parallax_layer_back" id="particles-projects"></div> -->
+        <div class="particles-bg parallax_layer_back" id="particles-projects"></div>
         <div class="parallax_layer_front">
-          <h1 class="page-header">
+          <h1 class="page-header" id="projects-header">
             Projects
             <div class="underline"></div>
           </h1>
 
-          <div class="container-fluid project-images mt-5">
+          <div class="container-fluid project-images my-5">
             <div class="row justify-content-center">
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img src="images/projects/queueing/kiosk-issue.png" alt="Queueing System">
+                <img class="project-image" src="images/projects/queueing/kiosk-issue.png" alt="Queueing System">
                 <div class="project-description flex-center">
                   <h2>Queueing System</h2>
                   <h4>React / JavaScript</h4>
@@ -289,7 +304,7 @@
               </div>
 
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img src="images/projects/firedrop/home.png" alt="FireDrop">
+                <img class="project-image" src="images/projects/firedrop/home.png" alt="FireDrop">
                 <div class="project-description flex-center">
                   <h2>FireDrop</h2>
                   <h4>JavaScript</h4>
@@ -301,7 +316,7 @@
               </div>
 
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img src="images/projects/ascend/preview.png" alt="Ascend Baruch">
+                <img class="project-image" src="images/projects/ascend/preview.png" alt="Ascend Baruch">
                 <div class="project-description flex-center">
                   <h2>Ascend Baruch</h2>
                   <h4>JavaScript</h4>
@@ -313,7 +328,7 @@
               </div>
 
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img src="images/projects/ezdoct_django/home.PNG" alt="EZDoct Django">
+                <img class="project-image" src="images/projects/ezdoct_django/home.PNG" alt="EZDoct Django">
                 <div class="project-description flex-center">
                   <h2>EZDoct Django</h2>
                   <h4>Python-Django</h4>
@@ -325,7 +340,7 @@
               </div>
 
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img src="images/projects/ezdoct_php/login.png" alt="EZDoct PHP">
+                <img class="project-image" src="images/projects/ezdoct_php/login.png" alt="EZDoct PHP">
                 <div class="project-description flex-center">
                   <h2>EZDoct</h2>
                   <h4>Apache / PHP</h4>
@@ -337,7 +352,7 @@
               </div>
 
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img src="images/projects/baruch_donor/preview.png" alt="Baruch Donor">
+                <img class="project-image" src="images/projects/baruch_donor/preview.png" alt="Baruch Donor">
                 <div class="project-description flex-center">
                   <h2>Baruch Donor</h2>
                   <h4>Apache / PHP</h4>
@@ -349,7 +364,7 @@
               </div>
 
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img src="images/projects/arduino_smarthome/lcd.png" alt="Arduino Smarthome">
+                <img class="project-image" src="images/projects/arduino_smarthome/lcd.png" alt="Arduino Smarthome">
                 <div class="project-description flex-center">
                   <h2>Smarthome</h2>
                   <h4>Arduino C++</h4>
@@ -379,7 +394,7 @@
       <section class="text-center parallax_group" id="contact">
         <!-- <div class="tint"></div> -->
         <div class="particles-bg" id="particles-contact"></div>
-        <h1 class="page-header mb-5">Contact</h1>
+        <h1 class="page-header mb-5" id="contact-header">Contact</h1>
 
         <form id="contact-form" class="mx-auto" action="https://formspree.io/xbjyywwg" target="_blank" method="POST">
 
@@ -401,7 +416,7 @@
           <a href="https://www.linkedin.com/in/jun-huang1/" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/junh4533" target="_blank"><i class="fab fa-github-square"></i></a>
         </div>
-        
+
 
         <footer>
           <p><b>Jun Huang</b> &copy; 2020</p>

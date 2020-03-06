@@ -1,10 +1,16 @@
 #projects {
+    #particles-projects {
+        // position: relative;
+        top: 50%;
+        height: 50%;
+    }
     .project-images {
 
         img {
             width: 100%;
             height: 100%;
             border-radius: $border-radius;
+            position: relative;
         }
 
         .project-description {

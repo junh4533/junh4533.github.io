@@ -1,5 +1,15 @@
 #skills {
     // background: rgb(25,25,25);
+    .slide-in {
+        position: relative;   
+        opacity: 0;
+    }
+    // .slide-to-right{
+    //     transform: translateX(-100vw);
+    // }
+    // .slide-to-left{
+    //     transform: translateX(100vw);
+    // } 
 
     .img-round {
         width: 400px;

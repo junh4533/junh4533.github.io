@@ -6,16 +6,29 @@
 
     .container {
         position: relative;
-        z-index: 999;
-        color: rgb(250, 134, 7);
+        z-index: 99999;
+        color: $slate-blue;
         font-weight: 900;
-        // font-size: 10em;
+        font-size: 1em !important;
     }
 
-    #social-media-icons {
-        color: white;
-        font-size: 300%;
+    #hero-text {
+        h1 {
+            font-size: 5rem !important;
+        }
+        i {
+            font-size: 250%;
+        }
     }
+
+    #guess_horoscope {
+        display: none; 
+    }
+
+    // #social-media-icons {
+    //     color: white;
+    //     font-size: 300%;
+    // }
 
     #starfield, #sagittarius {
         width: 100%;
