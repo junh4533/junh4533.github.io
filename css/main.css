@@ -53,7 +53,7 @@ a {
   color: #5f5fc2; }
   a:hover {
     text-decoration: none;
-    color: #282852; }
+    color: #7e7ef8; }
 
 .flex-center {
   display: flex;
@@ -94,18 +94,17 @@ a {
 
 section {
   position: relative;
-  min-height: 100vh;
-  scroll-behavior: smooth; }
+  min-height: 100vh; }
 
 #top-nav {
   background: rgba(0, 0, 0, 0.85); }
 
 .hexagon {
   position: relative;
-  margin: 0.5rem auto;
-  width: 5rem;
-  height: 8.66rem;
-  border-radius: 0.5rem / 0.25rem;
+  margin: 0.5em auto;
+  width: 5em;
+  height: 8.66em;
+  border-radius: 0.5em / 0.25em;
   background: #5f5fc2;
   transition: opacity .5s;
   transform: rotate(90deg);
@@ -261,18 +260,19 @@ section {
       #about #food-gallery .parent .div10 {
         grid-area: 7 / 2 / 8 / 3; } }
 
-#skills .slide-in {
-  position: relative;
-  opacity: 0; }
-
-#skills .img-round {
-  width: 400px;
-  height: 400px;
+#skills #circle-img {
+  width: 15em;
+  height: 15em;
   border-radius: 50%;
   overflow: hidden; }
-  #skills .img-round img {
+  #skills #circle-img #profile-pic {
     width: 100%;
     height: auto; }
+
+@media only screen and (min-width: 1440px) {
+  #skills #circle-img {
+    width: 20em;
+    height: 20em; } }
 
 #skills .progress {
   font-size: 100%;

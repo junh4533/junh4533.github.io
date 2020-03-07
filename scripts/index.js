@@ -1,5 +1,11 @@
 $(document).ready(() => {
 
+    const circleImg = document.getElementById("circle-img");
+    console.log(circleImg.offsetWidth);
+    circleImg .offsetWidth = "100%";
+    circleImg.offsetHeight = circleImg.clientWidth;
+    console.log(circleImg.offsetHeight);
+
     const particlesConfig = {
         "particles": {
             "number": {
@@ -333,9 +339,9 @@ $(document).ready(() => {
             duration: 0,
         })
         .setTween(skillsTweenTimeline)
-        .addIndicators({
-            name: "skills"
-        })
+        // .addIndicators({
+        //     name: "skills"
+        // })
         .addTo(controller);
 
     ////////////////////// end skills section //////////////////////
@@ -362,9 +368,9 @@ $(document).ready(() => {
             duration: 0,
         })
         .setTween(projectsTweenTimeline)
-        .addIndicators({
-            name: "projects"
-        })
+        // .addIndicators({
+        //     name: "projects"
+        // })
         .addTo(controller);
 
     ////////////////////// End Projects section //////////////////////
@@ -421,9 +427,9 @@ $(document).ready(() => {
             duration: 0,
         })
         .setTween(contactTweenTimeline)
-        .addIndicators({
-            name: "contact"
-        })
+        // .addIndicators({
+        //     name: "contact"
+        // })
         .addTo(controller);
 
     ////////////////////// End Projects section //////////////////////
@@ -673,7 +679,7 @@ $(document).ready(() => {
             switch (e.target.id.toString()) {
 
                 case "QueueingSystem":
-                    images = ["kiosk-issue", "kiosk-swipe", "kiosk-text", "kiosk-wait", "order", "portal", "performance"],
+                    images = ["issue", "swipe", "text", "wait", "order", "order_video", "order_video2", "queue", "portal", "dashboard", "customize", "reports"]
                         heading = "Queueing System",
                         subHeading = "Queue Management and Appointment Scheduling",
                         desc = "Managing long lines of customers with pen and paper can be a daunting task. With a queueing system, customers can schedule an appointment and receive status updates with ease.";
@@ -717,6 +723,17 @@ $(document).ready(() => {
                     addGithubIcon("https://github.com/junh4533/masters");
 
                     break;
+                case "mediaManagement":
+                    images = ["login", "admin", "add_tv", "configure"],
+                        heading = "Baruch Media Management - Django",
+                        subHeading = "Video Streaming",
+                        desc = "This app was created for Baruch's marketing team so they can easily upload, delete, and manage Baruch's promotional videos.";
+
+                    appendProjectImages("media_management", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/masters");
+
+                    break;
                 case "EZDoctPHP":
                     images = ["doctor", "assistant", "doctor", "patient", "db", "xampp"],
                         heading = "EZDoct - PHP",
@@ -729,7 +746,7 @@ $(document).ready(() => {
 
                     break;
                 case "BaruchDonorPHP":
-                    images = ["home", "view_donors", "view_pc"],
+                    images = ["preview", "home", "view_donors", "view_pc"],
                         heading = "Baruch Donor",
                         subHeading = "Baruch Donor Appreciation",
                         desc = "Baruch decided to honor their supporters by adding their names to desktop backgrounds across the computer labs. This application manages donor information and automatically generates desktop backgrounds.";

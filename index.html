@@ -124,7 +124,7 @@
           </h1>
 
           <div class="container-fluid">
-            <div class="row my-5 w-75 mx-auto">
+            <div class="row my-5">
               <div class="col-6 col-md-3 flex-center justify-content-start">
                 <div class="hexagon flex-center">
                   <i class="fas fa-flask"></i>
@@ -167,7 +167,7 @@
             <div class="row my-5">
               <div class="col-12 col-md-6 col-xl-5 flex-center">
                 <div class="slide-in slide-to-right">
-                  <div class="img-round flex-center">
+                  <div class="flex-center" id="circle-img">
                     <img id="profile-pic" src="images/profile.jpg" alt="Jun">
                   </div>
                 </div>
@@ -292,7 +292,7 @@
           <div class="container-fluid project-images my-5">
             <div class="row justify-content-center">
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="images/projects/queueing/kiosk-issue.png" alt="Queueing System">
+                <img class="project-image" src="images/projects/queueing/issue.png" alt="Queueing System">
                 <div class="project-description flex-center">
                   <h2>Queueing System</h2>
                   <h4>React / JavaScript</h4>
@@ -328,11 +328,23 @@
               </div>
 
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="images/projects/ezdoct_django/home.PNG" alt="EZDoct Django">
+                <img class="project-image" src="images/projects/ezdoct_django/home.png" alt="EZDoct Django">
                 <div class="project-description flex-center">
                   <h2>EZDoct Django</h2>
                   <h4>Python-Django</h4>
                   <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="EZDoctDjango"
+                    data-toggle="modal" data-target="#project-modal">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-4 my-3">
+                <img class="project-image" src="images/projects/media_management/admin.png" alt="Media Management">
+                <div class="project-description flex-center">
+                  <h2>Baruch Media Management</h2>
+                  <h4>Python - Django</h4>
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="mediaManagement"
                     data-toggle="modal" data-target="#project-modal">
                     Learn More
                   </button>
@@ -377,16 +389,6 @@
 
             </div>
           </div>
-
-          <!-- <h3>Appointment Scheduling</h3>
-          <h3>Queueing Software</h3>
-          <h3>Video Upload</h3>
-          <h3>EZDoct</h3>
-          <h3>Arduino Smarthome</h3>
-          <h3>Ascend Baruch</h3>
-          <h3>Baruch Donor</h3>
-          <h3>Firedrop</h3> -->
-
         </div>
       </section>
 

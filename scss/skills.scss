@@ -1,25 +1,20 @@
 #skills {
-    // background: rgb(25,25,25);
-    .slide-in {
-        position: relative;   
-        opacity: 0;
-    }
-    // .slide-to-right{
-    //     transform: translateX(-100vw);
-    // }
-    // .slide-to-left{
-    //     transform: translateX(100vw);
-    // } 
-
-    .img-round {
-        width: 400px;
-        height: 400px;
+    #circle-img {
+        width: 15em;
+        height: 15em;
         border-radius: 50%;
         overflow: hidden;
 
-        img {
+        #profile-pic {
             width: 100%;
             height: auto;
+        }
+    }
+
+    @media only screen and (min-width:1440px) {
+        #circle-img {
+            width: 20em;
+            height: 20em;
         }
     }
 
