@@ -310,7 +310,7 @@ $(document).ready(() => {
 
     const projectsTweenTimeline = new TimelineMax().add([
         headerSlideIn("#projects-header", projectsEasing)
-    ], 0).add(
+    ], 0).add([
         TweenMax.fromTo([".project-image"], 1, {
             // scale: 0, 
             opacity: 0,
@@ -321,7 +321,7 @@ $(document).ready(() => {
             translateY: 0,
             ease: projectsEasing
         })
-    );
+    ], 0);
 
     new ScrollMagic.Scene({
             triggerElement: "#projects",
