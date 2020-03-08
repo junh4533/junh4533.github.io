@@ -298,10 +298,9 @@ $(document).ready(() => {
             duration: 0,
         })
         .setTween(skillsTweenTimeline)
-        // .addIndicators({
-        //     name: "skills"
-        // })
         .addTo(controller);
+
+    skillsTweenTimeline.progress(1).progress(0);
 
     ////////////////////// end skills section //////////////////////
 
@@ -311,25 +310,22 @@ $(document).ready(() => {
 
     const projectsTweenTimeline = new TimelineMax().add(
         TweenMax.fromTo([".project-image"], 1, {
-            scale: 0,
+            // scale: 0, 
             opacity: 0,
-            translateY: (vh / 2)
+            translateY: (vh / 5)
         }, {
-            scale: 1,
+            // scale: 1,
             opacity: 1,
             translateY: 0,
             ease: projectsEasing
         })
-    )
+    );
 
     new ScrollMagic.Scene({
             triggerElement: "#projects",
             duration: 0,
         })
         .setTween(projectsTweenTimeline)
-        // .addIndicators({
-        //     name: "projects"
-        // })
         .addTo(controller);
 
     ////////////////////// End Projects section //////////////////////
@@ -386,10 +382,12 @@ $(document).ready(() => {
             duration: 0,
         })
         .setTween(contactTweenTimeline)
-        // .addIndicators({
-        //     name: "contact"
-        // })
         .addTo(controller);
+    
+    // preload animations by running them once first 
+    skillsTweenTimeline.progress(1).progress(0);
+    projectsTweenTimeline.progress(1).progress(0);
+    contactTweenTimeline.progress(1).progress(0);
 
     ////////////////////// End Projects section //////////////////////
 
@@ -584,7 +582,7 @@ $(document).ready(() => {
                 })
             ], 0)
         }
-        
+
         new ScrollMagic.Scene({
                 triggerElement: "#hero",
                 duration: 0,
@@ -690,7 +688,7 @@ $(document).ready(() => {
 
             let slideImg = '<div class="carousel-item">' +
                 '<img class="w-100 h-100" src="images/projects/' +
-                parentFolder + '/' + image + '.png"' + ' alt="' + image + '">' +
+                parentFolder + '/' + image + '.jpg"' + ' alt="' + image + '">' +
                 '</div>';
 
             document.getElementById("projectSlides").insertAdjacentHTML('beforeend', slideImg);
