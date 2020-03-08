@@ -1,10 +1,7 @@
 $(document).ready(() => {
 
-    const circleImg = document.getElementById("circle-img");
-    console.log(circleImg.offsetWidth);
-    circleImg .offsetWidth = "100%";
-    circleImg.offsetHeight = circleImg.clientWidth;
-    console.log(circleImg.offsetHeight);
+    const vw = document.body.clientWidth;
+    const vh = document.body.clientHeight;
 
     const particlesConfig = {
         "particles": {
@@ -228,50 +225,12 @@ $(document).ready(() => {
         "retina_detect": true
     }
 
-    particlesJS("particles-about", particlesConfig);
-    // particlesJS("particles-skills", particlesConfig);
+    // particlesJS("particles-about", particlesConfig);
+    particlesJS("particles-skills", particlesConfig);
     particlesJS("particles-projects", particlesConfig);
     particlesJS("particles-contact", particlesConfigContact);
 
     const controller = new ScrollMagic.Controller(); // initialize scrollmagic
-
-    const images = [
-        "../images/flipbook/jump1.jpg",
-        "../images/flipbook/jump2.jpg",
-        "../images/flipbook/jump3.jpg",
-        "../images/flipbook/jump4.jpg",
-        "../images/flipbook/jump5.jpg",
-        "../images/flipbook/jump6.jpg",
-    ];
-
-    let obj = {
-        curImg: 0
-    };
-
-    // create tween for table tennis image animation
-    let TTtween = TweenMax.to(obj, 0.5, {
-        curImg: images.length - 1, // animate propery curImg to number of images
-        roundProps: "curImg", // only integers so it can be used as an array index
-        immediateRender: true, // load first image automatically
-        ease: Linear.easeNone, // show every image the same ammount of time
-        onUpdate: () => {
-            $("#flip-img").attr("src", images[obj.curImg]); // set the image source
-        }
-    });
-
-    new ScrollMagic.Scene({
-            triggerElement: "#about",
-            duration: '60%',
-            triggerHook: .6
-        })
-        .setTween(TTtween)
-        .addIndicators({
-            name: "table tennis"
-        })
-        .addTo(controller);
-
-    const vw = document.body.clientWidth;
-    const vh = document.body.clientHeight;
 
     const headerSlideIn = (header, easing) => {
         return TweenMax.fromTo(header, 1, {
@@ -413,7 +372,7 @@ $(document).ready(() => {
             translateX: 0,
             ease: contactEasing
         })
-    ], 1).add([
+    ], .5).add([
         TweenMax.fromTo(["footer"], 1, {
             opacity: 0,
         }, {
@@ -550,70 +509,166 @@ $(document).ready(() => {
 
     //////////////////////////// STARFIELD ////////////////////////////
 
-    document.body.addEventListener("mousemove", function handler(e) {
+    toggleScroll = (on_off) => {
+        const container = document.getElementById("parallaxContainer");
+        on_off ? container.style.overflowY = "auto" : container.style.overflowY = "hidden";
+    }
 
-        //if mouse moves the minimum x or y distance
-        if (Math.abs(e.pageX - mouseX) > mouseTravel || Math.abs(e.pageY - mouseY) > mouseTravel) {
-            mouseX = e.pageX;
-            mouseY = e.pageY;
+    toggleHeroText = (on_off) => {
+        const heroText = document.getElementById("hero-text");
+        const heroTint = document.getElementById("hero-tint");
+        const guessButton = document.getElementById("guess_horoscope");
+        const horoscope = document.getElementById("horoscope");
 
-            animateCanvas(starfield,
-                getRandom(-50, 50) + e.pageX,
-                getRandom(-50, 50) + e.pageY,
-                Math.random() * 2,
-                getRandom(50, 100),
-                getRandom(70, 100),
-                3,
-                500);
+        let heroTweenTimeline;
+        const heroEasing = "circ.inOut";
+
+        if (on_off) {
+            // toggle text/tint ON
+            heroTweenTimeline = new TimelineMax().add([
+                TweenMax.fromTo([guessButton], 1, {
+                    visibility: "hidden",
+                    opacity: 0
+                }, {
+                    visibility: "hidden",
+                    opacity: 0,
+                    ease: heroEasing
+                })
+            ], 0).add([
+                TweenMax.fromTo([heroText], 1, {
+                    opacity: 0,
+                    display: "none"
+                }, {
+                    opacity: 1,
+                    display: "flex",
+                    ease: heroEasing
+                })
+            ], 0).add([
+                TweenMax.fromTo([horoscope], 1, {
+                    opacity: 0,
+                    display: "none"
+                }, {
+                    opacity: 1,
+                    display: "block",
+                    ease: heroEasing
+                })
+            ], 0).add([
+                TweenMax.fromTo([heroTint], 1, {
+                    opacity: 0,
+                    display: "none"
+                }, {
+                    opacity: .95,
+                    display: "flex",
+                    ease: heroEasing
+                })
+            ], 0)
+        } else {
+            // toggle text/tint OFF
+            heroTweenTimeline = new TimelineMax().add([
+                TweenMax.fromTo([heroText], 1, {
+                    opacity: 1,
+                    display: "flex"
+                }, {
+                    opacity: 0,
+                    display: "none",
+                    ease: heroEasing
+                })
+            ], 0).add([
+                TweenMax.fromTo([heroTint], 1, {
+                    opacity: .95,
+                    display: "block"
+                }, {
+                    opacity: 0,
+                    display: "none",
+                    ease: heroEasing
+                })
+            ], 0)
         }
+        
+        new ScrollMagic.Scene({
+                triggerElement: "#hero",
+                duration: 0,
+            })
+            .setTween(heroTweenTimeline)
+            .addTo(controller);
+    }
 
-        // check each star coordinate everytime the mouse moves 
-        for (let star in star_coordinates) {
-            let starX = star_coordinates[star][0] * vw;
-            let starY = star_coordinates[star][1] * vh;
+    startGame = () => {
+        document.body.addEventListener("mousemove", mouseMoveHandler = (e) => {
 
-            // if mouse is within mouseDistance of star coordinate
-            if (Math.abs(e.pageX - starX) <= mouseDistance && Math.abs(e.pageY - starY) <= mouseDistance) {
-                animateCanvas(sagittarius,
-                    starX,
-                    starY,
-                    8,
+            //if mouse moves the minimum x or y distance
+            if (Math.abs(e.pageX - mouseX) > mouseTravel || Math.abs(e.pageY - mouseY) > mouseTravel) {
+                mouseX = e.pageX;
+                mouseY = e.pageY;
+
+                animateCanvas(starfield,
+                    getRandom(-50, 50) + e.pageX,
+                    getRandom(-50, 50) + e.pageY,
+                    Math.random() * 2,
                     getRandom(50, 100),
-                    getRandom(85, 100),
-                    1,
-                    0);
-                // delete star so it doesn't redraw on hover
-                delete star_coordinates[star];
+                    getRandom(70, 100),
+                    3,
+                    500);
+            }
 
-                // check sagitarrius lines for star coordinates that are removed (hovered over)
-                for (let line_coordinate in sagittarius_lines) {
-                    let line_coordinate2 = sagittarius_lines[line_coordinate];
-                    // if both coordinates are hovered over, form a line connecting the two
-                    if (!(line_coordinate in star_coordinates) && !(line_coordinate2 in star_coordinates)) {
-                        let starX1 = star_coordinates2[line_coordinate][0] * vw,
-                            starY1 = star_coordinates2[line_coordinate][1] * vh,
-                            starX2 = star_coordinates2[line_coordinate2][0] * vw,
-                            starY2 = star_coordinates2[line_coordinate2][1] * vh;
-                        ctx.beginPath();
-                        ctx.lineWidth = 3;
-                        ctx.strokeStyle = "hsl(240, 90%, 90%)";
-                        ctx.moveTo(starX1, starY1);
-                        ctx.lineTo(starX2, starY2);
-                        ctx.stroke();
-                        ctx.closePath();
+            // check each star coordinate everytime the mouse moves 
+            for (let star in star_coordinates) {
+                let starX = star_coordinates[star][0] * vw;
+                let starY = star_coordinates[star][1] * vh;
+
+                // if mouse is within mouseDistance of star coordinate
+                if (Math.abs(e.pageX - starX) <= mouseDistance && Math.abs(e.pageY - starY) <= mouseDistance) {
+                    animateCanvas(sagittarius,
+                        starX,
+                        starY,
+                        8,
+                        getRandom(50, 100),
+                        getRandom(85, 100),
+                        1,
+                        0);
+                    // delete star so it doesn't redraw on hover
+                    delete star_coordinates[star];
+
+                    // check sagitarrius lines for star coordinates that are removed (hovered over)
+                    for (let line_coordinate in sagittarius_lines) {
+                        let line_coordinate2 = sagittarius_lines[line_coordinate];
+                        // if both coordinates are hovered over, form a line connecting the two
+                        if (!(line_coordinate in star_coordinates) && !(line_coordinate2 in star_coordinates)) {
+                            let starX1 = star_coordinates2[line_coordinate][0] * vw,
+                                starY1 = star_coordinates2[line_coordinate][1] * vh,
+                                starX2 = star_coordinates2[line_coordinate2][0] * vw,
+                                starY2 = star_coordinates2[line_coordinate2][1] * vh;
+                            ctx.beginPath();
+                            ctx.lineWidth = 3;
+                            ctx.strokeStyle = "hsl(240, 90%, 90%)";
+                            ctx.moveTo(starX1, starY1);
+                            ctx.lineTo(starX2, starY2);
+                            ctx.stroke();
+                            ctx.closePath();
+                        }
                     }
                 }
+
+                // When user finds all of the stars
+                if (Object.keys(star_coordinates).length === 0) {
+                    console.log("Found all stars");
+                    toggleHeroText(true);
+                    toggleScroll(true); // prevents scrolling when playing game 
+                    e.currentTarget.removeEventListener(e.type, mouseMoveHandler);
+                }
+
             }
 
-            // When user finds all of the stars
-            if (Object.keys(star_coordinates).length === 0) {
-                console.log("Found all stars");
-                e.currentTarget.removeEventListener(e.type, handler);
-            }
+        });
+    }
 
-        }
-
+    document.getElementById('guess_horoscope').addEventListener("click", () => {
+        console.log("game start");
+        toggleHeroText(false);
+        toggleScroll(false); // prevents scrolling when playing game 
+        startGame();
     });
+
 
     const addText = (heading, subheading, description) => {
         const modalBody = document.getElementById('modal-body'),
@@ -680,7 +735,7 @@ $(document).ready(() => {
 
                 case "QueueingSystem":
                     images = ["issue", "swipe", "text", "wait", "order", "order_video", "order_video2", "queue", "portal", "dashboard", "customize", "reports"]
-                        heading = "Queueing System",
+                    heading = "Queueing System",
                         subHeading = "Queue Management and Appointment Scheduling",
                         desc = "Managing long lines of customers with pen and paper can be a daunting task. With a queueing system, customers can schedule an appointment and receive status updates with ease.";
 
@@ -731,18 +786,7 @@ $(document).ready(() => {
 
                     appendProjectImages("media_management", images);
                     addText(heading, subHeading, desc);
-                    addGithubIcon("https://github.com/junh4533/masters");
-
-                    break;
-                case "EZDoctPHP":
-                    images = ["doctor", "assistant", "doctor", "patient", "db", "xampp"],
-                        heading = "EZDoct - PHP",
-                        subHeading = "Appointment Scheduling",
-                        desc = "One of the first web application I've created. I was beginning to understand how fullstack development involves front end UI/UX design and backend database engineering.";
-
-                    appendProjectImages("ezdoct_php", images);
-                    addText(heading, subHeading, desc);
-                    addGithubIcon("https://github.com/junh4533/ezdoc");
+                    addGithubIcon("https://github.com/junh4533/BCTC");
 
                     break;
                 case "BaruchDonorPHP":
@@ -768,14 +812,7 @@ $(document).ready(() => {
 
                     break;
             }
-
-
         }
     );
-
-    // $("#contact-form").onsubmit = () => {
-    //     window.location.href = "http://www.jsfiddle.net";
-    //     return false;
-    // };
 
 });

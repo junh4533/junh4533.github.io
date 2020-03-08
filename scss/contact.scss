@@ -1,12 +1,11 @@
 #contact {
     color: white;
-    // background: rgb(25,25,25);
     background: $font-color;
 
     #contact-form {
         position: relative;
         border-radius: $border-radius;
-        width: 35%;
+        width: 75%;
         height: 50vh;
 
         input,
@@ -71,5 +70,21 @@
         position: absolute;
         top: 0;
         left: 0;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #contact {
+        #contact-form {
+            width: 45%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #contact {
+        #contact-form {
+            width: 35%;
+        }
     }
 }

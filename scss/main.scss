@@ -9,16 +9,8 @@ html {
     box-sizing: border-box;
     overflow: hidden; //HIDES SECOND SCROLLBAR FROM PARALLAX
     -webkit-font-smoothing: antialiased;
-    font-size: 18px;
+    font-size: 16px;
     font-family: $font-family;
-    // scroll-behavior: smooth;
-}
-
-@media only screen and (max-width: 769px) {
-    body,
-    html {
-        font-size: 16px; //default browser font size
-    }
 }
 
 .main-content {
@@ -88,7 +80,7 @@ a {
     height: 100%;
     left: 0;
     top: 0;
-    background: rgba(0, 0, 0, .9);
+    background: rgba(0, 0, 0, .95);
     z-index: 501;
 }
 
@@ -121,14 +113,15 @@ section {
 
 #top-nav {
     background: rgba(0, 0, 0, .85);
+    font-size: 135%;
 }
 
-// @media only screen and (max-width: 769px) {
-//     #top-nav {
-//         justify-content: center;
-//         // height: 100vh;
-//     }
-// }
+@media only screen and (min-width: 768px) {
+    body,
+    html {
+        font-size: 18px;
+    }
+}
 
 @import 'hexagon.scss';
 @import 'parallax';

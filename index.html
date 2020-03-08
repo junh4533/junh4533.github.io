@@ -51,44 +51,46 @@
   <script src="scripts/index.js"></script>
 </head>
 
-<body data-spy="scroll" data-target="#top-nav" data-offset="50">
-  <div class="parallax">
+<body>
+  <div class="parallax" id="parallaxContainer">
 
     <!-- HERO -->
     <section class="flex-center" id="hero">
 
-      <div class="container flex-center" id="hero-text">
+      <div class="container flex-center text-center" id="hero-text">
         <h1>Hi! My name is Jun Huang.</h1> <br />
-        <h1>Sagitarrius</h1>
-        <a href="#about"><i class="fas fa-chevron-circle-down mt-5 fa-2x" aria-hidden="true"></i></a>
-      </div>
+        <h2>I am a full-stack developer.</h2>
+        <h2 id="horoscope">Sagitarrius</h2>
 
-      <div class="container flex-center">
-        <button type="button" class="btn btn-outline-light mt-4" id="guess_horoscope">
+        <button type="button" class="btn btn-outline-light mt-4 align-top" id="guess_horoscope">
           Guess my Horoscope
         </button>
+        <a href="#skills" id="scroll-down" class="align-bottom"><i class="fas fa-chevron-circle-down fa-2x" aria-hidden="true"></i></a>
       </div>
 
-      <canvas id="starfield" width="750" height="500"></canvas>
-      <canvas id="sagittarius" width="800" height="800"></canvas>
+      <canvas id="starfield"></canvas>
+      <canvas id="sagittarius"></canvas>
 
-      <div class="tint"></div>
-
+      <div class="tint" id="hero-tint"></div>
+      
     </section>
 
     <!-- CONTAINER FOR SCROLLSPY -->
     <div class="main-content">
 
       <!-- FIXED TOP NAVBAR -->
-      <nav id="top-nav" class="navbar navbar-expand-sm navbar-dark sticky-top">
+      <nav id="top-nav" class="navbar navbar-expand navbar-dark sticky-top">
         <!-- <a class="navbar-brand" href="#">Jun Huang</a> -->
         <ul class="navbar-nav" role="tablist">
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#hero">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#skills">Skills</a>
+            <a class="nav-link" href="#skills">About</a>
           </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#projects">Projects</a>
           </li>
@@ -99,7 +101,7 @@
       </nav>
 
       <!-- ABOUT -->
-      <section class="text-center parallax_group" id="about">
+      <!-- <section class="text-center parallax_group" id="about">
         <div class="particles-bg parallax_layer_back" id="particles-about"></div>
 
         <div class="parallax_layer_front">
@@ -111,7 +113,7 @@
           <img id="flip-img" src="images/flipbook/jump1.jpg" alt="flip-img"> <br>
           <h3>Huge Fan of Table Tennis</h3>
         </div>
-      </section>
+      </section> -->
 
       <!-- SKILLS -->
       <section class="text-center parallax_group" id="skills">
@@ -119,7 +121,7 @@
         <div class="parallax_layer_front">
 
           <h1 class="page-header" id="skills-header">
-            Skills
+            About
             <div class="underline"></div>
           </h1>
 
@@ -352,18 +354,6 @@
               </div>
 
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="images/projects/ezdoct_php/login.png" alt="EZDoct PHP">
-                <div class="project-description flex-center">
-                  <h2>EZDoct</h2>
-                  <h4>Apache / PHP</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="EZDoctPHP"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-6 col-xl-4 my-3">
                 <img class="project-image" src="images/projects/baruch_donor/preview.png" alt="Baruch Donor">
                 <div class="project-description flex-center">
                   <h2>Baruch Donor</h2>
@@ -398,7 +388,7 @@
         <div class="particles-bg" id="particles-contact"></div>
         <h1 class="page-header mb-5" id="contact-header">Contact</h1>
 
-        <form id="contact-form" class="mx-auto" action="https://formspree.io/xbjyywwg" target="_blank" method="POST">
+        <form id="contact-form" class="mx-auto" action="https://formspree.io/xjvrdyld" target="_blank" method="POST">
 
           <div class="form-group">
             <input type="email" class="form-control" placeholder="Your Email" id="email" name="_replyto" required>
@@ -419,7 +409,6 @@
           <a href="https://github.com/junh4533" target="_blank"><i class="fab fa-github-square"></i></a>
         </div>
 
-
         <footer>
           <p><b>Jun Huang</b> &copy; 2020</p>
         </footer>
@@ -430,7 +419,7 @@
 
   </div>
 
-  <!-- The Modal -->
+  <!-- Projects Modal -->
   <div class="modal fade" id="project-modal">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">

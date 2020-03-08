@@ -1,7 +1,9 @@
 #about {
+    overflow: auto;
     #food-gallery {
         min-height: 150vh;
         background: pink;
+        
 
         img {
             max-width: 100%;
@@ -19,7 +21,6 @@
                 background-size: cover;
                 width: 100%;
                 height: 100%;
-                // position: absolute;
             }
 
             .div1 {

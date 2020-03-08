@@ -19,16 +19,18 @@
         i {
             font-size: 250%;
         }
+        height: 100vh;
     }
 
-    #guess_horoscope {
+    #horoscope {
         display: none; 
     }
 
-    // #social-media-icons {
-    //     color: white;
-    //     font-size: 300%;
-    // }
+    #scroll-down {
+        position: absolute;
+        bottom: 2em;
+        // margin-top: 20vh;
+    }
 
     #starfield, #sagittarius {
         width: 100%;
