@@ -308,7 +308,9 @@ $(document).ready(() => {
 
     const projectsEasing = "circ.inOut";
 
-    const projectsTweenTimeline = new TimelineMax().add(
+    const projectsTweenTimeline = new TimelineMax().add([
+        headerSlideIn("#projects-header", projectsEasing)
+    ], 0).add(
         TweenMax.fromTo([".project-image"], 1, {
             // scale: 0, 
             opacity: 0,

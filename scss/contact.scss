@@ -2,6 +2,16 @@
     color: white;
     background: $font-color;
 
+    #contact-header {
+        .underline {
+            background: $slate-blue;
+
+            &:before, &:after {
+                background: $slate-blue;
+            }
+        }
+    }
+
     #contact-form {
         position: relative;
         border-radius: $border-radius;
