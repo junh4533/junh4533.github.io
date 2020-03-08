@@ -742,7 +742,7 @@ $(document).ready(() => {
 
                     break;
                 case "FireDrop":
-                    images = ["home"],
+                    images = ["home", "drops", "raffle", "merchandise", "about"],
                         heading = "Fire Drop",
                         subHeading = "Online Sneaker Marketplace",
                         desc = "FireDrop is a static website with front-end form validation. I created this as my final project for a web design class at Baruch.";

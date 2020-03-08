@@ -162,6 +162,10 @@ body {
     height: auto;
 }
 
+.t-shirt-caption {
+    top: 15% !important;
+}
+
 .newsletter-subscribe {
     color: white;
     /* background-color:#fff; */
