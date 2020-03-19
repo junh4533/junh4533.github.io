@@ -88,10 +88,6 @@ a {
   background: rgba(0, 0, 0, 0.95);
   z-index: 501; }
 
-section {
-  position: relative;
-  min-height: 100vh; }
-
 #top-nav {
   background: rgba(0, 0, 0, 0.85);
   font-size: 135%; }
@@ -191,83 +187,18 @@ section {
     top: 0;
     z-index: 500; }
 
-#about {
-  overflow: auto; }
-  #about #food-gallery {
-    min-height: 150vh;
-    background: pink; }
-    #about #food-gallery img {
-      max-width: 100%; }
-    #about #food-gallery .parent {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(8, 1fr);
-      grid-column-gap: 0;
-      grid-row-gap: 0; }
-      #about #food-gallery .parent div {
-        background-position: center;
-        background-size: cover;
-        width: 100%;
-        height: 100%; }
-      #about #food-gallery .parent .div1 {
-        grid-area: 1 / 1 / 3 / 3;
-        transform: "translateX(-200px)"; }
-      #about #food-gallery .parent .test-img {
-        position: absolute; }
-      #about #food-gallery .parent .div2 {
-        grid-area: 1 / 3 / 3 / 5;
-        background-image: url("../images/food/salmon.jpg"); }
-      #about #food-gallery .parent .div3 {
-        grid-area: 1 / 5 / 3 / 7;
-        background-image: url("../images/food/hargow.jpg"); }
-      #about #food-gallery .parent .div4 {
-        grid-area: 3 / 1 / 5 / 3;
-        background-image: url("../images/food/ice-cream.jpg"); }
-      #about #food-gallery .parent .div5 {
-        grid-area: 3 / 5 / 7 / 7;
-        background-image: url("../images/food/fish.jpg"); }
-      #about #food-gallery .parent .div6 {
-        grid-area: 3 / 3 / 5 / 5;
-        background-image: url("../images/food/noodles.jpg"); }
-      #about #food-gallery .parent .div7 {
-        grid-area: 5 / 1 / 7 / 3;
-        background-image: url("../images/food/sashimi.jpg"); }
-      #about #food-gallery .parent .div8 {
-        grid-area: 5 / 3 / 7 / 5;
-        background-image: url("../images/food/foie-gras.jpg"); }
-      #about #food-gallery .parent .div9 {
-        grid-area: 7 / 1 / 9 / 4;
-        background-image: url("../images/food/eel.jpg"); }
-      #about #food-gallery .parent .div10 {
-        grid-area: 7 / 4 / 9 / 7;
-        background-image: url("../images/food/short-ribs.jpg"); }
-    @media only screen and (max-width: 768px) {
-      #about #food-gallery .parent {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(7, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px; }
-        #about #food-gallery .parent .div1 {
-          grid-area: 1 / 1 / 2 / 2; }
-        #about #food-gallery .parent .div2 {
-          grid-area: 1 / 2 / 2 / 3; }
-        #about #food-gallery .parent .div3 {
-          grid-area: 2 / 1 / 3 / 2; }
-        #about #food-gallery .parent .div4 {
-          grid-area: 3 / 1 / 4 / 2; }
-        #about #food-gallery .parent .div5 {
-          grid-area: 2 / 2 / 4 / 3; }
-        #about #food-gallery .parent .div6 {
-          grid-area: 4 / 1 / 5 / 2; }
-        #about #food-gallery .parent .div7 {
-          grid-area: 4 / 2 / 5 / 3; }
-        #about #food-gallery .parent .div8 {
-          grid-area: 5 / 1 / 7 / 3; }
-        #about #food-gallery .parent .div9 {
-          grid-area: 7 / 1 / 8 / 2; }
-        #about #food-gallery .parent .div10 {
-          grid-area: 7 / 2 / 8 / 3; } }
+#about #particles-about {
+  top: 50%;
+  height: 50%; }
+
+#about .about-description {
+  padding: 2em 2em 2em 2em; }
+
+#about #fun-facts ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  line-height: 2em; }
 
 #skills #circle-img {
   width: 15em;
@@ -398,7 +329,8 @@ section {
 
 #contact {
   color: white;
-  background: #17191b; }
+  background: #17191b;
+  min-height: 100vh; }
   #contact #contact-header .underline {
     background: #5f5fc2; }
     #contact #contact-header .underline:before, #contact #contact-header .underline:after {
@@ -441,7 +373,7 @@ section {
     bottom: 1%; }
     #contact .contact-icons a {
       display: block;
-      font-size: 300%; }
+      font-size: 250%; }
   #contact footer {
     position: absolute;
     font-size: 150%;

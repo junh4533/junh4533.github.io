@@ -3,7 +3,7 @@
 
 <head>
   <title>Jun Huang's Portfolio</title>
-  
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -66,14 +66,15 @@
         <button type="button" class="btn btn-outline-light mt-4 align-top" id="guess_horoscope">
           Guess my Horoscope
         </button>
-        <a href="#skills" id="scroll-down" class="align-bottom"><i class="fas fa-chevron-circle-down fa-2x" aria-hidden="true"></i></a>
+        <a href="#skills" id="scroll-down" class="align-bottom"><i class="fas fa-chevron-circle-down fa-2x"
+            aria-hidden="true"></i></a>
       </div>
 
       <canvas id="starfield"></canvas>
       <canvas id="sagittarius"></canvas>
 
       <div class="tint" id="hero-tint"></div>
-      
+
     </section>
 
     <!-- CONTAINER FOR SCROLLSPY -->
@@ -87,11 +88,11 @@
             <a class="nav-link" href="#hero">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#skills">About</a>
-          </li>
-          <!-- <li class="nav-item">
             <a class="nav-link" href="#skills">Skills</a>
-          </li> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="#projects">Projects</a>
           </li>
@@ -101,28 +102,13 @@
         </ul>
       </nav>
 
-      <!-- ABOUT -->
-      <!-- <section class="text-center parallax_group" id="about">
-        <div class="particles-bg parallax_layer_back" id="particles-about"></div>
-
-        <div class="parallax_layer_front">
-          <h1 class="page-header" id="about-header">
-            About
-            <div class="underline"></div>
-          </h1>
-          <br>
-          <img id="flip-img" src="images/flipbook/jump1.jpg" alt="flip-img"> <br>
-          <h3>Huge Fan of Table Tennis</h3>
-        </div>
-      </section> -->
-
       <!-- SKILLS -->
       <section class="text-center parallax_group" id="skills">
         <div class="particles-bg parallax_layer_back" id="particles-skills"></div>
         <div class="parallax_layer_front">
 
-          <div class="header-container"  id="skills-header">
-            <h1 class="page-header">About</h1>
+          <div class="header-container" id="skills-header">
+            <h1 class="page-header">Skills</h1>
             <div class="underline"></div>
           </div>
 
@@ -134,7 +120,7 @@
                 </div>
                 <div class="hexagon-description my-3">
                   <h3 class="my-1">Practical</h3>
-                    <p>Every project is a solution, not a problem.</p>
+                  <p>Every project is a solution, not a problem.</p>
                 </div>
               </div>
               <div class="col-6 col-md-3 flex-center justify-content-start">
@@ -143,7 +129,7 @@
                 </div>
                 <div class="hexagon-description my-3">
                   <h3 class="my-1">Creative</h3>
-                    <p>Every project should be visually and functionally unique.</p>
+                  <p>Every project should be visually and functionally unique.</p>
                 </div>
               </div>
               <div class="col-6 col-md-3 flex-center justify-content-start">
@@ -152,8 +138,8 @@
                 </div>
                 <div class="hexagon-description my-3">
                   <h3 class="my-1">Interactive</h3>
-                    <p>A website should do more than just present information.
-                      It should come to life.</p>
+                  <p>A website should do more than just present information.
+                    It should come to life.</p>
                 </div>
               </div>
               <div class="col-6 col-md-3 flex-center justify-content-start">
@@ -162,7 +148,7 @@
                 </div>
                 <div class="hexagon-description my-3">
                   <h3 class="my-1">Responsive</h3>
-                    <p>Same content across every device.</p>
+                  <p>Same content across every device.</p>
                 </div>
               </div>
             </div>
@@ -282,19 +268,61 @@
 
       </section>
 
+      <!-- ABOUT -->
+      <section class="text-center parallax_group" id="about">
+        <div class="particles-bg parallax_layer_back" id="particles-about"></div>
+
+        <div class="parallax_layer_front">
+
+          <div class="header-container" id="about-header">
+            <h1 class="page-header">About</h1>
+            <div class="underline"></div>
+          </div>
+          <br>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 col-md-6 col-xl-4 order-2 order-xl-1 about-description" id="about-me">
+                <div class="text-left w-75 mx-auto">
+                  <h3>Who am I?</h3>
+                  <p>I enjoy creating complex animations that bring applications to life.
+                    It's much more fun when I work with other people so
+                    I love collaborating with other ambitious and creative professionals.</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-xl-4 order-1 order-xl-2 about-description flex-center">
+                <img class="w-100" id="paddle-pic" src="images/paddle.png" alt="paddle">
+              </div>
+              <div class="col-12 col-md-6 col-xl-4 order-3 order-xl-3 about-description" id="fun-facts">
+                <div class="text-left mx-auto w-75">
+                  <h3>Random fun facts</h3>
+                  <ul>
+                    <li>I am addicted to sweets</li>
+                    <li>I love to eat but can't cook</li>
+                    <li>I enjoy building gaming computers</li>
+                    <li>I like to deconstruct and reassemble things</li>
+                    <li>I will continue playing table tennis even when I'm 65</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <!-- PROJECTS -->
       <section class="text-center parallax_group" id="projects">
         <!-- <div class="tint"></div> -->
         <div class="particles-bg parallax_layer_back" id="particles-projects"></div>
         <div class="parallax_layer_front">
-        
+
           <div class="header-container" id="projects-header">
             <h1 class="page-header">Projects</h1>
             <div class="underline"></div>
           </div>
 
           <div class="container-fluid project-images my-5">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center aaaa">
               <div class="col-12 col-md-6 col-xl-4 my-3">
                 <img class="project-image" src="images/projects/queueing/issue.jpg" alt="Queueing System">
                 <div class="project-description flex-center">

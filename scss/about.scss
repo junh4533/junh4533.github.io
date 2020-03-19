@@ -1,139 +1,17 @@
 #about {
-    overflow: auto;
-    #food-gallery {
-        min-height: 150vh;
-        background: pink;
-        
-
-        img {
-            max-width: 100%;
-        }
-
-        .parent {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(8, 1fr);
-            grid-column-gap: 0;
-            grid-row-gap: 0;
-
-            div {
-                background-position: center;
-                background-size: cover;
-                width: 100%;
-                height: 100%;
-            }
-
-            .div1 {
-                grid-area: 1 / 1 / 3 / 3;
-                // background-image: url("../images/food/rice.jpg");
-                transform: "translateX(-200px)"
-            }
-
-            .test-img {
-                position: absolute;
-            }
-
-            .div2 {
-                grid-area: 1 / 3 / 3 / 5;
-                background-image: url("../images/food/salmon.jpg");
-            }
-
-            .div3 {
-                grid-area: 1 / 5 / 3 / 7;
-                background-image: url("../images/food/hargow.jpg");
-            }
-
-            .div4 {
-                grid-area: 3 / 1 / 5 / 3;
-                background-image: url("../images/food/ice-cream.jpg");
-            }
-
-            .div5 {
-                grid-area: 3 / 5 / 7 / 7;
-                background-image: url("../images/food/fish.jpg");
-            }
-
-            .div6 {
-                grid-area: 3 / 3 / 5 / 5;
-                background-image: url("../images/food/noodles.jpg");
-            }
-
-            .div7 {
-                grid-area: 5 / 1 / 7 / 3;
-                background-image: url("../images/food/sashimi.jpg");
-            }
-
-            .div8 {
-                grid-area: 5 / 3 / 7 / 5;
-                background-image: url("../images/food/foie-gras.jpg");
-            }
-
-            .div9 {
-                grid-area: 7 / 1 / 9 / 4;
-                background-image: url("../images/food/eel.jpg");
-            }
-
-            .div10 {
-                grid-area: 7 / 4 / 9 / 7;
-                background-image: url("../images/food/short-ribs.jpg");
-            }
-        }
-
-
-        @media only screen and (max-width: 768px) {
-            .parent {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(7, 1fr);
-                grid-column-gap: 0px;
-                grid-row-gap: 0px;
-
-                .div1 {
-                    grid-area: 1 / 1 / 2 / 2;
-                }
-
-                .div2 {
-                    grid-area: 1 / 2 / 2 / 3;
-                }
-
-                .div3 {
-                    grid-area: 2 / 1 / 3 / 2;
-                }
-
-                .div4 {
-                    grid-area: 3 / 1 / 4 / 2;
-                }
-
-                .div5 {
-                    grid-area: 2 / 2 / 4 / 3;
-                }
-
-                .div6 {
-                    grid-area: 4 / 1 / 5 / 2;
-                }
-
-                .div7 {
-                    grid-area: 4 / 2 / 5 / 3;
-                }
-
-                .div8 {
-                    grid-area: 5 / 1 / 7 / 3;
-                }
-
-                .div9 {
-                    grid-area: 7 / 1 / 8 / 2;
-                }
-
-                .div10 {
-                    grid-area: 7 / 2 / 8 / 3;
-                }
-            }
-
-
-        }
-
+    #particles-about {
+        top: 50%;
+        height: 50%;
     }
 
+    .about-description {
+        padding: 2em 2em 2em 2em;
+    }
 
-
+    #fun-facts ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        line-height: 2em;
+    }
 }

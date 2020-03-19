@@ -225,7 +225,7 @@ $(document).ready(() => {
         "retina_detect": true
     }
 
-    // particlesJS("particles-about", particlesConfig);
+    particlesJS("particles-about", particlesConfig);
     particlesJS("particles-skills", particlesConfig);
     particlesJS("particles-projects", particlesConfig);
     particlesJS("particles-contact", particlesConfigContact);
@@ -300,9 +300,26 @@ $(document).ready(() => {
         .setTween(skillsTweenTimeline)
         .addTo(controller);
 
-    skillsTweenTimeline.progress(1).progress(0);
-
     ////////////////////// end skills section //////////////////////
+    
+    ////////////////////// About section //////////////////////
+
+    const aboutEasing = "circ.inOut";
+
+    const aboutTweenTimeline = new TimelineMax().add([
+        headerSlideIn("#about-header", aboutEasing)
+    ], 0).add([
+        headerSlideIn(".about-description", aboutEasing)
+    ], .5);
+
+    new ScrollMagic.Scene({
+        triggerElement: "#about",
+        duration: 0,
+    })
+    .setTween(aboutTweenTimeline)
+    .addTo(controller);
+    
+    ////////////////////// end  about section //////////////////////
 
     ////////////////////// Projects section //////////////////////
 
@@ -311,7 +328,7 @@ $(document).ready(() => {
     const projectsTweenTimeline = new TimelineMax().add([
         headerSlideIn("#projects-header", projectsEasing)
     ], 0).add([
-        TweenMax.fromTo([".project-image"], 1, {
+        TweenMax.fromTo([".project-images"], 1, {
             // scale: 0, 
             opacity: 0,
             translateY: (vh / 5)
@@ -388,6 +405,7 @@ $(document).ready(() => {
     
     // preload animations by running them once first 
     skillsTweenTimeline.progress(1).progress(0);
+    aboutTweenTimeline.progress(1).progress(0);
     projectsTweenTimeline.progress(1).progress(0);
     contactTweenTimeline.progress(1).progress(0);
 
