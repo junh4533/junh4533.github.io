@@ -156,7 +156,8 @@ a {
   background-image: linear-gradient(to top, #1b0b3d, #0f1242, #050522, #010108);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  min-height: 100vh; }
   #hero .container {
     position: relative;
     z-index: 99999;

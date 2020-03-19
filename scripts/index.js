@@ -225,8 +225,8 @@ $(document).ready(() => {
         "retina_detect": true
     }
 
-    particlesJS("particles-about", particlesConfig);
     particlesJS("particles-skills", particlesConfig);
+    particlesJS("particles-about", particlesConfig);
     particlesJS("particles-projects", particlesConfig);
     particlesJS("particles-contact", particlesConfigContact);
 
@@ -319,7 +319,7 @@ $(document).ready(() => {
     .setTween(aboutTweenTimeline)
     .addTo(controller);
     
-    ////////////////////// end  about section //////////////////////
+    ////////////////////// end about section //////////////////////
 
     ////////////////////// Projects section //////////////////////
 
