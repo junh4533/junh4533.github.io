@@ -301,7 +301,7 @@ $(document).ready(() => {
         .addTo(controller);
 
     ////////////////////// end skills section //////////////////////
-    
+
     ////////////////////// About section //////////////////////
 
     const aboutEasing = "circ.inOut";
@@ -313,12 +313,12 @@ $(document).ready(() => {
     ], .5);
 
     new ScrollMagic.Scene({
-        triggerElement: "#about",
-        duration: 0,
-    })
-    .setTween(aboutTweenTimeline)
-    .addTo(controller);
-    
+            triggerElement: "#about",
+            duration: 0,
+        })
+        .setTween(aboutTweenTimeline)
+        .addTo(controller);
+
     ////////////////////// end about section //////////////////////
 
     ////////////////////// Projects section //////////////////////
@@ -402,7 +402,7 @@ $(document).ready(() => {
         })
         .setTween(contactTweenTimeline)
         .addTo(controller);
-    
+
     // preload animations by running them once first 
     skillsTweenTimeline.progress(1).progress(0);
     aboutTweenTimeline.progress(1).progress(0);
@@ -453,30 +453,13 @@ $(document).ready(() => {
         17: [.81, .474],
         18: [.694, .588],
         19: [.74, .66],
-    }
+    };
 
-    const star_coordinates2 = {
-        1: [.4, .9],
-        2: [.39, .8],
-        3: [.234, .834],
-        4: [.212, .636],
-        5: [.2, .584],
-        6: [.194, .396],
-        7: [.336, .284],
-        8: [.476, .406],
-        9: [.534, .34],
-        10: [.588, .368],
-        12: [.456, .17],
-        13: [.402, .072],
-        11: [.508, .456],
-        14: [.684, .32],
-        15: [.744, .23],
-        16: [.73, .446],
-        17: [.81, .474],
-        18: [.694, .588],
-        19: [.74, .66],
-    }
+    // copy of the star coordinates for drawing lines
+    const star_coordinates2 = new Object;
+    Object.assign(star_coordinates2, star_coordinates);
 
+    // map of connecting points 
     const sagittarius_lines = {
         1: 3,
         2: 3,
@@ -497,7 +480,7 @@ $(document).ready(() => {
         17: 16,
         18: 16,
         19: 18,
-    }
+    };
 
     let animateCanvas = (canvas, x, y, radius, saturation, lightness, interval, delay) => {
         ctx = canvas.getContext("2d");
@@ -705,15 +688,12 @@ $(document).ready(() => {
     const appendProjectImages = (parentFolder, images) => {
         // Append project images
         for (let image of images) {
-
             let slideImg = '<div class="carousel-item">' +
                 '<img class="w-100 h-100" src="images/projects/' +
                 parentFolder + '/' + image + '.jpg"' + ' alt="' + image + '">' +
                 '</div>';
-
             document.getElementById("projectSlides").insertAdjacentHTML('beforeend', slideImg);
         }
-
         // add class "active" to ONLY the first slide of the carousel
         document.getElementById("projectSlides").firstElementChild.classList.add("active");
     }
@@ -723,7 +703,6 @@ $(document).ready(() => {
             '<a href="' + link + '" target = "_blank">' +
             '<i class="fas fa-globe-americas mr-2"></i>' +
             '</a>';
-
         document.getElementById("modal-body").insertAdjacentHTML('beforeend', icon);
     }
 
@@ -732,14 +711,12 @@ $(document).ready(() => {
             '<a href="' + link + '" target = "_blank">' +
             '<i class="fab fa-github mr-2"></i>' +
             '</a>';
-
         document.getElementById("modal-body").insertAdjacentHTML('beforeend', icon);
     }
 
     //////////////////////////// PROJECTS MODAL ////////////////////////////
     $('.modal-button').on("click",
         modalContents = (e) => {
-
             // reset existing images/text from the carousel
             document.getElementById("projectSlides").innerHTML = '';
             document.getElementById("modal-body").innerHTML = ''
@@ -750,13 +727,12 @@ $(document).ready(() => {
                 desc;
 
             switch (e.target.id.toString()) {
-
                 case "QueueingSystem":
                     images = ["issue", "swipe", "text", "wait", "order", "order_video", "order_video2", "queue", "portal", "dashboard", "customize", "reports"]
                     heading = "Queueing System",
                         subHeading = "Queue Management and Appointment Scheduling",
                         desc = "Managing long lines of customers with pen and paper can be a daunting task. With a queueing system, customers can schedule an appointment and receive status updates with ease.";
-
+                    
                     appendProjectImages("queueing", images);
                     addText(heading, subHeading, desc);
 
@@ -833,4 +809,4 @@ $(document).ready(() => {
         }
     );
 
-});
+}); // end document.ready 
