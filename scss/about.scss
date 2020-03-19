@@ -14,4 +14,14 @@
         list-style-type: none;
         line-height: 2em;
     }
+
+    #paddle-pic {
+        width: 35%;
+    }
+
+    @media only screen and (min-width:1200px) {
+        #paddle-pic {
+            width: 75%;
+        }
+    }
 }

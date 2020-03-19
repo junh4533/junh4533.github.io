@@ -200,6 +200,13 @@ a {
   list-style-type: none;
   line-height: 2em; }
 
+#about #paddle-pic {
+  width: 35%; }
+
+@media only screen and (min-width: 1200px) {
+  #about #paddle-pic {
+    width: 75%; } }
+
 #skills #circle-img {
   width: 15em;
   height: 15em;
