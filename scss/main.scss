@@ -60,6 +60,10 @@ a {
     }
 }
 
+p, a, li {
+    font-size: 125%;
+}
+
 .flex-center {
     display: flex;
     flex-direction: column;
@@ -112,13 +116,17 @@ a {
 
 #top-nav {
     background: rgba(0, 0, 0, .85);
-    font-size: 135%;
+    font-size: 60%;
 }
 
 @media only screen and (min-width: 768px) {
     body,
     html {
         font-size: 18px;
+    }
+
+    #top-nav {
+        font-size: 100%;
     }
 }
 

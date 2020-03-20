@@ -50,6 +50,9 @@ a {
     text-decoration: none;
     color: #7e7ef8; }
 
+p, a, li {
+  font-size: 125%; }
+
 .flex-center {
   display: flex;
   flex-direction: column;
@@ -90,12 +93,14 @@ a {
 
 #top-nav {
   background: rgba(0, 0, 0, 0.85);
-  font-size: 135%; }
+  font-size: 60%; }
 
 @media only screen and (min-width: 768px) {
   body,
   html {
-    font-size: 18px; } }
+    font-size: 18px; }
+  #top-nav {
+    font-size: 100%; } }
 
 .hexagon {
   position: relative;
@@ -125,6 +130,9 @@ a {
     transform: rotate(-90deg);
     font-size: 300%;
     color: whitesmoke; }
+
+.hexagon-description p {
+  font-size: 125%; }
 
 .parallax {
   height: 100%;
@@ -199,7 +207,7 @@ a {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  line-height: 2em; }
+  line-height: 2.5em; }
 
 #about #paddle-pic {
   width: 35%; }
