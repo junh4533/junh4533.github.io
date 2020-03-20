@@ -386,7 +386,7 @@ p, li {
   #contact .contact-icons {
     position: absolute;
     left: 25px;
-    bottom: 1%; }
+    bottom: 5%; }
     #contact .contact-icons a {
       display: block;
       font-size: 250%; }
