@@ -1,7 +1,6 @@
 @import 'variables';
 @import 'mixins';
 
-
 body,
 html {
     width: 100%;
@@ -9,7 +8,7 @@ html {
     box-sizing: border-box;
     overflow: hidden; //HIDES SECOND SCROLLBAR FROM PARALLAX
     -webkit-font-smoothing: antialiased;
-    font-size: 16px;
+    font-size: 14px;
     font-family: $font-family;
 }
 
@@ -61,7 +60,7 @@ a {
 }
 
 p, li {
-    font-size: 125%;
+    font-size: 115%;
 }
 
 .flex-center {
@@ -119,17 +118,6 @@ p, li {
     font-size: 60%;
 }
 
-@media only screen and (min-width: 768px) {
-    body,
-    html {
-        font-size: 18px;
-    }
-
-    #top-nav {
-        font-size: 100%;
-    }
-}
-
 @import 'hexagon.scss';
 @import 'parallax';
 @import 'hero';
@@ -138,3 +126,26 @@ p, li {
 @import 'projects';
 @import 'contact';
 @import 'modal';
+
+@media only screen and (min-width: 768px) {
+    body,
+    html {
+        font-size: 16px;
+    }
+
+    #top-nav {
+        font-size: 100%;
+    }
+}
+
+@media (min-width: 1440px){
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 1920px){
+    .container {
+        max-width: 1600px;
+    }
+}

@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
 body,
 html {
   width: 100%;
@@ -6,7 +14,7 @@ html {
   box-sizing: border-box;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Rajdhani"; }
 
 .main-content {
@@ -51,7 +59,7 @@ a {
     color: #7e7ef8; }
 
 p, li {
-  font-size: 125%; }
+  font-size: 115%; }
 
 .flex-center {
   display: flex;
@@ -95,19 +103,12 @@ p, li {
   background: rgba(0, 0, 0, 0.85);
   font-size: 60%; }
 
-@media only screen and (min-width: 768px) {
-  body,
-  html {
-    font-size: 18px; }
-  #top-nav {
-    font-size: 100%; } }
-
 .hexagon {
   position: relative;
-  margin: 0.5em auto;
-  width: 5em;
-  height: 8.66em;
-  border-radius: 0.5em / 0.25em;
+  margin: 0.4rem auto;
+  width: 4rem;
+  height: 6.928rem;
+  border-radius: 0.4rem / 0.2rem;
   background: #5f5fc2;
   transition: opacity .5s;
   transform: rotate(90deg);
@@ -128,11 +129,8 @@ p, li {
     transform: rotate(-60deg); }
   .hexagon i {
     transform: rotate(-90deg);
-    font-size: 300%;
+    font-size: 2rem;
     color: whitesmoke; }
-
-.hexagon-description p {
-  font-size: 125%; }
 
 .parallax {
   height: 100%;
@@ -217,8 +215,8 @@ p, li {
     width: 75%; } }
 
 #skills #circle-img {
-  width: 15em;
-  height: 15em;
+  width: 13rem;
+  height: 13rem;
   border-radius: 50%;
   overflow: hidden; }
   #skills #circle-img #profile-pic {
@@ -227,8 +225,8 @@ p, li {
 
 @media only screen and (min-width: 1440px) {
   #skills #circle-img {
-    width: 20em;
-    height: 20em; } }
+    width: 17.5rem;
+    height: 17.5rem; } }
 
 #skills .progress {
   font-size: 100%;
@@ -354,7 +352,6 @@ p, li {
   #contact #contact-form {
     position: relative;
     border-radius: 0.25rem;
-    width: 75%;
     height: 50vh; }
     #contact #contact-form input,
     #contact #contact-form textarea {
@@ -392,7 +389,6 @@ p, li {
       font-size: 250%; }
   #contact footer {
     position: absolute;
-    font-size: 150%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -404,11 +400,11 @@ p, li {
 
 @media only screen and (min-width: 768px) {
   #contact #contact-form {
-    width: 45%; } }
+    width: 85%; } }
 
 @media only screen and (min-width: 1200px) {
   #contact #contact-form {
-    width: 35%; } }
+    width: 30%; } }
 
 #project-modal #modalProjectSubHeading {
   font-weight: 400;
@@ -427,3 +423,18 @@ p, li {
 
 .modal-backdrop {
   opacity: .9 !important; }
+
+@media only screen and (min-width: 768px) {
+  body,
+  html {
+    font-size: 16px; }
+  #top-nav {
+    font-size: 100%; } }
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1320px; } }
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px; } }

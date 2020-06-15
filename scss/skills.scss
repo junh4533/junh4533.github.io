@@ -1,7 +1,10 @@
+@import 'variables';
+@import 'mixins';
+
 #skills {
     #circle-img {
-        width: 15em;
-        height: 15em;
+        width: 13rem;
+        height: 13rem;
         border-radius: 50%;
         overflow: hidden;
 
@@ -13,8 +16,8 @@
 
     @media only screen and (min-width:1440px) {
         #circle-img {
-            width: 20em;
-            height: 20em;
+            width: 17.5rem;
+            height: 17.5rem;
         }
     }
 

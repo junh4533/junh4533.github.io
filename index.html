@@ -111,9 +111,9 @@
             <div class="underline"></div>
           </div>
 
-          <div class="container-fluid">
+          <div class="container">
             <div class="row my-5">
-              <div class="col-6 col-md-3 flex-center justify-content-start">
+              <div class="col-6 col-lg-3 flex-center justify-content-start">
                 <div class="hexagon flex-center">
                   <i class="fas fa-flask"></i>
                 </div>
@@ -122,7 +122,7 @@
                   <p>I don't solve problems, I create solutions.</p>
                 </div>
               </div>
-              <div class="col-6 col-md-3 flex-center justify-content-start">
+              <div class="col-6 col-lg-3 flex-center justify-content-start">
                 <div class="hexagon flex-center">
                   <i class="fas fa-lightbulb"></i>
                 </div>
@@ -131,7 +131,7 @@
                   <p>Every project should be visually and functionally unique.</p>
                 </div>
               </div>
-              <div class="col-6 col-md-3 flex-center justify-content-start">
+              <div class="col-6 col-lg-3 flex-center justify-content-start">
                 <div class="hexagon flex-center">
                   <i class="fas fa-hand-pointer"></i>
                 </div>
@@ -141,7 +141,7 @@
                     It should come to life.</p>
                 </div>
               </div>
-              <div class="col-6 col-md-3 flex-center justify-content-start">
+              <div class="col-6 col-lg-3 flex-center justify-content-start">
                 <div class="hexagon flex-center">
                   <i class="fas fa-laptop-code"></i>
                 </div>
@@ -163,9 +163,8 @@
                   <h2 class="my-3">
                     Jun Huang
                   </h2>
-                  <p class="w-75 mx-auto">I'm a fullstack developer at Baruch College. I have a passion for
-                    designing
-                    visually stunning and intuitive web applications. <br>
+                  <p class="w-75 mx-auto">I'm a fullstack developer at Baruch College.
+                    I have a passion for designing visually stunning and intuitive web applications. <br>
                     <a href="#projects"><b>Check out some of my projects!</b></a>
                   </p>
                 </div>
@@ -278,7 +277,7 @@
             <div class="underline"></div>
           </div>
           <br>
-          <div class="container-fluid">
+          <div class="container">
             <div class="row">
               <div class="col-12 col-md-6 col-xl-4 order-2 order-xl-1 about-description" id="about-me">
                 <div class="text-left w-75 mx-auto">
@@ -320,8 +319,23 @@
             <div class="underline"></div>
           </div>
 
-          <div class="container-fluid project-images my-5">
+          <div class="container project-images my-5">
             <div class="row justify-content-center">
+
+              <!-- SavingTakeouts -->
+              <div class="col-12 col-md-6 col-xl-4 my-3">
+                <img class="project-image" src="images/projects/ST/home.jpg" alt="SavingTakeouts">
+                <div class="project-description flex-center">
+                  <h2>Saving Takeouts</h2>
+                  <h4>JavaScript</h4>
+                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="SavingTakeouts"
+                    data-toggle="modal" data-target="#project-modal">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+
+              <!-- Qronus  -->
               <div class="col-12 col-md-6 col-xl-4 my-3">
                 <img class="project-image" src="images/projects/queueing/issue.jpg" alt="Queueing System">
                 <div class="project-description flex-center">
@@ -334,6 +348,7 @@
                 </div>
               </div>
 
+              <!-- FireDrop  -->
               <div class="col-12 col-md-6 col-xl-4 my-3">
                 <img class="project-image" src="images/projects/firedrop/home.jpg" alt="FireDrop">
                 <div class="project-description flex-center">
@@ -346,6 +361,7 @@
                 </div>
               </div>
 
+              <!-- Ascend Baruch  -->
               <div class="col-12 col-md-6 col-xl-4 my-3">
                 <img class="project-image" src="images/projects/ascend/preview.jpg" alt="Ascend Baruch">
                 <div class="project-description flex-center">
@@ -358,6 +374,7 @@
                 </div>
               </div>
 
+              <!-- EZDoct Django  -->
               <div class="col-12 col-md-6 col-xl-4 my-3">
                 <img class="project-image" src="images/projects/ezdoct_django/home.jpg" alt="EZDoct Django">
                 <div class="project-description flex-center">
@@ -370,8 +387,9 @@
                 </div>
               </div>
 
+              <!-- Baruch Media Management -->
               <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="images/projects/media_management/admin.jpg" alt="Media Management">
+                <img class="project-image" src="images/projects/media_management/admin.jpg" alt="Baruch Media Management">
                 <div class="project-description flex-center">
                   <h2>Baruch Media Management</h2>
                   <h4>Python - Django</h4>
@@ -382,6 +400,7 @@
                 </div>
               </div>
 
+              <!-- Baruch Donor -->
               <div class="col-12 col-md-6 col-xl-4 my-3">
                 <img class="project-image" src="images/projects/baruch_donor/preview.jpg" alt="Baruch Donor">
                 <div class="project-description flex-center">
@@ -394,6 +413,7 @@
                 </div>
               </div>
 
+              <!-- Arduino Smarthome -->
               <div class="col-12 col-md-6 col-xl-4 my-3">
                 <img class="project-image" src="images/projects/arduino_smarthome/lcd.jpg" alt="Arduino Smarthome">
                 <div class="project-description flex-center">
@@ -422,16 +442,18 @@
         </div>
 
         <form id="contact-form" class="mx-auto" action="https://formspree.io/xjvrdyld" target="_blank" method="POST">
-
-          <div class="form-group">
+          <br>
+          <p>Leave me a message or contact me via Linkedin.</p>
+          <div class="form-group mb-4">
             <input type="email" class="form-control" placeholder="Your Email" id="email" name="_replyto" required>
           </div>
-          <div class="form-group">
+          <div class="form-group mb-4">
             <input type="text" class="form-control" name="_subject" placeholder="Subject" required>
           </div>
-          <div class="form-group">
+          <div class="form-group mb-4">
             <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
           </div>
+          <br>
           <button class="custom-button" type="submit">Send</button>
 
         </form>

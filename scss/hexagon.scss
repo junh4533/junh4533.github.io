@@ -1,4 +1,7 @@
-$hexagon-width: 5em;
+@import 'variables';
+@import 'mixins';
+
+$hexagon-width: 4rem;
 $hexagon-height: $hexagon-width * 1.732;
 $hexagon-margin: $hexagon-width / 10;
 $hexagon-margin-half: $hexagon-margin / 2;
@@ -40,13 +43,13 @@ $hexagon-color: $slate-blue;
 
     i {
         transform: rotate(-90deg);
-        font-size: 300%;
+        font-size: $hexagon-width/2;
         color: $main-bg;
     }
 }
 
-.hexagon-description {
-    p {
-        font-size: 125%;
-    }
-}
+// .hexagon-description {
+//     p {
+//         font-size: 115%;
+//     }
+// }

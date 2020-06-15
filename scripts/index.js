@@ -727,6 +727,17 @@ $(document).ready(() => {
                 desc;
 
             switch (e.target.id.toString()) {
+                case "SavingTakeouts":
+                    images = ["home", "mission", "business_owners", "volunteers", "services", "team"],
+                        heading = "SavingTakeouts",
+                        subHeading = "Free business consultation for small restaurants",
+                        desc = "SavingTakeouts’s mission is to provide small businesses a platform to tell their stories beyond their block. Immigrant owned businesses have always found it hard to compete with modern businesses with technological resources. Restaurants that have been in business for decades are rapidly being displaced by gentrification. We believe storytelling and building genuine connections between businesses and consumers through effective marketing will ultimately bring small business brands to new heights.";
+
+                    appendProjectImages("ST", images);
+                    addText(heading, subHeading, desc);
+                    addWebIcon("https://savingtakeouts.org/");
+
+                    break;
                 case "QueueingSystem":
                     images = ["issue", "swipe", "text", "wait", "order", "order_video", "order_video2", "queue", "portal", "dashboard", "customize", "reports"]
                     heading = "Queueing System",
@@ -758,7 +769,7 @@ $(document).ready(() => {
                     appendProjectImages("ascend", images);
                     addText(heading, subHeading, desc);
                     addGithubIcon("https://github.com/junh4533/ascend");
-                    addWebIcon("http://www.ascendbaruch.org/");
+                    addWebIcon("https://www.ascendbaruch.org/");
 
                     break;
                 case "EZDoctDjango":

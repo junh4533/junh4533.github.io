@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'mixins';
+
 #contact {
     color: white;
     background: $font-color;
@@ -16,7 +19,7 @@
     #contact-form {
         position: relative;
         border-radius: $border-radius;
-        width: 75%;
+        // width: 2%;
         height: 50vh;
 
         input,
@@ -70,7 +73,7 @@
 
     footer {
         position: absolute;
-        font-size: 150%;
+        // font-size: 150%;
         left: 0;
         right: 0;
         bottom: 0;
@@ -87,7 +90,7 @@
 @media only screen and (min-width: 768px) {
     #contact {
         #contact-form {
-            width: 45%;
+            width: 85%;
         }
     }
 }
@@ -95,7 +98,7 @@
 @media only screen and (min-width: 1200px) {
     #contact {
         #contact-form {
-            width: 35%;
+            width: 30%;
         }
     }
 }
