@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
 body,
 html {
   width: 100%;
@@ -29,7 +29,7 @@ h4,
 h5,
 h6 {
   display: inline-block;
-  font-weight: bolder; }
+  font-weight: 700; }
 
 .custom-button {
   border: 1px solid white;
@@ -168,14 +168,18 @@ p, li {
     position: relative;
     z-index: 99999;
     color: #5f5fc2;
-    font-weight: 900;
-    font-size: 1em !important; }
+    font-weight: 700;
+    align-items: flex-start; }
   #hero #hero-text {
     height: 100vh; }
     #hero #hero-text h1 {
-      font-size: 5rem !important; }
+      font-size: 10rem; }
+    #hero #hero-text h2 {
+      font-size: 5rem; }
     #hero #hero-text i {
       font-size: 250%; }
+    #hero #hero-text button {
+      font-size: 150%; }
   #hero #horoscope {
     display: none; }
   #hero #scroll-down {
@@ -230,7 +234,7 @@ p, li {
 
 #skills .progress {
   font-size: 100%;
-  font-weight: bold; }
+  letter-spacing: 1px; }
   #skills .progress .progress-bar {
     background-color: #5f5fc2; }
 
@@ -407,7 +411,7 @@ p, li {
     width: 30%; } }
 
 #project-modal #modalProjectSubHeading {
-  font-weight: 400;
+  font-weight: 500;
   color: #636d77; }
 
 #project-modal i {

@@ -12,18 +12,24 @@
         position: relative;
         z-index: 99999;
         color: $slate-blue;
-        font-weight: 900;
-        font-size: 1em !important;
+        font-weight: 700;
+        align-items: flex-start;
     }
 
     #hero-text {
+        height: 100vh;
         h1 {
-            font-size: 5rem !important;
+            font-size: 10rem;
+        }
+        h2 {
+            font-size: 5rem;
         }
         i {
             font-size: 250%;
         }
-        height: 100vh;
+        button {
+            font-size: 150%;
+        }
     }
 
     #horoscope {
