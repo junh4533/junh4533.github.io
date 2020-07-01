@@ -518,7 +518,7 @@ $(document).ready(() => {
     toggleHeroText = (on_off) => {
         const heroText = document.getElementById("hero-text");
         const heroTint = document.getElementById("hero-tint");
-        const guessButton = document.getElementById("guess_horoscope");
+        const guessButton = document.getElementById("start-game");
         const horoscope = document.getElementById("horoscope");
 
         let heroTweenTimeline;
@@ -595,30 +595,42 @@ $(document).ready(() => {
     }
 
     startGame = () => {
-        document.body.addEventListener("mousemove", mouseMoveHandler = (e) => {
+
+        let moveHandler = (e) => {
+            let x, y;
+    
+            // if the device is a touch screen device
+            if ("ontouchstart" in document.documentElement) {
+                x = e.touches[0].pageX;
+                y = e.touches[0].pageY;
+            } else {
+                //device is in mouse mode
+                x = e.pageX;
+                y = e.pageY;
+            }
 
             //if mouse moves the minimum x or y distance
-            if (Math.abs(e.pageX - mouseX) > mouseTravel || Math.abs(e.pageY - mouseY) > mouseTravel) {
-                mouseX = e.pageX;
-                mouseY = e.pageY;
-
+            if (Math.abs(x - mouseX) > mouseTravel || Math.abs(y - mouseY) > mouseTravel) {
+                mouseX = x;
+                mouseY = y;
+    
                 animateCanvas(starfield,
-                    getRandom(-50, 50) + e.pageX,
-                    getRandom(-50, 50) + e.pageY,
+                    getRandom(-50, 50) + x,
+                    getRandom(-50, 50) + y,
                     Math.random() * 2,
                     getRandom(50, 100),
                     getRandom(70, 100),
                     3,
                     500);
             }
-
+    
             // check each star coordinate everytime the mouse moves 
             for (let star in star_coordinates) {
                 let starX = star_coordinates[star][0] * vw;
                 let starY = star_coordinates[star][1] * vh;
-
+    
                 // if mouse is within mouseDistance of star coordinate
-                if (Math.abs(e.pageX - starX) <= mouseDistance && Math.abs(e.pageY - starY) <= mouseDistance) {
+                if (Math.abs(x - starX) <= mouseDistance && Math.abs(y - starY) <= mouseDistance) {
                     animateCanvas(sagittarius,
                         starX,
                         starY,
@@ -629,7 +641,7 @@ $(document).ready(() => {
                         0);
                     // delete star so it doesn't redraw on hover
                     delete star_coordinates[star];
-
+    
                     // check sagitarrius lines for star coordinates that are removed (hovered over)
                     for (let line_coordinate in sagittarius_lines) {
                         let line_coordinate2 = sagittarius_lines[line_coordinate];
@@ -649,21 +661,24 @@ $(document).ready(() => {
                         }
                     }
                 }
-
+    
                 // When user finds all of the stars
                 if (Object.keys(star_coordinates).length === 0) {
                     console.log("Found all stars");
                     toggleHeroText(true);
                     toggleScroll(true); // prevents scrolling when playing game 
-                    e.currentTarget.removeEventListener(e.type, mouseMoveHandler);
+                    e.currentTarget.removeEventListener(e.type, moveHandler);
                 }
-
+    
             }
+        }
+    
+        document.body.addEventListener("mousemove", moveHandler);
+        document.body.addEventListener("touchmove", moveHandler);
 
-        });
     }
 
-    document.getElementById('guess_horoscope').addEventListener("click", () => {
+    document.getElementById('start-game').addEventListener("click", () => {
         console.log("game start");
         toggleHeroText(false);
         toggleScroll(false); // prevents scrolling when playing game 
@@ -672,7 +687,7 @@ $(document).ready(() => {
 
 
     const addText = (heading, subheading, description) => {
-        const modalBody = document.getElementById('modal-body'),
+        const modalBody = document.getElementById('projects-modal-body'),
             modalProjectHeading = '<h3 id="modalProjectHeading">' + heading + '</h3>',
             modalProjectSubHeading = '<h5 id="modalProjectSubHeading">' + subheading + '</h5>',
             modalProjectDescription = '<p id="modalProjectDescription">' + description + '</p>',
@@ -703,7 +718,7 @@ $(document).ready(() => {
             '<a href="' + link + '" target = "_blank">' +
             '<i class="fas fa-globe-americas mr-2"></i>' +
             '</a>';
-        document.getElementById("modal-body").insertAdjacentHTML('beforeend', icon);
+        document.getElementById("projects-modal-body").insertAdjacentHTML('beforeend', icon);
     }
 
     const addGithubIcon = (link) => {
@@ -711,7 +726,7 @@ $(document).ready(() => {
             '<a href="' + link + '" target = "_blank">' +
             '<i class="fab fa-github mr-2"></i>' +
             '</a>';
-        document.getElementById("modal-body").insertAdjacentHTML('beforeend', icon);
+        document.getElementById("projects-modal-body").insertAdjacentHTML('beforeend', icon);
     }
 
     //////////////////////////// PROJECTS MODAL ////////////////////////////
@@ -719,7 +734,7 @@ $(document).ready(() => {
         modalContents = (e) => {
             // reset existing images/text from the carousel
             document.getElementById("projectSlides").innerHTML = '';
-            document.getElementById("modal-body").innerHTML = ''
+            document.getElementById("projects-modal-body").innerHTML = ''
 
             let images,
                 heading,
