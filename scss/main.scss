@@ -136,15 +136,23 @@ p, li {
     #top-nav {
         font-size: 100%;
     }
+    #hero-text {
+        h1 {
+            font-size: 9rem !important;
+        }
+        h2 {
+            font-size: 4rem !important;
+        }
+    }
 }
 
-@media (min-width: 1440px){
+@media only screen and (min-width: 1440px){
     .container {
         max-width: 1320px;
     }
 }
 
-@media (min-width: 1920px){
+@media only screen and (min-width: 1920px){
     .container {
         max-width: 1600px;
     }

@@ -1,7 +1,13 @@
 $(document).ready(() => {
 
-    const vw = document.body.clientWidth;
-    const vh = document.body.clientHeight;
+    let docWidth = document.body.clientWidth,
+    docHeight = document.body.clientHeight;
+
+    window.addEventListener("resize", function () {
+        docWidth = document.body.clientWidth;
+        docHeight = document.body.clientHeight;
+        console.log(docWidth, docHeight);
+    }, false);
 
     const particlesConfig = {
         "particles": {
@@ -234,7 +240,7 @@ $(document).ready(() => {
 
     const headerSlideIn = (header, easing) => {
         return TweenMax.fromTo(header, 1, {
-            translateX: -(vw / 4),
+            translateX: -(docWidth / 4),
             opacity: 0
         }, {
             translateX: 0,
@@ -252,7 +258,7 @@ $(document).ready(() => {
     ], 0).add([
         // hexagon rotate in  
         TweenMax.fromTo(".hexagon", 1, {
-            translateX: -(vw / 2),
+            translateX: -(docWidth / 2),
             opacity: 0
         }, {
             rotate: 450,
@@ -266,7 +272,7 @@ $(document).ready(() => {
     ], 0.5).add([
         // profile picture slide in to right
         TweenMax.fromTo(".slide-to-right", 1, {
-            translateX: -(vw / 4),
+            translateX: -(docWidth / 4),
             opacity: 0
         }, {
             translateX: 0,
@@ -276,7 +282,7 @@ $(document).ready(() => {
     ], 1.5).add([
         // skills level slide in to left
         TweenMax.fromTo(".slide-to-left", 1, {
-            translateX: (vw / 4),
+            translateX: (docWidth / 4),
             opacity: 0
         }, {
             translateX: 0,
@@ -331,7 +337,7 @@ $(document).ready(() => {
         TweenMax.fromTo([".project-images"], 1, {
             // scale: 0, 
             opacity: 0,
-            translateY: (vh / 5)
+            translateY: (docHeight / 5)
         }, {
             // scale: 1,
             opacity: 1,
@@ -357,7 +363,7 @@ $(document).ready(() => {
         TweenMax.fromTo(["#contact-header"], 1, {
             scale: 0,
             opacity: 0,
-            translateY: -(vh / 5)
+            translateY: -(docHeight / 5)
         }, {
             scale: 1,
             opacity: 1,
@@ -368,7 +374,7 @@ $(document).ready(() => {
             TweenMax.fromTo(["#contact-form"], 1, {
                 scale: 0,
                 opacity: 0,
-                translateY: -(vh / 5)
+                translateY: -(docHeight / 5)
             }, {
                 scale: 1,
                 opacity: 1,
@@ -380,7 +386,7 @@ $(document).ready(() => {
         TweenMax.fromTo([".contact-icons"], 1, {
             scale: 0,
             opacity: 0,
-            translateX: -(vw / 5)
+            translateX: -(docWidth / 5)
         }, {
             scale: 1,
             opacity: 1,
@@ -425,14 +431,29 @@ $(document).ready(() => {
         mouseY = 0;
 
     //set background starfield to fullscreen
-    starfield.width = vw;
-    starfield.height = vh;
+    starfield.width = docWidth;
+    starfield.height = docHeight;
 
-    //set sag map to fullscreen
-    sagittarius.width = vw;
-    sagittarius.height = vh;
+    //set sag map to width
+    sagittarius.width = docWidth;
 
-    // x times a square vh will give coordinate
+    // if the device is a touch screen device
+    if ("ontouchstart" in document.documentElement) {
+        //set sag map to half of screen height
+        sagittarius.height = docHeight / 2;
+    } else {
+        //device is in mouse mode
+        //set sag map to fullscreen
+        sagittarius.height = docHeight;
+    }
+
+    window.addEventListener("resize", function () {
+        docWidth = document.body.clientWidth;
+        docHeight = document.body.clientHeight;
+        console.log(docWidth, docHeight)
+    }, false);
+
+    // x times a square docHeight will give coordinate
     const star_coordinates = {
         1: [.4, .9],
         2: [.39, .8],
@@ -518,7 +539,7 @@ $(document).ready(() => {
     toggleHeroText = (on_off) => {
         const heroText = document.getElementById("hero-text");
         const heroTint = document.getElementById("hero-tint");
-        const guessButton = document.getElementById("start-game");
+        const guessButton = document.getElementById("guess-horoscope");
         const horoscope = document.getElementById("horoscope");
 
         let heroTweenTimeline;
@@ -598,7 +619,7 @@ $(document).ready(() => {
 
         let moveHandler = (e) => {
             let x, y;
-    
+
             // if the device is a touch screen device
             if ("ontouchstart" in document.documentElement) {
                 x = e.touches[0].pageX;
@@ -613,7 +634,7 @@ $(document).ready(() => {
             if (Math.abs(x - mouseX) > mouseTravel || Math.abs(y - mouseY) > mouseTravel) {
                 mouseX = x;
                 mouseY = y;
-    
+
                 animateCanvas(starfield,
                     getRandom(-50, 50) + x,
                     getRandom(-50, 50) + y,
@@ -623,12 +644,12 @@ $(document).ready(() => {
                     3,
                     500);
             }
-    
+
             // check each star coordinate everytime the mouse moves 
             for (let star in star_coordinates) {
-                let starX = star_coordinates[star][0] * vw;
-                let starY = star_coordinates[star][1] * vh;
-    
+                let starX = star_coordinates[star][0] * sagittarius.width;
+                let starY = star_coordinates[star][1] * sagittarius.height;
+
                 // if mouse is within mouseDistance of star coordinate
                 if (Math.abs(x - starX) <= mouseDistance && Math.abs(y - starY) <= mouseDistance) {
                     animateCanvas(sagittarius,
@@ -641,16 +662,16 @@ $(document).ready(() => {
                         0);
                     // delete star so it doesn't redraw on hover
                     delete star_coordinates[star];
-    
+
                     // check sagitarrius lines for star coordinates that are removed (hovered over)
                     for (let line_coordinate in sagittarius_lines) {
                         let line_coordinate2 = sagittarius_lines[line_coordinate];
                         // if both coordinates are hovered over, form a line connecting the two
                         if (!(line_coordinate in star_coordinates) && !(line_coordinate2 in star_coordinates)) {
-                            let starX1 = star_coordinates2[line_coordinate][0] * vw,
-                                starY1 = star_coordinates2[line_coordinate][1] * vh,
-                                starX2 = star_coordinates2[line_coordinate2][0] * vw,
-                                starY2 = star_coordinates2[line_coordinate2][1] * vh;
+                            let starX1 = star_coordinates2[line_coordinate][0] * sagittarius.width,
+                                starY1 = star_coordinates2[line_coordinate][1] * sagittarius.height,
+                                starX2 = star_coordinates2[line_coordinate2][0] * sagittarius.width,
+                                starY2 = star_coordinates2[line_coordinate2][1] * sagittarius.height;
                             ctx.beginPath();
                             ctx.lineWidth = 3;
                             ctx.strokeStyle = "hsl(240, 90%, 90%)";
@@ -661,7 +682,7 @@ $(document).ready(() => {
                         }
                     }
                 }
-    
+
                 // When user finds all of the stars
                 if (Object.keys(star_coordinates).length === 0) {
                     console.log("Found all stars");
@@ -669,10 +690,10 @@ $(document).ready(() => {
                     toggleScroll(true); // prevents scrolling when playing game 
                     e.currentTarget.removeEventListener(e.type, moveHandler);
                 }
-    
+
             }
         }
-    
+
         document.body.addEventListener("mousemove", moveHandler);
         document.body.addEventListener("touchmove", moveHandler);
 
@@ -704,7 +725,7 @@ $(document).ready(() => {
         // Append project images
         for (let image of images) {
             let slideImg = '<div class="carousel-item">' +
-                '<img class="w-100 h-100" src="images/projects/' +
+                '<img class="w-100 h-100" src="assets/images/projects/' +
                 parentFolder + '/' + image + '.jpg"' + ' alt="' + image + '">' +
                 '</div>';
             document.getElementById("projectSlides").insertAdjacentHTML('beforeend', slideImg);
@@ -758,7 +779,7 @@ $(document).ready(() => {
                     heading = "Queueing System",
                         subHeading = "Queue Management and Appointment Scheduling",
                         desc = "Managing long lines of customers with pen and paper can be a daunting task. With a queueing system, customers can schedule an appointment and receive status updates with ease.";
-                    
+
                     appendProjectImages("queueing", images);
                     addText(heading, subHeading, desc);
 

@@ -19,7 +19,7 @@
     #contact-form {
         position: relative;
         border-radius: $border-radius;
-        // width: 2%;
+        width: 75%;
         height: 50vh;
 
         input,
@@ -73,7 +73,6 @@
 
     footer {
         position: absolute;
-        // font-size: 150%;
         left: 0;
         right: 0;
         bottom: 0;
@@ -90,7 +89,7 @@
 @media only screen and (min-width: 768px) {
     #contact {
         #contact-form {
-            width: 85%;
+            width: 40%;
         }
     }
 }

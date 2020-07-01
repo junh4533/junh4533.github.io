@@ -173,9 +173,9 @@ p, li {
   #hero #hero-text {
     height: 100vh; }
     #hero #hero-text h1 {
-      font-size: 9rem; }
+      font-size: 5rem; }
     #hero #hero-text h2 {
-      font-size: 4rem; }
+      font-size: 2rem; }
     #hero #hero-text i {
       font-size: 250%; }
     #hero #hero-text button {
@@ -184,7 +184,8 @@ p, li {
     display: none; }
   #hero #scroll-down {
     position: absolute;
-    bottom: 3.5em; }
+    bottom: 3.5em;
+    align-self: center; }
   #hero #starfield, #hero #sagittarius {
     width: 100%; }
   #hero #starfield {
@@ -356,6 +357,7 @@ p, li {
   #contact #contact-form {
     position: relative;
     border-radius: 0.25rem;
+    width: 75%;
     height: 50vh; }
     #contact #contact-form input,
     #contact #contact-form textarea {
@@ -404,11 +406,18 @@ p, li {
 
 @media only screen and (min-width: 768px) {
   #contact #contact-form {
-    width: 85%; } }
+    width: 40%; } }
 
 @media only screen and (min-width: 1200px) {
   #contact #contact-form {
     width: 30%; } }
+
+#tutorial-modal #tutorial-video {
+  width: 100%;
+  height: 100%; }
+
+#tutorial-modal ol {
+  font-size: 120%; }
 
 #project-modal #modalProjectSubHeading {
   font-weight: 500;
@@ -433,12 +442,16 @@ p, li {
   html {
     font-size: 16px; }
   #top-nav {
-    font-size: 100%; } }
+    font-size: 100%; }
+  #hero-text h1 {
+    font-size: 9rem !important; }
+  #hero-text h2 {
+    font-size: 4rem !important; } }
 
-@media (min-width: 1440px) {
+@media only screen and (min-width: 1440px) {
   .container {
     max-width: 1320px; } }
 
-@media (min-width: 1920px) {
+@media only screen and (min-width: 1920px) {
   .container {
     max-width: 1600px; } }
