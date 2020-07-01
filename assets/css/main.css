@@ -69,8 +69,8 @@ p, li {
 
 .header-container {
   display: inline-block;
-  margin-top: 8vh;
-  margin-bottom: 8vh; }
+  margin-top: 5vh;
+  margin-bottom: 5vh; }
   .header-container .page-header {
     position: relative;
     font-size: 3.5rem; }
@@ -357,14 +357,18 @@ p, li {
   #contact #contact-form {
     position: relative;
     border-radius: 0.25rem;
-    width: 75%;
-    height: 50vh; }
+    width: 90%;
+    padding: 2em;
+    background: rgba(36, 36, 36, 0.5);
+    box-shadow: 0px 0px 5px #2b2b2b; }
+    #contact #contact-form p {
+      font-size: 120%; }
     #contact #contact-form input,
     #contact #contact-form textarea {
       background: #1f1f1f;
-      height: 50px; }
+      height: 30px; }
     #contact #contact-form textarea {
-      height: 150px; }
+      height: 100px; }
     #contact #contact-form input:-webkit-autofill:hover,
     #contact #contact-form input:-webkit-autofill:focus,
     #contact #contact-form textarea:-webkit-autofill:hover,
@@ -373,19 +377,23 @@ p, li {
     #contact #contact-form input:-webkit-autofill {
       -webkit-box-shadow: 0 0 0px 1000px #1f1f1f inset;
       -webkit-text-fill-color: white; }
-  #contact .form-control {
-    color: white; }
-    #contact .form-control:focus {
-      border-color: white;
-      -webkit-transition: box-shadow .35s ease-out;
-      -moz-transition: box-shadow .35s ease-out;
-      -ms-transition: box-shadow .35s ease-out;
-      -o-transition: box-shadow .35s ease-out;
-      transition: box-shadow .35s ease-out;
-      box-shadow: inset 0 0 0 99999px #282852;
+    #contact #contact-form .form-control {
       color: white; }
-    #contact .form-control::placeholder {
-      color: rgba(255, 255, 255, 0.5); }
+      #contact #contact-form .form-control:focus {
+        border-color: white;
+        -webkit-transition: box-shadow .35s ease-out;
+        -moz-transition: box-shadow .35s ease-out;
+        -ms-transition: box-shadow .35s ease-out;
+        -o-transition: box-shadow .35s ease-out;
+        transition: box-shadow .35s ease-out;
+        box-shadow: inset 0 0 0 99999px #282852;
+        color: white; }
+      #contact #contact-form .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+    #contact #contact-form .form-group {
+      width: 90%;
+      margin: auto;
+      padding: 10px 0 10px 0; }
   #contact .contact-icons {
     position: absolute;
     left: 25px;
@@ -406,11 +414,16 @@ p, li {
 
 @media only screen and (min-width: 768px) {
   #contact #contact-form {
-    width: 40%; } }
+    width: 50%; }
+    #contact #contact-form input,
+    #contact #contact-form textarea {
+      height: 50px; }
+    #contact #contact-form textarea {
+      height: 150px; } }
 
 @media only screen and (min-width: 1200px) {
   #contact #contact-form {
-    width: 30%; } }
+    width: 40%; } }
 
 #tutorial-modal #tutorial-video {
   width: 100%;
@@ -441,6 +454,9 @@ p, li {
   body,
   html {
     font-size: 16px; }
+  .header-container {
+    margin-top: 8vh;
+    margin-bottom: 8vh; }
   #top-nav {
     font-size: 100%; }
   #hero-text h1 {
