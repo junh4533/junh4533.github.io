@@ -771,8 +771,9 @@ $(document).ready(() => {
 
                     appendProjectImages("grand_ocean", images);
                     addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/grand-ocean");
                     addWebIcon("https://grandocean-seafood.tk/");
-
+                    
                     break;
                 case "SavingTakeouts":
                     images = ["home", "mission", "business_owners", "volunteers", "services", "team"],
