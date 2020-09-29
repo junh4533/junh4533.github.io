@@ -766,14 +766,14 @@ $(document).ready(() => {
                 case "GrandOcean":
                     images = ["home", "story", "todays_selection", "footer", "checkout_modal", "checkout", "confirmation"],
                         heading = "Grand Ocean Seafood",
-                        subHeading = "Local seafood wholesale basedd in Queens, NY",
+                        subHeading = "Local seafood wholesale based in Queens, NY",
                         desc = "This is one of SavingTakeouts' first client projects. In the span of two weeks, ST's development team (myself, Nicholas Chen, Ivy Tong, and Minh Dang) and marketing team designed and developed this website for a local seafood wholesale business. For the past five years, our client acquired customers through word of mouth. This website helps them build an online presence to expand their client base and boost revenue.";
 
                     appendProjectImages("grand_ocean", images);
                     addText(heading, subHeading, desc);
                     addGithubIcon("https://github.com/junh4533/grand-ocean");
                     addWebIcon("https://grandocean-seafood.tk/");
-                    
+
                     break;
                 case "SavingTakeouts":
                     images = ["home", "mission", "business_owners", "volunteers", "services", "team"],
@@ -783,6 +783,7 @@ $(document).ready(() => {
 
                     appendProjectImages("ST", images);
                     addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/st-master");
                     addWebIcon("https://savingtakeouts.org/");
 
                     break;
