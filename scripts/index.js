@@ -763,6 +763,18 @@ $(document).ready(() => {
                 desc;
 
             switch (e.target.id.toString()) {
+                case "Fireflies":
+                    images = ["home", "ways-to-spark-change", "careers", "footer"],
+                        heading = "Fireflies",
+                        subHeading = "A one-stop platform for advocacy",
+                        desc = "Fireflies is a one-stop platform for advocacy. Support the causes you care about, track your impact, and share your experiences with the world.";
+
+                    appendProjectImages("fireflies", images);
+                    addText(heading, subHeading, desc);
+                    addGithubIcon("https://github.com/junh4533/fireflies");
+                    addWebIcon("https://fireflies.app/");
+
+                    break;
                 case "GrandOcean":
                     images = ["home", "story", "todays_selection", "footer", "checkout_modal", "checkout", "confirmation"],
                         heading = "Grand Ocean Seafood",
@@ -779,7 +791,7 @@ $(document).ready(() => {
                     images = ["home", "mission", "business_owners", "volunteers", "services", "team"],
                         heading = "SavingTakeouts",
                         subHeading = "Free business consultation for small restaurants",
-                        desc = "SavingTakeouts’s mission is to provide small businesses a platform to tell their stories beyond their block. Immigrant owned businesses have always found it hard to compete with modern businesses with technological resources. Restaurants that have been in business for decades are rapidly being displaced by gentrification. We believe storytelling and building genuine connections between businesses and consumers through effective marketing will ultimately bring small business brands to new heights.";
+                        desc = "ST's mission is to provide small businesses a platform to tell their stories beyond their block. Immigrant owned businesses have always found it hard to compete with modern businesses with technological resources. Restaurants that have been in business for decades are rapidly being displaced by gentrification. We believe storytelling and building genuine connections between businesses and consumers through effective marketing will ultimately bring small business brands to new heights.";
 
                     appendProjectImages("ST", images);
                     addText(heading, subHeading, desc);
