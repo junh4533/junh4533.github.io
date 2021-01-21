@@ -1,0 +1,33 @@
+#tutorial-modal {
+  #tutorial-video {
+    width: 100%;
+    height: 100%;
+  }
+  ol {
+    font-size: 120%;
+  }
+}
+
+#project-modal {
+  #modalProjectSubHeading {
+    font-weight: 500;
+    color: $secondary-font-color;
+  }
+  i {
+    font-size: 2rem;
+  }
+  a {
+    color: $slate-blue;
+
+    &:hover {
+      color: $slate-blue-dark;
+    }
+  }
+  h3 {
+    display: block;
+  }
+}
+
+.modal-backdrop {
+  opacity: 0.9 !important;
+}

@@ -1,12 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
 body,
 html {
   width: 100%;
@@ -58,7 +50,8 @@ a {
     text-decoration: none;
     color: #7e7ef8; }
 
-p, li {
+p,
+li {
   font-size: 115%; }
 
 .flex-center {
@@ -78,9 +71,9 @@ p, li {
     height: 4px;
     background: #1b0c3e;
     width: 75%;
-    margin: .5em auto; }
+    margin: 0.5em auto; }
     .header-container .underline:before, .header-container .underline:after {
-      content: '';
+      content: "";
       height: 10px;
       width: 10px;
       border-radius: 10px;
@@ -110,7 +103,7 @@ p, li {
   height: 6.928rem;
   border-radius: 0.4rem / 0.2rem;
   background: #5f5fc2;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   transform: rotate(90deg);
   z-index: -1; }
   .hexagon:before, .hexagon:after {
@@ -119,7 +112,7 @@ p, li {
     height: inherit;
     border-radius: inherit;
     background: inherit;
-    content: '';
+    content: "";
     z-index: -1; }
   .hexagon:before {
     -webkit-transform: rotate(60deg);
@@ -186,7 +179,8 @@ p, li {
     position: absolute;
     bottom: 3.5em;
     align-self: center; }
-  #hero #starfield, #hero #sagittarius {
+  #hero #starfield,
+  #hero #sagittarius {
     width: 100%; }
   #hero #starfield {
     position: absolute;
@@ -254,7 +248,7 @@ p, li {
 
 #projects .project-images .project-description {
   position: absolute;
-  width: calc(100% - 30px);
+  width: calc( 100% - 30px);
   height: 100%;
   top: 0;
   left: 15px;
@@ -448,7 +442,7 @@ p, li {
   display: block; }
 
 .modal-backdrop {
-  opacity: .9 !important; }
+  opacity: 0.9 !important; }
 
 @media only screen and (min-width: 768px) {
   body,

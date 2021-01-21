@@ -1,580 +1,900 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>Jun Huang's Portfolio</title>
-
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <!-- Custom compiled stylesheet  -->
-  <link rel="stylesheet" href="assets/css/main.css">
-
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-
-  <!-- Popper.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-
-  <!-- Bootstrap JS  -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
-
-  <!-- Font Awesome  -->
-  <script src="https://kit.fontawesome.com/7737a0af7b.js" crossorigin="anonymous"></script>
-
-  <!-- GreenSock Animation (GSAP) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
-
-  <!-- ScrollMagic JS  -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-
-  <!-- ScrollMagic Indicators  -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-
-  <!-- GSAP Plugin  -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
-
-  <!-- Particle JS  -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-  <!-- Custom JS  -->
-  <script src="scripts/index.js"></script>
-</head>
-
-<body>
-  <div class="parallax" id="parallaxContainer">
-
-    <!-- HERO -->
-    <section class="flex-center" id="hero">
-
-      <div class="container flex-center text-center" id="hero-text">
-        <h1>Hi! I'm Jun.</h1> <br />
-        <h2>I'm a full-stack developer based in NYC.</h2>
-        <h2 id="horoscope">Sagitarrius</h2>
-        <button type="button" class="btn btn-outline-light mt-4 align-top" id="guess-horoscope" data-toggle="modal"
-          data-target="#tutorial-modal">
-          Guess my Horoscope
-        </button>
-        <a href="#skills" id="scroll-down" class="align-bottom"><i class="fas fa-chevron-circle-down fa-2x"
-            aria-hidden="true"></i></a>
-      </div>
-
-      <canvas id="starfield"></canvas>
-      <canvas id="sagittarius"></canvas>
-
-      <div class="tint" id="hero-tint"></div>
-
-    </section>
-
-    <!-- CONTAINER FOR SCROLLSPY -->
-    <div class="main-content">
-
-      <!-- FIXED TOP NAVBAR -->
-      <nav id="top-nav" class="navbar navbar-expand navbar-dark sticky-top">
-        <!-- <a class="navbar-brand" href="#">Jun Huang</a> -->
-        <ul class="navbar-nav" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link" href="#hero">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="assets/resume.pdf" target="_blank">Resume</a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- SKILLS -->
-      <section class="text-center parallax_group" id="skills">
-        <div class="particles-bg parallax_layer_back" id="particles-skills"></div>
-        <div class="parallax_layer_front">
-
-          <div class="header-container" id="skills-header">
-            <h1 class="page-header">Skills</h1>
-            <div class="underline"></div>
-          </div>
-
-          <div class="container">
-            <div class="row my-5">
-              <div class="col-6 col-lg-3 flex-center justify-content-start">
-                <div class="hexagon flex-center">
-                  <i class="fas fa-flask"></i>
-                </div>
-                <div class="hexagon-description my-3">
-                  <h3 class="my-1">Practical</h3>
-                  <p>I don't solve problems, I create solutions.</p>
-                </div>
-              </div>
-              <div class="col-6 col-lg-3 flex-center justify-content-start">
-                <div class="hexagon flex-center">
-                  <i class="fas fa-lightbulb"></i>
-                </div>
-                <div class="hexagon-description my-3">
-                  <h3 class="my-1">Creative</h3>
-                  <p>Every project should be visually and functionally unique.</p>
-                </div>
-              </div>
-              <div class="col-6 col-lg-3 flex-center justify-content-start">
-                <div class="hexagon flex-center">
-                  <i class="fas fa-hand-pointer"></i>
-                </div>
-                <div class="hexagon-description my-3">
-                  <h3 class="my-1">Interactive</h3>
-                  <p>A website should do more than just present information.
-                    It should come to life.</p>
-                </div>
-              </div>
-              <div class="col-6 col-lg-3 flex-center justify-content-start">
-                <div class="hexagon flex-center">
-                  <i class="fas fa-laptop-code"></i>
-                </div>
-                <div class="hexagon-description my-3">
-                  <h3 class="my-1">Responsive</h3>
-                  <p>Same content across every device.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="row my-5">
-              <div class="col-12 col-md-6 col-xl-5 flex-center">
-                <div class="slide-in slide-to-right">
-                  <div class="flex-center" id="circle-img">
-                    <img id="profile-pic" src="assets/images/profile.jpg" alt="Jun">
-                  </div>
-                </div>
-                <div class="slide-in slide-to-right text-center">
-                  <h2 class="my-3">
-                    Jun Huang
-                  </h2>
-                  <p class="w-75 mx-auto">I'm a fullstack developer at Baruch College.
-                    I have a passion for designing visually stunning and intuitive web applications. <br>
-                    <a href="#projects"><b>Check out some of my projects!</b></a>
-                  </p>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-xl-7 flex-center">
-                <div class="w-100 slide-in slide-to-left">
-                  <!-- Nav pills -->
-                  <ul class="nav nav-pills d-flex justify-content-center" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-toggle="pill" href="#languages">Languages</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#frameworks">Frameworks</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#software">Software</a>
-                    </li>
-                  </ul>
-
-                  <!-- Tab panes -->
-                  <div class="tab-content">
-                    <div id="languages" class="container tab-pane active"><br>
-                      <h3>Languages</h3>
-                      <div class="container">
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:90%;height:30px">HTML</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:90%;height:30px">CSS/SCSS</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:70%;height:30px">JavaScript</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:50%;height:30px">Python</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:50%;height:30px">SQL</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:50%;height:30px">PHP</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="frameworks" class="container tab-pane fade"><br>
-                      <h3>Frameworks</h3>
-                      <div class="container">
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:90%;height:30px">Bootstrap</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:60%;height:30px">Python-Django</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:50%;height:30px">React</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:40%;height:30px">Node.js</div>
-                        </div>
-                        <div class="progress my-3 invisible" style="height:30px">
-                          <div class="progress-bar" style="width:40%;height:30px">Filler</div>
-                        </div>
-                        <div class="progress my-3 invisible" style="height:30px">
-                          <div class="progress-bar" style="width:40%;height:30px">Filler</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="software" class="container tab-pane fade"><br>
-                      <h3>Software</h3>
-                      <div class="container">
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:90%;height:30px">Visual Studio Code</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:80%;height:30px">Git</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:80%;height:30px">WordPress</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:70%;height:30px">MYSQL Workbench</div>
-                        </div>
-                        <div class="progress my-3" style="height:30px">
-                          <div class="progress-bar" style="width:70%;height:30px">XAMPP</div>
-                        </div>
-                        <div class="progress my-3 invisible" style="height:30px">
-                          <div class="progress-bar" style="width:40%;height:30px">Filler</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <!-- ABOUT -->
-      <section class="text-center parallax_group" id="about">
-        <div class="particles-bg parallax_layer_back" id="particles-about"></div>
-
-        <div class="parallax_layer_front">
-
-          <div class="header-container" id="about-header">
-            <h1 class="page-header">About</h1>
-            <div class="underline"></div>
-          </div>
-          <br>
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-6 col-xl-4 order-2 order-xl-1 about-description" id="about-me">
-                <div class="text-left w-75 mx-auto">
-                  <h3>Who am I?</h3>
-                  <p>I enjoy creating complex animations that bring applications to life.
-                    It's much more fun when I work with other people so
-                    I love collaborating with other ambitious and creative professionals.</p>
-                </div>
-              </div>
-              <div class="col-12 col-md-12 col-xl-4 order-1 order-xl-2 about-description flex-center">
-                <img id="paddle-pic" src="assets/images/paddle.png" alt="paddle">
-              </div>
-              <div class="col-12 col-md-6 col-xl-4 order-3 order-xl-3 about-description" id="fun-facts">
-                <div class="text-left mx-auto w-75">
-                  <h3>Random fun facts</h3>
-                  <ul>
-                    <li>I am addicted to sweets</li>
-                    <li>I love to eat but can't cook</li>
-                    <li>I enjoy building gaming computers</li>
-                    <li>I like to deconstruct and reassemble things</li>
-                    <li>My favorite sport is table tennis</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section class="text-center parallax_group" id="projects">
-        <!-- <div class="tint"></div> -->
-        <div class="particles-bg parallax_layer_back" id="particles-projects"></div>
-        <div class="parallax_layer_front">
-
-          <div class="header-container" id="projects-header">
-            <h1 class="page-header">Projects</h1>
-            <div class="underline"></div>
-          </div>
-
-          <div class="container project-images my-5">
-            <div class="row justify-content-center">
-
-              <!-- Fireflies -->
-              <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="assets/images/projects/fireflies/home.jpg" alt="Fireflies">
-                <div class="project-description flex-center">
-                  <h2>Fireflies</h2>
-                  <h4>Custom WordPress Theme</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="Fireflies"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              <!-- Grand Ocean -->
-              <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="assets/images/projects/grand_ocean/home.jpg" alt="Grand Ocean Seafood Wholesale">
-                <div class="project-description flex-center">
-                  <h2>Grand Ocean Seafood Wholesale</h2>
-                  <h4>Custom WordPress Theme</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="GrandOcean"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              <!-- SavingTakeouts -->
-              <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="assets/images/projects/ST/home.jpg" alt="SavingTakeouts">
-                <div class="project-description flex-center">
-                  <h2>Saving Takeouts</h2>
-                  <h4>Custom WordPress Theme</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="SavingTakeouts"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              <!-- Qronus  -->
-              <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="assets/images/projects/queueing/issue.jpg" alt="Queueing System">
-                <div class="project-description flex-center">
-                  <h2>Queueing System</h2>
-                  <h4>React / JavaScript</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="QueueingSystem"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              <!-- FireDrop  -->
-              <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="assets/images/projects/firedrop/home.jpg" alt="FireDrop">
-                <div class="project-description flex-center">
-                  <h2>FireDrop</h2>
-                  <h4>HTML/CSS</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="FireDrop"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              <!-- Ascend Baruch  -->
-              <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="assets/images/projects/ascend/preview.jpg" alt="Ascend Baruch">
-                <div class="project-description flex-center">
-                  <h2>Ascend Baruch</h2>
-                  <h4>HTML/CSS</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="AscendBaruch"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              <!-- EZDoct Django  -->
-              <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="assets/images/projects/ezdoct_django/home.jpg" alt="EZDoct Django">
-                <div class="project-description flex-center">
-                  <h2>EZDoct Django</h2>
-                  <h4>Python-Django</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="EZDoctDjango"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              <!-- Baruch Media Management -->
-              <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="assets/images/projects/media_management/admin.jpg"
-                  alt="Baruch Media Management">
-                <div class="project-description flex-center">
-                  <h2>Baruch Media Management</h2>
-                  <h4>Python - Django</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="mediaManagement"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              <!-- Baruch Donor -->
-              <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="assets/images/projects/baruch_donor/preview.jpg" alt="Baruch Donor">
-                <div class="project-description flex-center">
-                  <h2>Baruch Donor</h2>
-                  <h4>Apache / PHP</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="BaruchDonorPHP"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              <!-- Arduino Smarthome -->
-              <div class="col-12 col-md-6 col-xl-4 my-3">
-                <img class="project-image" src="assets/images/projects/arduino_smarthome/lcd.jpg"
-                  alt="Arduino Smarthome">
-                <div class="project-description flex-center">
-                  <h2>Smart Home</h2>
-                  <h4>Arduino C++</h4>
-                  <button type="button" class="btn btn-outline-light text-light mt-4 modal-button" id="arduinoSmarthome"
-                    data-toggle="modal" data-target="#project-modal">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section class="text-center parallax_group" id="contact">
-        <!-- <div class="tint"></div> -->
-        <div class="particles-bg" id="particles-contact"></div>
-
-        <div class="header-container" id="contact-header">
-          <h1 class="page-header">Contact</h1>
-          <div class="underline"></div>
-        </div>
-        <div class="">
-          <form id="contact-form" class="mx-auto" action="https://formspree.io/xjvrdyld" target="_blank" method="POST">
-            <div class="form-group">
-              <p>Let's work together! <br> Leave me a message or contact me via Linkedin.</p>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Your Email" id="email" name="_replyto" required>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="_subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-              <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
-            </div>
-            <div class="form-group">
-              <button class="custom-button w-100" type="submit">Send</button>
-            </div>
-          </form>
-        </div>
-
-        <div class="contact-icons">
-          <a href="https://github.com/junh4533" target="_blank"><i class="fab fa-github-square"></i></a>
-          <a href="https://www.linkedin.com/in/jun-huang1/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.facebook.com/JunHuang22" target="_blank"><i class="fab fa-facebook-square"></i></a>
-        </div>
-
-        <footer>
-          <p>Designed and coded by <b>Jun Huang</b></p>
-        </footer>
-
-      </section>
-
-    </div> <!-- END SCROLLSPY CONTAINER -->
-
-  </div>
-
-  <!-- Projects Modal -->
-  <div class="modal fade" id="project-modal">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-
-        <!-- Modal Image -->
-        <div id="modal-image">
-          <div id="modal-carousel" class="carousel slide" data-ride="carousel">
-
-            <!-- The slideshow -->
-            <div id="projectSlides" class="carousel-inner"></div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#modal-carousel" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#modal-carousel" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
-
-          </div>
-        </div>
-
-        <!-- Modal Body-->
-        <div id="projects-modal-body" class="p-3"></div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Game Tutorial Modal -->
-  <div class="modal fade" id="tutorial-modal">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h1 class="modal-title">Here's How It Works</h1>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-          <video id="tutorial-video" width="320" height="240" autoplay muted loop>
-            <source src="assets/videos/tutorial.mp4" alt="Tutorial Step 1">
-            Your browser does not support the video tag.
-          </video>
-          <ol>
-            <li>Move your mouse or fingers to find the hidden stars.</li>
-            <li>The game ends when you find all of the stars.</li>
-          </ol>
-        </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" id="start-game" data-toggle="modal"
-            data-target="#tutorial-modal">
-            Start Game!
+  <head>
+    <title>Jun Huang's Portfolio</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom compiled stylesheet  -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Popper.js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap JS  -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Font Awesome  -->
+    <script
+      src="https://kit.fontawesome.com/7737a0af7b.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- GreenSock Animation (GSAP) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+
+    <!-- ScrollMagic JS  -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+
+    <!-- ScrollMagic Indicators  -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+    <!-- GSAP Plugin  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+
+    <!-- Particle JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Custom JS  -->
+    <script src="scripts/index.js"></script>
+  </head>
+
+  <body>
+    <div class="parallax" id="parallaxContainer">
+      <!-- HERO -->
+      <section class="flex-center" id="hero">
+        <div class="container flex-center text-center" id="hero-text">
+          <h1>Hi! I'm Jun.</h1>
+          <br />
+          <h2>I'm a full-stack developer based in NYC.</h2>
+          <h2 id="horoscope">Sagitarrius</h2>
+          <button
+            type="button"
+            class="btn btn-outline-light mt-4 align-top"
+            id="guess-horoscope"
+            data-toggle="modal"
+            data-target="#tutorial-modal"
+          >
+            Guess my Horoscope
           </button>
+          <a href="#skills" id="scroll-down" class="align-bottom"
+            ><i class="fas fa-chevron-circle-down fa-2x" aria-hidden="true"></i
+          ></a>
         </div>
 
+        <canvas id="starfield"></canvas>
+        <canvas id="sagittarius"></canvas>
+
+        <div class="tint" id="hero-tint"></div>
+      </section>
+
+      <!-- CONTAINER FOR SCROLLSPY -->
+      <div class="main-content">
+        <!-- FIXED TOP NAVBAR -->
+        <nav id="top-nav" class="navbar navbar-expand navbar-dark sticky-top">
+          <!-- <a class="navbar-brand" href="#">Jun Huang</a> -->
+          <ul class="navbar-nav" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link" href="#hero">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="assets/resume.pdf" target="_blank"
+                >Resume</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- SKILLS -->
+        <section class="text-center parallax_group" id="skills">
+          <div
+            class="particles-bg parallax_layer_back"
+            id="particles-skills"
+          ></div>
+          <div class="parallax_layer_front">
+            <div class="header-container" id="skills-header">
+              <h1 class="page-header">Skills</h1>
+              <div class="underline"></div>
+            </div>
+
+            <div class="container">
+              <div class="row my-5">
+                <div class="col-6 col-lg-3 flex-center justify-content-start">
+                  <div class="hexagon flex-center">
+                    <i class="fas fa-flask"></i>
+                  </div>
+                  <div class="hexagon-description my-3">
+                    <h3 class="my-1">Practical</h3>
+                    <p>I don't solve problems, I create solutions.</p>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-3 flex-center justify-content-start">
+                  <div class="hexagon flex-center">
+                    <i class="fas fa-lightbulb"></i>
+                  </div>
+                  <div class="hexagon-description my-3">
+                    <h3 class="my-1">Creative</h3>
+                    <p>
+                      Every project should be visually and functionally unique.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-3 flex-center justify-content-start">
+                  <div class="hexagon flex-center">
+                    <i class="fas fa-hand-pointer"></i>
+                  </div>
+                  <div class="hexagon-description my-3">
+                    <h3 class="my-1">Interactive</h3>
+                    <p>
+                      A website should do more than just present information. It
+                      should come to life.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-3 flex-center justify-content-start">
+                  <div class="hexagon flex-center">
+                    <i class="fas fa-laptop-code"></i>
+                  </div>
+                  <div class="hexagon-description my-3">
+                    <h3 class="my-1">Responsive</h3>
+                    <p>Same content across every device.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row my-5">
+                <div class="col-12 col-md-6 col-xl-5 flex-center">
+                  <div class="slide-in slide-to-right">
+                    <div class="flex-center" id="circle-img">
+                      <img
+                        id="profile-pic"
+                        src="assets/images/profile.jpg"
+                        alt="Jun"
+                      />
+                    </div>
+                  </div>
+                  <div class="slide-in slide-to-right text-center">
+                    <h2 class="my-3">Jun Huang</h2>
+                    <p class="w-75 mx-auto">
+                      I have two years of project-based experience in full-stack
+                      development. My passion is to develop visually stunning
+                      and intuitive web applications that will make our lives
+                      easier! <br />
+                      <a href="#projects"
+                        ><b>Check out some of my projects!</b></a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-7 flex-center">
+                  <div class="w-100 slide-in slide-to-left">
+                    <!-- Nav pills -->
+                    <ul
+                      class="nav nav-pills d-flex justify-content-center"
+                      role="tablist"
+                    >
+                      <li class="nav-item">
+                        <a
+                          class="nav-link active"
+                          data-toggle="pill"
+                          href="#languages"
+                          >Languages</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          class="nav-link"
+                          data-toggle="pill"
+                          href="#frameworks"
+                          >Frameworks</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#software"
+                          >Software</a
+                        >
+                      </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div id="languages" class="container tab-pane active">
+                        <br />
+                        <h3>Languages</h3>
+                        <div class="container">
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 90%; height: 30px"
+                            >
+                              HTML
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 90%; height: 30px"
+                            >
+                              CSS/SCSS
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 70%; height: 30px"
+                            >
+                              JavaScript
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 70%; height: 30px"
+                            >
+                              PHP
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 50%; height: 30px"
+                            >
+                              Python
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 50%; height: 30px"
+                            >
+                              SQL
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="frameworks" class="container tab-pane fade">
+                        <br />
+                        <h3>Frameworks</h3>
+                        <div class="container">
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 90%; height: 30px"
+                            >
+                              Bootstrap
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 80%; height: 30px"
+                            >
+                              WordPress
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 70%; height: 30px"
+                            >
+                              React
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 60%; height: 30px"
+                            >
+                              Node.js
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 60%; height: 30px"
+                            >
+                              Python-Django
+                            </div>
+                          </div>
+                          <div
+                            class="progress my-3 invisible"
+                            style="height: 30px"
+                          >
+                            <div
+                              class="progress-bar"
+                              style="width: 40%; height: 30px"
+                            >
+                              Filler
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="software" class="container tab-pane fade">
+                        <br />
+                        <h3>Software</h3>
+                        <div class="container">
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 90%; height: 30px"
+                            >
+                              Visual Studio Code
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 80%; height: 30px"
+                            >
+                              Git
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 70%; height: 30px"
+                            >
+                              MYSQL Workbench
+                            </div>
+                          </div>
+                          <div class="progress my-3" style="height: 30px">
+                            <div
+                              class="progress-bar"
+                              style="width: 70%; height: 30px"
+                            >
+                              XAMPP
+                            </div>
+                          </div>
+                          <div
+                            class="progress my-3 invisible"
+                            style="height: 30px"
+                          >
+                            <div
+                              class="progress-bar"
+                              style="width: 40%; height: 30px"
+                            >
+                              Filler
+                            </div>
+                          </div>
+                          <div
+                            class="progress my-3 invisible"
+                            style="height: 30px"
+                          >
+                            <div
+                              class="progress-bar"
+                              style="width: 40%; height: 30px"
+                            >
+                              Filler
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="text-center parallax_group" id="about">
+          <div
+            class="particles-bg parallax_layer_back"
+            id="particles-about"
+          ></div>
+
+          <div class="parallax_layer_front">
+            <div class="header-container" id="about-header">
+              <h1 class="page-header">About</h1>
+              <div class="underline"></div>
+            </div>
+            <br />
+            <div class="container">
+              <div class="row">
+                <div
+                  class="col-12 col-md-6 col-xl-4 order-2 order-xl-1 about-description"
+                  id="about-me"
+                >
+                  <div class="text-left w-75 mx-auto">
+                    <h3>Who am I?</h3>
+                    <p>
+                      I enjoy creating complex animations that bring
+                      applications to life. It's much more fun when I work with
+                      other people so I love collaborating with other ambitious
+                      and creative professionals.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-12 col-md-12 col-xl-4 order-1 order-xl-2 about-description flex-center"
+                >
+                  <img
+                    id="paddle-pic"
+                    src="assets/images/paddle.png"
+                    alt="paddle"
+                  />
+                </div>
+                <div
+                  class="col-12 col-md-6 col-xl-4 order-3 order-xl-3 about-description"
+                  id="fun-facts"
+                >
+                  <div class="text-left mx-auto w-75">
+                    <h3>Random fun facts</h3>
+                    <ul>
+                      <li>I am addicted to sweets</li>
+                      <li>I love to eat but can't cook</li>
+                      <li>I enjoy building gaming computers</li>
+                      <li>I like to deconstruct and reassemble things</li>
+                      <li>My favorite sport is table tennis</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="text-center parallax_group" id="projects">
+          <!-- <div class="tint"></div> -->
+          <div
+            class="particles-bg parallax_layer_back"
+            id="particles-projects"
+          ></div>
+          <div class="parallax_layer_front">
+            <div class="header-container" id="projects-header">
+              <h1 class="page-header">Projects</h1>
+              <div class="underline"></div>
+            </div>
+
+            <div class="container project-images my-5">
+              <div class="row justify-content-center">
+                <!-- Fireflies -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/fireflies/home.jpg"
+                    alt="Fireflies"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>Fireflies</h2>
+                    <h4>Custom WordPress Theme</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="Fireflies"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Grand Ocean -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/grand_ocean/home.jpg"
+                    alt="Grand Ocean Seafood"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>Grand Ocean Seafood</h2>
+                    <h4>Custom WordPress Theme</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="GrandOcean"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- SavingTakeouts -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/ST/home.jpg"
+                    alt="SavingTakeouts"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>Saving Takeouts</h2>
+                    <h4>Custom WordPress Theme</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="SavingTakeouts"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- eServeLaw  -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/eservelaw/home.jpg"
+                    alt="eServeLaw"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>eServeLaw</h2>
+                    <h4>WordPress - Eightlaw Lite Theme</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="eServeLaw"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Qronus  -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/queueing/issue.jpg"
+                    alt="Queueing System"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>Queueing System</h2>
+                    <h4>React / JavaScript</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="QueueingSystem"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- FireDrop  -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/firedrop/home.jpg"
+                    alt="FireDrop"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>FireDrop</h2>
+                    <h4>HTML/CSS</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="FireDrop"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Ascend Baruch  -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/ascend/preview.jpg"
+                    alt="Ascend Baruch"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>Ascend Baruch</h2>
+                    <h4>HTML/CSS</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="AscendBaruch"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- EZDoct Django  -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/ezdoct_django/dashboard.jpg"
+                    alt="EZDoct Django"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>EZDoct Django</h2>
+                    <h4>Python-Django</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="EZDoctDjango"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Baruch Media Management -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/media_management/admin.jpg"
+                    alt="Baruch Media Management"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>Baruch Media Management</h2>
+                    <h4>Python - Django</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="mediaManagement"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Baruch Donor -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/baruch_donor/preview.jpg"
+                    alt="Baruch Donor"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>Baruch Donor</h2>
+                    <h4>Apache / PHP</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="BaruchDonorPHP"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Arduino Smarthome -->
+                <div class="col-12 col-md-6 col-xl-4 my-3">
+                  <img
+                    class="project-image"
+                    src="assets/images/projects/arduino_smarthome/lcd.jpg"
+                    alt="Arduino Smarthome"
+                  />
+                  <div class="project-description flex-center">
+                    <h2>Smart Home</h2>
+                    <h4>Arduino C++</h4>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light text-light mt-4 modal-button"
+                      id="arduinoSmarthome"
+                      data-toggle="modal"
+                      data-target="#project-modal"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="text-center parallax_group" id="contact">
+          <!-- <div class="tint"></div> -->
+          <div class="particles-bg" id="particles-contact"></div>
+
+          <div class="header-container" id="contact-header">
+            <h1 class="page-header">Contact</h1>
+            <div class="underline"></div>
+          </div>
+          <div class="">
+            <form
+              id="contact-form"
+              class="mx-auto"
+              action="https://formspree.io/xjvrdyld"
+              target="_blank"
+              method="POST"
+            >
+              <div class="form-group">
+                <p>
+                  Let's work together! <br />
+                  Leave me a message or contact me via Linkedin.
+                </p>
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  id="email"
+                  name="_replyto"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="_subject"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  class="form-control"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <button class="custom-button w-100" type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="contact-icons">
+            <a href="https://github.com/junh4533" target="_blank"
+              ><i class="fab fa-github-square"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/jun-huang1/" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <!-- <a href="https://www.facebook.com/JunHuang22" target="_blank"
+              ><i class="fab fa-facebook-square"></i
+            ></a> -->
+          </div>
+
+          <footer>
+            <p>Designed and coded by <b>Jun Huang</b></p>
+          </footer>
+        </section>
+      </div>
+      <!-- END SCROLLSPY CONTAINER -->
+    </div>
+
+    <!-- Projects Modal -->
+    <div class="modal fade" id="project-modal">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Modal Image -->
+          <div id="modal-image">
+            <div
+              id="modal-carousel"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <!-- The slideshow -->
+              <div id="projectSlides" class="carousel-inner"></div>
+
+              <!-- Left and right controls -->
+              <a
+                class="carousel-control-prev"
+                href="#modal-carousel"
+                data-slide="prev"
+              >
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#modal-carousel"
+                data-slide="next"
+              >
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Modal Body-->
+          <div id="projects-modal-body" class="p-3"></div>
+        </div>
       </div>
     </div>
-  </div>
 
+    <!-- Game Tutorial Modal -->
+    <div class="modal fade" id="tutorial-modal">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h1 class="modal-title">Here's How It Works</h1>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
 
+          <!-- Modal body -->
+          <div class="modal-body">
+            <video
+              id="tutorial-video"
+              width="320"
+              height="240"
+              autoplay
+              muted
+              loop
+            >
+              <source src="assets/videos/tutorial.mp4" alt="Tutorial Step 1" />
+              Your browser does not support the video tag.
+            </video>
+            <ol>
+              <li>Move your mouse or fingers to find the hidden stars.</li>
+              <li>The game ends when you find all of the stars.</li>
+            </ol>
+          </div>
 
-</body>
-
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-success"
+              id="start-game"
+              data-toggle="modal"
+              data-target="#tutorial-modal"
+            >
+              Start Game!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

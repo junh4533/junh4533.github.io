@@ -1,0 +1,27 @@
+#about {
+  #particles-about {
+    top: 50%;
+    height: 50%;
+  }
+
+  .about-description {
+    padding: 2em 2em 2em 2em;
+  }
+
+  #fun-facts ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    line-height: 2.5em;
+  }
+
+  #paddle-pic {
+    width: 35%;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    #paddle-pic {
+      width: 75%;
+    }
+  }
+}

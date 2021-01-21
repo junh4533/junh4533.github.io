@@ -1,17 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Rajdhani:500,700");
 $font-family: "Rajdhani";
 
-// font color 
+// font color
 $font-color: rgb(23, 25, 27);
 $secondary-font-color: rgb(99, 109, 119);
 
-// background colors 
+// background colors
 $main-bg: whitesmoke;
-$star-bg: linear-gradient(to top, rgb(27, 11, 61), rgb(15, 18, 66), rgb(5, 5, 34), rgb(1, 1, 8));
+$star-bg: linear-gradient(
+  to top,
+  rgb(27, 11, 61),
+  rgb(15, 18, 66),
+  rgb(5, 5, 34),
+  rgb(1, 1, 8)
+);
 
-// theme colors 
+// theme colors
 $slate-blue: rgb(95, 95, 194);
 $slate-blue-light: rgb(126, 126, 248);
 $slate-blue-dark: rgb(40, 40, 82);
 
-$border-radius: .25rem;
+$border-radius: 0.25rem;

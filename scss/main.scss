@@ -1,21 +1,21 @@
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
 body,
 html {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    overflow: hidden; //HIDES SECOND SCROLLBAR FROM PARALLAX
-    -webkit-font-smoothing: antialiased;
-    font-size: 14px;
-    font-family: $font-family;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden; //HIDES SECOND SCROLLBAR FROM PARALLAX
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-family: $font-family;
 }
 
 .main-content {
-    background: $main-bg;
-    position: relative;
-    color: $font-color;  
+  background: $main-bg;
+  position: relative;
+  color: $font-color;
 }
 
 h1,
@@ -24,141 +24,142 @@ h3,
 h4,
 h5,
 h6 {
-    display: inline-block;
-    font-weight: 700;
+  display: inline-block;
+  font-weight: 700;
 }
 
 .custom-button {
-    border: 1px solid white;
-    background: transparent;
-    padding: 0.5em 1em;
-    border-radius: 0;
-    color: white;
-    border-radius: 4px;
-    @include transition('box-shadow .35s ease-out');
+  border: 1px solid white;
+  background: transparent;
+  padding: 0.5em 1em;
+  border-radius: 0;
+  color: white;
+  border-radius: 4px;
+  @include transition("box-shadow .35s ease-out");
 
-    // darkens button on hover 
-    &:hover {
-        box-shadow: inset 0 0 0 99999px $slate-blue;
-        text-decoration: none;
-        color: white;
-        border-color: rgb(199, 199, 199);
-    }
+  // darkens button on hover
+  &:hover {
+    box-shadow: inset 0 0 0 99999px $slate-blue;
+    text-decoration: none;
+    color: white;
+    border-color: rgb(199, 199, 199);
+  }
 }
 
 b {
-    color: $slate-blue;
+  color: $slate-blue;
 }
 
 a {
-    color: $slate-blue;
+  color: $slate-blue;
 
-    &:hover {
-        text-decoration: none;
-        color: $slate-blue-light;
-    }
+  &:hover {
+    text-decoration: none;
+    color: $slate-blue-light;
+  }
 }
 
-p, li {
-    font-size: 115%;
+p,
+li {
+  font-size: 115%;
 }
 
 .flex-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-container {
-    display: inline-block;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+  display: inline-block;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 
-    .page-header {
-        position: relative;
-        font-size: 3.5rem;
+  .page-header {
+    position: relative;
+    font-size: 3.5rem;
+  }
+
+  .underline {
+    height: 4px;
+    background: rgb(27, 12, 62);
+    width: 75%;
+    margin: 0.5em auto;
+
+    &:before,
+    &:after {
+      content: "";
+      height: 10px;
+      width: 10px;
+      border-radius: 10px;
+      float: left;
+      background: rgb(27, 12, 62);
+      margin-top: -3px;
     }
 
-    .underline {
-        height: 4px;
-        background: rgb(27, 12, 62);
-        width: 75%;
-        margin: .5em auto;
-    
-        &:before,
-        &:after {
-            content: '';
-            height: 10px;
-            width: 10px;
-            border-radius: 10px;
-            float: left;
-            background: rgb(27, 12, 62);
-            margin-top: -3px;
-        }
-    
-        &:after {
-            float: right;
-        }
+    &:after {
+      float: right;
     }
+  }
 }
 
 .tint {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, .95);
-    z-index: 501;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 501;
 }
 
 #top-nav {
-    background: rgba(0, 0, 0, .85);
-    font-size: 60%;
+  background: rgba(0, 0, 0, 0.85);
+  font-size: 60%;
 }
 
-@import 'hexagon.scss';
-@import 'parallax';
-@import 'hero';
-@import 'about';
-@import 'skills';
-@import 'projects';
-@import 'contact';
-@import 'modal';
+@import "hexagon";
+@import "parallax";
+@import "hero";
+@import "about";
+@import "skills";
+@import "projects";
+@import "contact";
+@import "modal";
 
 @media only screen and (min-width: 768px) {
-    body,
-    html {
-        font-size: 16px;
-    }
+  body,
+  html {
+    font-size: 16px;
+  }
 
-    .header-container {
-        margin-top: 8vh;
-        margin-bottom: 8vh;
-    }
+  .header-container {
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+  }
 
-    #top-nav {
-        font-size: 100%;
+  #top-nav {
+    font-size: 100%;
+  }
+  #hero-text {
+    h1 {
+      font-size: 9rem !important;
     }
-    #hero-text {
-        h1 {
-            font-size: 9rem !important;
-        }
-        h2 {
-            font-size: 4rem !important;
-        }
+    h2 {
+      font-size: 4rem !important;
     }
+  }
 }
 
-@media only screen and (min-width: 1440px){
-    .container {
-        max-width: 1320px;
-    }
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
 }
 
-@media only screen and (min-width: 1920px){
-    .container {
-        max-width: 1600px;
-    }
+@media only screen and (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
 }

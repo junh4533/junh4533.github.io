@@ -1,0 +1,51 @@
+$hexagon-width: 4rem;
+$hexagon-height: $hexagon-width * 1.732;
+$hexagon-margin: $hexagon-width / 10;
+$hexagon-margin-half: $hexagon-margin / 2;
+$hexagon-color: $slate-blue;
+
+.hexagon {
+  position: relative;
+  margin: $hexagon-margin auto;
+  width: $hexagon-width;
+  height: $hexagon-height;
+  border-radius: #{$hexagon-margin} / #{$hexagon-margin-half};
+  background: $hexagon-color;
+  transition: opacity 0.5s;
+  transform: rotate(90deg);
+  z-index: -1;
+
+  &:before,
+  &:after {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+    content: "";
+
+    z-index: -1;
+  }
+
+  &:before {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+
+  &:after {
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+  }
+
+  i {
+    transform: rotate(-90deg);
+    font-size: $hexagon-width/2;
+    color: $main-bg;
+  }
+}
+
+// .hexagon-description {
+//     p {
+//         font-size: 115%;
+//     }
+// }
