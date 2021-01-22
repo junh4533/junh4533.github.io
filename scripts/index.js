@@ -950,6 +950,27 @@ $(document).ready(() => {
       let images, heading, subHeading, desc;
 
       switch (e.target.id.toString()) {
+        case "DinnerTable":
+          (images = [
+            "home",
+            "join",
+            "meal_plans",
+            "menu",
+            "customers",
+            "contact_us",
+            "cart",
+            "order",
+          ]),
+            (heading = "Dinner Table"),
+            (subHeading = "Bringing You the Dinner Table"),
+            (desc =
+              "Cooking can be hard, time consuming, and stressful when you don't get it right. Leave it to us, we know the struggle firsthand and that’s why we are determined to make this right. Dinner Table, it’s made love.");
+
+          appendProjectImages("dinner_table", images);
+          addText(heading, subHeading, desc);
+          addWebIcon("https://dinnertableapp.com/");
+
+          break;
         case "Fireflies":
           (images = ["home", "ways-to-spark-change", "careers", "footer"]),
             (heading = "Fireflies"),
