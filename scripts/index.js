@@ -950,6 +950,28 @@ $(document).ready(() => {
       let images, heading, subHeading, desc;
 
       switch (e.target.id.toString()) {
+        case "Skill_ly":
+          (images = [
+            "home",
+            "features",
+            "recruiters",
+            "applicants",
+            "challenges",
+            "login",
+            "profile",
+            "skills",
+            "resume",
+          ]),
+            (heading = "Skill.ly"),
+            (subHeading = "1st Place Winner of the 2021 CUNY Hackathon"),
+            (desc =
+              "Jeffrey Guan and I used Figma to prototype an all-in-one platform where recruiters can use projects to verify a prospective employee's skills. Recruiters post their projects with specific requirements and a deadline for the applicants. Applicants will show off their skills and complete the projects and receive a qualitative score from the recruiters to display on their platform resume.");
+
+          appendProjectImages("skill.ly", images);
+          addText(heading, subHeading, desc);
+          addWebIcon("https://devpost.com/software/skill-ly");
+
+          break;
         case "DinnerTable":
           (images = [
             "home",
